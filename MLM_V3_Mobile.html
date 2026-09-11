@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>国际 MLM 深度薪酬制度 V3.0 · 移动端完美版</title>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c5a059; /* 香槟金 */
+            --bg-color: #f4f5f7;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --danger-color: #d9534f;
+            --success-color: #28a745;
+            --web3-color: #6f42c1;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        .confidential {
+            color: var(--accent-color);
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin: 10px 0;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1em;
+            margin-bottom: 25px;
+        }
+        .core-params {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .param-item {
+            text-align: center;
+            background: #fafafa;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            min-width: 120px;
+            flex: 1;
+        }
+        .param-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .param-label {
+            font-size: 0.8em;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* TOC */
+        .toc {
+            background: #fafafa;
+            padding: 20px;
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 40px;
+            border-radius: 0 8px 8px 0;
+        }
+        .toc h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 8px 20px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+        .toc a:hover, .toc a:active {
+            background: #fff;
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateX(3px);
+        }
+        .toc a.web3-link {
+            color: var(--web3-color);
+            font-weight: bold;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 50px;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            font-size: 1.6em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h2.web3-title {
+            border-left: 5px solid var(--web3-color);
+            background: linear-gradient(90deg, rgba(111,66,193,0.05) 0%, transparent 100%);
+            padding: 12px 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        h3 {
+            color: var(--accent-color);
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Tables - Mobile Optimized */
+        .table-responsive {
+            position: relative;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .table-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+        .table-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .table-scroll::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+        /* 滑动提示阴影 */
+        .table-responsive::after {
+            content: '👉 左右滑动';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            pointer-events: none;
+            opacity: 0.8;
+            z-index: 2;
+            transition: opacity 0.3s;
+        }
+        .table-scroll.scrolled::after {
+            opacity: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            background: #fff;
+            min-width: 500px; /* 强制触发横向滚动 */
+        }
+        th {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+        tr:nth-child(even) { background-color: #fcfcfc; }
+        tr:active { background-color: #f0f0f0; }
+
+        /* Cards & Boxes */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+        .card:active { transform: scale(0.98); }
+        .card h4 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 1.05em;
+        }
+        
+        .warning-box, .danger-box, .info-box, .web3-box, .calc-card {
+            padding: 15px 18px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        .warning-box { background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; }
+        .danger-box { background-color: #f8d7da; border-left: 5px solid var(--danger-color); color: #721c24; font-weight: 500; }
+        .info-box { background-color: #eef2f5; border-left: 5px solid #6c757d; color: #495057; }
+        .web3-box { background: linear-gradient(135deg, #f8f9fa 0%, #f3e5f5 100%); border: 1px solid var(--web3-color); border-left: 5px solid var(--web3-color); color: #4a148c; }
+        .calc-card { background: linear-gradient(135deg, #fdfbfb 0%, #f4f6f8 100%); border: 1px solid var(--accent-color); box-shadow: 0 4px 10px rgba(197, 160, 89, 0.1); }
+        .calc-card h4 { color: var(--primary-color); margin-top: 0; border-bottom: 1px dashed var(--accent-color); padding-bottom: 10px; margin-bottom: 15px; }
+
+        .flow-chart {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+            color: var(--primary-color);
+            margin: 20px 0;
+            border: 1px dashed #ccc;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        /* Architecture Diagram - Mobile Optimized */
+        .arch-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 25px 0;
+        }
+        .arch-layer {
+            border-radius: 8px;
+            padding: 15px;
+            border: 2px solid;
+        }
+        .arch-layer h4 {
+            margin: 0 0 8px 0;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .arch-layer p { margin: 5px 0; font-size: 0.9em; }
+        .layer-1 { background: #e8f5e9; border-color: #4caf50; color: #1b5e20; }
+        .layer-2 { background: #f3e5f5; border-color: #9c27b0; color: #4a148c; }
+        .layer-3 { background: #e3f2fd; border-color: #2196f3; color: #0d47a1; }
+        .arch-arrow {
+            text-align: center;
+            font-size: 1.2em;
+            color: #999;
+            margin: -5px 0;
+            font-weight: bold;
+        }
+
+        .highlight { color: var(--accent-color); font-weight: bold; }
+        .text-danger { color: var(--danger-color); font-weight: bold; }
+        .text-success { color: var(--success-color); font-weight: bold; }
+        .text-web3 { color: var(--web3-color); font-weight: bold; }
+
+        /* Footer & Next Steps */
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid var(--primary-color);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.85em;
+        }
+        .next-steps {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 25px 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .next-steps h3 { color: var(--accent-color); margin-top: 0; font-size: 1.2em; }
+        .next-steps ol { padding-left: 20px; margin-bottom: 0; }
+        .next-steps li { margin-bottom: 12px; font-size: 0.95em; }
+
+        /* ========================================= */
+        /* 📱 MOBILE RESPONSIVE OVERRIDES (< 768px) */
+        /* ========================================= */
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            h1 { font-size: 1.7em; }
+            h2 { font-size: 1.35em; margin-top: 30px; }
+            h3 { font-size: 1.1em; }
+            
+            .core-params {
+                gap: 10px;
+            }
+            .param-item {
+                padding: 12px 10px;
+                min-width: 90px;
+            }
+            .param-value { font-size: 1.2em; }
+            .param-label { font-size: 0.75em; }
+
+            .toc { padding: 15px; }
+            .toc-grid {
+                grid-template-columns: 1fr; /* 手机端单列，更易点击 */
+                gap: 4px;
+            }
+            .toc a {
+                padding: 12px 15px;
+                font-size: 0.95em;
+                border-bottom: 1px solid #eee;
+                border-radius: 0;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr; /* 手机端卡片单列 */
+                gap: 12px;
+            }
+            
+            table { font-size: 0.85em; }
+            th, td { padding: 10px 12px; }
+
+            .calc-card { padding: 18px; }
+            .calc-card table { min-width: auto; box-shadow: none; }
+            .calc-card table th, .calc-card table td { white-space: normal; }
+        }
+
+        @media print {
+            .container { box-shadow: none; margin: 0; padding: 20px; }
+            .table-responsive::after { display: none; }
+            table { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header class="header">
+        <div class="confidential">Confidential · Internal Briefing · Board Level</div>
+        <h1>国际 MLM 深度薪酬制度 V3.0</h1>
+        <p class="subtitle">轻奢珠宝与可更换配饰包袋 ｜ 印尼及东南亚市场 ｜ Web3 资本化路线</p>
+        <div class="core-params">
+            <div class="param-item">
+                <div class="param-value">$250 / $35</div>
+                <div class="param-label">零售价 / 成本</div>
+            </div>
+            <div class="param-item">
+                <div class="param-value">≤ 40%</div>
+                <div class="param-label">拨出上限 (合规红线)</div>
+            </div>
+            <div class="param-item">
+                <div class="param-value">NASDAQ</div>
+                <div class="param-label">终极资本退出路径</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TOC -->
+    <nav class="toc">
+        <h3>📑 目录 · 全 19 部分</h3>
+        <div class="toc-grid">
+            <a href="#part01">01 制度设计哲学与核心原则</a>
+            <a href="#part02">02 五级三阶晋升体系</a>
+            <a href="#part03">03 收入引擎总览</a>
+            <a href="#part04">04 个人销售佣金</a>
+            <a href="#part05">05 压缩级差奖金</a>
+            <a href="#part06">06 无限代匹配奖金</a>
+            <a href="#part07">07 全球领袖分红池</a>
+            <a href="#part08">08 VIP 订阅永久被动收入</a>
+            <a href="#part09">09 CARAT 双代币系统</a>
+            <a href="#part10">10 利润分享单元（PSU）</a>
+            <a href="#part11">11 领导人养老金账户</a>
+            <a href="#part12">12 接班人传承权</a>
+            <a href="#part13">13 硬性考核红线</a>
+            <a href="#part14">14 软着陆保护机制</a>
+            <a href="#part15">15 拨出动态封顶</a>
+            <a href="#part16">16 各头衔月收入潜力</a>
+            <a href="#part17">17 总拨出演算</a>
+            <a href="#part18">18 制度核心哲学与速查</a>
+            <a href="#part19" class="web3-link">19 🚀 终极资本路线与 Web3 架构 (新增)</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Part 01 -->
+        <section id="part01">
+            <h2>01 制度设计哲学与核心原则</h2>
+            <p><strong>核心理念：</strong>让新人 <span class="highlight">进得来</span>、让中层 <span class="highlight">爬得动</span>、让顶层 <span class="highlight">留得住</span>、让事业 <span class="highlight">可传承</span> ——同时确保公司利润安全和印尼合规。</p>
+            <div class="danger-box">
+                <strong>⚠️ 印尼合规红线：不可突破的 40%</strong><br>
+                法规依据：印尼贸易部第 32/M-DAG/PER/8/2008 号 | SIUPL 直销牌照严格审查 | APLI 行业标准。<br>
+                <strong>三重约束共同指向同一条上限：佣金及奖金总额 ≤ 产品销售价值的 40%。</strong>
+            </div>
+        </section>
+
+        <!-- Part 02 -->
+        <section id="part02">
+            <h2>02 五级三阶晋升体系</h2>
+            <p><strong>五级：</strong>银级 · 金级 · 铂金 · 钻石 · 双钻石/皇冠<br>
+            <strong>三阶：</strong>每个核心级别内增设“高级”阶段，形成 10 级完整阶梯。</p>
+            
+            <div class="table-responsive">
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr><th>头衔</th><th>佣金率</th><th>整组月流水 GV</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>银级（Silver）</td><td>20%</td><td>≥ $2,500</td></tr>
+                            <tr><td>高级银级（Silver+）</td><td>22%</td><td>≥ $5,000</td></tr>
+                            <tr><td>金级（Gold）</td><td>25%</td><td>≥ $12,500</td></tr>
+                            <tr><td>高级金级（Gold+）</td><td>27%</td><td>≥ $25,000</td></tr>
+                            <tr><td>铂金（Platinum）</td><td>30%</td><td>≥ $50,000</td></tr>
+                            <tr><td>高级铂金（Platinum+）</td><td>32%</td><td>≥ $100,000</td></tr>
+                            <tr><td>钻石（Diamond）</td><td>33%</td><td>≥ $200,000</td></tr>
+                            <tr><td>高级钻石（Diamond+）</td><td>34%</td><td>≥ $350,000</td></tr>
+                            <tr><td>双钻石（Double Diamond）</td><td>35%</td><td>≥ $500,000</td></tr>
+                            <tr><td>皇冠（Crown）</td><td>35%</td><td>≥ $1,000,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 03 to 18 (Condensed for code length, fully structured) -->
+        <section id="part03"><h2>03 收入引擎总览</h2><p><strong>核心拨出 = 1 + 2 + 3 + 4 = 40%</strong> (受印尼法规约束，动态封顶)<br><strong>5 – 9 不占核心拨出</strong>，来自订阅收入或公司净利润。</p></section>
+        
+        <section id="part04"><h2>04 个人销售佣金：统一零售价机制</h2><p>客户支付 $250 → 平台统一收款 → 系统即时计算 → 经销商电子钱包 (20%-35% 实时到账)。</p></section>
+        
+        <section id="part05"><h2>05 压缩级差奖金：双轨压缩 · 月结</h2><p>若下级与上级平级或更高级，系统自动 <span class="highlight">“压缩”</span> 跳过该层，向下穿透至最低级别。系统同时计算 <strong>最多 2 条最深压缩线路</strong> 的级差之和。</p></section>
+        
+        <section id="part06"><h2>06 无限代匹配奖金 · 月结</h2><p>公司额外拿出 <span class="highlight">全球总业绩的 5%</span> 作为匹配奖池。你的下级赚了多少钱，公司 <strong>额外</strong> 支付你该金额的一定比例。<strong>这笔钱不扣下级的收入</strong>。</p></section>
+        
+        <section id="part07"><h2>07 全球领袖分红池 · 月结</h2><p><strong>三层级联池 · 互不稀释：</strong> 钻石不必与双钻石同池竞争，各池独立，人人有盼头。合计提取月 TSO 的 3.0%。</p></section>
+        
+        <section id="part08"><h2>08 VIP 订阅永久被动收入 · 周结</h2><p><strong>“焕新俱乐部” · 每月 $39</strong> (不占用 40% 产品拨出额度，从订阅收入中支出)。LTV 阶梯佣金最高可达 28%。</p></section>
+        
+        <section id="part09"><h2>09 CARAT 双代币系统</h2><div class="warning-box"><strong>⚠️ 合规声明：</strong>CARAT 为内部忠诚度积分，非加密货币，不上链，不公开交易（印尼本地运营框架）。</div></section>
+        
+        <section id="part10"><h2>10 利润分享单元（PSU） ⭐</h2><p><strong>核心设计：</strong>不发放公司股权，发行“利润分享单元”——每一单元代表公司年度净利润的固定比例（0.001%）。经销商通过达成年度业绩目标免费获得。</p></section>
+        
+        <section id="part11"><h2>11 领导人养老金账户 ⭐</h2><p>为连续活跃的铂金及以上领袖设立虚拟养老金账户，锁定至其“退休”时一次性发放。钻石及以上计提月 GV 的 0.8%。</p></section>
+        
+        <section id="part12"><h2>12 接班人传承权 ⭐</h2><p><strong>核心设计：</strong>解决 MLM “不可传承”的最大痛点。高阶领袖可将自己的整个团队网络一次性指定传承给继承人。原领袖保留 <span class="highlight">20% 的永久经销商费</span>。</p></section>
+        
+        <section id="part13"><h2>13 硬性考核红线</h2><div class="danger-box"><strong>🚨 四条底线不可突破。</strong> 70% 终端零售 | 三腿宽深 | 个人活跃度 | 退货扣回。</div></section>
+        
+        <section id="part14"><h2>14 软着陆保护机制</h2><p><strong>适用级别：</strong>铂金及以上。单月未达标头衔只降 1 级，连续 3 个月未达标才正式降级。</p></section>
+        
+        <section id="part15"><h2>15 拨出动态封顶：40% 核心风控</h2><p><strong>封顶机制：</strong>总拨出率 = 所有实发奖金总和 ÷ 当月批发总收入。压缩系数：40% ÷ 实际拨出率。</p></section>
+        
+        <section id="part16"><h2>16 各头衔月收入潜力总览</h2>
+            <div class="table-responsive">
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>头衔</th><th>月收入区间</th><th>核心来源</th></tr></thead>
+                        <tbody>
+                            <tr><td>银级</td><td>$1,000 – $2,500</td><td>个人佣金（20%）+ VIP 订阅</td></tr>
+                            <tr><td>金级</td><td>$2,500 – $6,000</td><td>个人佣金（25%）+ 级差 + 团队积分</td></tr>
+                            <tr><td>铂金</td><td>$7,000 – $16,000</td><td>30% + 压缩级差 + 匹配 4% + 铂金池 + 养老金</td></tr>
+                            <tr><td>钻石</td><td>$18,000 – $55,000</td><td>全模块 · 33% + 匹配 6% + 钻石池 + PSU</td></tr>
+                            <tr><td>双钻石</td><td>$35,000 – $100,000+</td><td>全部模块最高比例 + 传承权（2 人）</td></tr>
+                            <tr><td>皇冠</td><td class="highlight">$50,000 – $150,000+</td><td>全部模块最高比例 + 匹配 10% + 传承权（3 人）</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <section id="part17"><h2>17 总拨出演算与单件利润核算</h2><p><strong>成熟期总拨出结构：</strong>个人销售佣金(26%) + 压缩级差(6%) + 匹配奖金(5%) + 分红池(3%) = <span class="highlight">40%</span>。<br><strong>公司单件净利润：</strong>$250 零售价 - $35 成本 - $100 核心拨出 - $37.5 运营 = <span class="text-success">$77.50 (31% 净利率)</span>。</p></section>
+        
+        <section id="part18"><h2>18 制度核心哲学与速查总表</h2><div class="info-box" style="font-size: 1em; line-height: 1.7;">卖一个包赚 <strong>$87.50</strong> 佣金，建两条深线拿 <strong>双倍压缩</strong>，带团队拿 <strong>5% 无限代匹配</strong>，达标进池分 <strong>3% 全球分红</strong>，转 VIP 拿 <strong>28% 月月递增</strong>，攒 CARAT 享回购增值，囤 PSU 享公司利润分红，存养老金退休一次性领取，传网络给后代享 <strong>20% 永久经销商费</strong>。</div></section>
+
+        <!-- ========================================== -->
+        <!-- PART 19: ULTIMATE CAPITAL ROUTE -->
+        <!-- ========================================== -->
+        <section id="part19">
+            <h2 class="web3-title">19 🚀 终极资本路线与 Web3 资产架构 (Board Level)</h2>
+            <p><strong>战略愿景：</strong>将东南亚庞大的 MLM 现金流与 Web3 资产锚定技术结合，通过离岸信托架构实现“<span class="text-web3">业务在东南亚，资本在离岸，上市在华尔街</span>”的终极跨越。为顶级领袖提供从“赚取法币佣金”到“持有数字证券化资产”的阶层跃迁通道。</p>
+
+            <div class="web3-box">
+                <strong>⚠️ 顶层合规防火墙 (Jurisdictional Isolation)：</strong><br>
+                印尼本地实体 (PT) <strong>仅处理法币、实物珠宝与传统 MLM 佣金</strong>，绝对不触碰任何代币发行或证券化操作。<br>
+                所有 Web3 代币 (CARAT RWA)、股权映射与资本运作，均通过 <strong>新加坡基金会 (Foundation)</strong> 与 <strong>开曼信托 (Cayman Trust)</strong> 在离岸合规框架下进行，彻底隔离印尼 OJK/Bappebti 监管风险。
+            </div>
+
+            <h3>19.1 全球三层隔离架构 (The Tri-Layer Architecture)</h3>
+            <div class="arch-diagram">
+                <div class="arch-layer layer-1">
+                    <h4>🟢 Layer 1: 印尼运营实体 (PT / Fiat & Physical)</h4>
+                    <p><strong>职能：</strong>持有 SIUPL 牌照，处理实物珠宝供应链、法币收单、MLM 佣金结算、VIP 订阅。</p>
+                    <p><strong>合规：</strong>100% 遵守印尼贸易部 40% 拨出上限，无代币，无证券，纯传统零售与直销。</p>
+                </div>
+                <div class="arch-arrow">↓ (数据与利润合规审计上链) ↓</div>
+                <div class="arch-layer layer-2">
+                    <h4>🟣 Layer 2: 新加坡 Web3 基金会 (Token & RWA Issuer)</h4>
+                    <p><strong>职能：</strong>发行 CARAT RWA 数字凭证，管理 LUSTER 效用积分，运行智能合约分红池。</p>
+                    <p><strong>合规：</strong>依据新加坡 MAS 支付代币豁免框架，CARAT 定义为“锚定底层资产收益权的数字凭证 (Asset-Backed Digital Receipt)”，非公开证券。</p>
+                </div>
+                <div class="arch-arrow">↓ (收益权映射与锁仓) ↓</div>
+                <div class="arch-layer layer-3">
+                    <h4>🔵 Layer 3: 开曼/特拉华控股 (NASDAQ SPAC / Merger Target)</h4>
+                    <p><strong>职能：</strong>作为上市主体，吸收东南亚实体利润，发行传统股票或 SPAC 合并。</p>
+                    <p><strong>资本：</strong>CARAT 持有者通过“数字认股权证 (Digital Warrant)”映射为上市主体的 Pre-IPO 收益权。</p>
+                </div>
+            </div>
+
+            <h3>19.2 美国 NASDAQ 上市双轨路径 (Dual-Track Capital Strategy)</h3>
+            <p>当东南亚市场月 TSO 稳定在 $1,000 万以上，且 CARAT RWA 生态成熟时，启动赴美上市程序。</p>
+            <div class="table-responsive">
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr><th>路径</th><th>SPAC 并购上市 (首选)</th><th>反向收购/买壳 (Reverse Merger)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>核心逻辑</strong></td>
+                                <td>寻找专注“Web3 + 消费零售”概念的 SPAC 壳公司，通过 De-SPAC 合并上市。</td>
+                                <td>直接收购纳斯达克主板/板已停滞的干净壳公司，注入东南亚珠宝资产。</td>
+                            </tr>
+                            <tr>
+                                <td><strong>估值溢价</strong></td>
+                                <td class="text-web3">极高 (享受 Web3 / RWA / 东南亚增长 三重概念溢价)</td>
+                                <td>中等 (按传统珠宝零售 PE 估值)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>时间周期</strong></td>
+                                <td>9 – 14 个月</td>
+                                <td>6 – 9 个月</td>
+                            </tr>
+                            <tr>
+                                <td><strong>领袖退出</strong></td>
+                                <td>CARAT 质押者通过智能合约自动转换为上市公司股票/现金。</td>
+                                <td>通过离岸信托代持股权，按协议分配 IPO 后解禁份额。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3>19.3 CARAT 代币 RWA 化 (Real World Asset Tokenization)</h3>
+            <p><strong>从“行为积分”向“资产凭证”跃迁：</strong> CARAT 不再仅仅是公司利润的分配权，而是锚定真实世界资产 (RWA) 的数字凭证。</p>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>🏦 锚定资产池 A</h4>
+                    <p><strong>全球珠宝供应链金库</strong><br>锚定公司持有的实物黄金/钻石储备，由第三方审计 (如 SGS) 定期出具证明，CARAT 价值与贵金属指数挂钩。</p>
+                </div>
+                <div class="card">
+                    <h4>🏢 锚定资产池 B</h4>
+                    <p><strong>东南亚旗舰店营收收益权</strong><br>将雅加达、曼谷等核心旗舰店的未来 5 年营收流水打包，CARAT 持有者享有该流水的固定比例分红。</p>
+                </div>
+                <div class="card">
+                    <h4>📜 合规发行机制</h4>
+                    <p><strong>数字收据 (Digital Receipt)</strong><br>在新加坡法律框架下，CARAT 被定义为“特定资产池的收益权数字收据”，规避 SEC 证券属性，实现合规流通。</p>
+                </div>
+            </div>
+
+            <h3>19.4 “币股同权”映射架构 (Token-Equity Parity)</h3>
+            <p><strong>核心设计：</strong>解决 Web3 代币持有者与传统股权股东之间的利益分配问题。通过智能合约与离岸信托，实现 <span class="text-web3">经济权益同权 (Economic Rights Parity)</span>。</p>
+            <div class="calc-card">
+                <h4>💡 映射机制演算：皇冠领袖的 CARAT 变现之路</h4>
+                <ul>
+                    <li><strong>阶段一 (MLM 运营期)：</strong> 领袖通过团队业绩获得 CARAT，享受公司季度回购溢价与 RWA 资产池分红。</li>
+                    <li><strong>阶段二 (Pre-IPO 锁仓期)：</strong> 领袖将 CARAT 质押至开曼信托的智能合约，锁定 12 个月，换取 <strong>“数字认股权证 (Digital Warrant)”</strong>。</li>
+                    <li><strong>阶段三 (NASDAQ 上市日)：</strong> 智能合约自动触发，Warrant 按约定汇率 (如 100 CARAT = 1 Share) 映射为上市公司股票，或按 IPO 定价直接结算为 USDC/法币。</li>
+                </ul>
+                <p style="margin-top:15px; border-top: 1px dashed #ccc; padding-top:15px;">
+                    <strong>⚖️ 法律隔离说明：</strong>在印尼及东南亚本地，CARAT 仅是“积分/收据”；但在开曼信托层面，它被法律认定为“Pre-IPO 收益权凭证”。<strong>币股同权并非直接发币换股权，而是通过“收益权映射+智能合约对赌”实现经济利益的绝对等价。</strong>
+                </p>
+            </div>
+
+            <h3>19.5 顶级领袖的终极叙事 (The Ultimate Pitch)</h3>
+            <div class="info-box" style="background: linear-gradient(135deg, #fff 0%, #f3e5f5 100%); border-left: 5px solid var(--web3-color); font-size: 1em;">
+                “你不仅在印尼卖轻奢珠宝赚取 40% 拨出的法币佣金；你还在通过 CARAT 积累锚定全球黄金与核心商圈的 RWA 资产。当公司登陆 NASDAQ 的那一刻，你手中的 CARAT 将自动转化为华尔街的证券化资产。<strong>你不仅是东南亚的直销皇冠，你更是全球 Web3 消费零售上市公司的早期数字股东。</strong>”
+            </div>
+        </section>
+    </main>
+
+    <!-- Next Steps & Footer -->
+    <div class="next-steps">
+        <h3>🚀 下一步行动计划 (Next Steps)</h3>
+        <ol>
+            <li>批准进入印尼法律与税务复核 (SIUPL 牌照申请)</li>
+            <li>启动财务精算：拨出 / 退货 / 现金流压力测试</li>
+            <li>搭建实时 + 周结 + 月结结算系统</li>
+            <li>选择试点市场，小范围验证 3–6 个月</li>
+            <li class="text-web3" style="color: #d1c4e9;">【资本线】接触新加坡 Web3 律所，设计 CARAT RWA 离岸信托架构</li>
+            <li class="text-web3" style="color: #d1c4e9;">【资本线】对接华尔街 SPAC 发起人 (Sponsor)，签署 Pre-NDA 与上市意向书</li>
+        </ol>
+    </div>
+
+    <footer class="footer">
+        <p><strong>Confidential · Internal Briefing · Board Level</strong></p>
+        <p>公司安全 · 领袖赚钱 · 事业可传承 · 资本可证券化</p>
+        <p style="margin-top: 20px; font-size: 0.8em; color: #999;">
+            ⚠️ <strong>免责声明：</strong>本文中的法律、牌照、税务及薪酬合规表述属于制度草案内容，不应直接视为法律意见。Part 19 涉及的 Web3、RWA、SPAC 及币股映射架构为<strong>资本战略愿景</strong>，正式落地前必须由新加坡 MAS 合规律师、美国 SEC 证券律师及印尼当地合规顾问联合出具法律意见书。<br>
+            机密信息：仅供董事会及核心联合创始人查阅。严禁外传。
+        </p>
+    </footer>
+</div>
+
+<script>
+    // 移动端表格滑动提示隐藏逻辑
+    document.querySelectorAll('.table-scroll').forEach(el => {
+        el.addEventListener('scroll', function() {
+            if (this.scrollLeft > 10) {
+                this.classList.add('scrolled');
+            } else {
+                this.classList.remove('scrolled');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
