@@ -288,39 +288,6 @@
             line-height: 1.7;
         }
 
-        /* Rank Ladder */
-        .rank-ladder {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin: 25px 0;
-        }
-        .rank-step {
-            background: #fff;
-            border: 1.5px solid var(--border-color);
-            border-radius: 12px;
-            padding: 15px 12px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s;
-        }
-        .rank-step:hover { border-color: var(--accent-color); transform: translateY(-3px); }
-        .rank-badge {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--gradient-gold);
-            color: #fff;
-            line-height: 40px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            font-size: 0.9em;
-        }
-        .rank-name { font-weight: 700; color: var(--primary-color); font-size: 0.95em; margin-bottom: 4px; }
-        .rank-rate { color: var(--accent-color); font-weight: 800; font-size: 1.1em; }
-        .rank-gv { font-size: 0.75em; color: var(--text-light); margin-top: 4px; }
-
         /* Timeline */
         .timeline {
             position: relative;
@@ -456,7 +423,6 @@
             .toc-grid { grid-template-columns: 1fr; }
             .toc a { padding: 12px 15px; font-size: 0.95em; }
             .card-grid { grid-template-columns: 1fr; }
-            .rank-ladder { grid-template-columns: repeat(2, 1fr); }
             table { font-size: 0.82em; }
             th, td { padding: 10px 12px; }
             .big-number { font-size: 2em; }
@@ -512,12 +478,12 @@
             <a href="#s5">05 个人销售佣金</a>
             <a href="#s6">06 团队管理奖金</a>
             <a href="#s7">07 VIP订阅被动收入</a>
-            <a href="#s8">08 CARAT代币系统</a>
-            <a href="#s9">09 PSU利润分享</a>
-            <a href="#s10">10 养老金与传承权</a>
-            <a href="#s11" class="highlight-link">11 🏆 年度荣耀之旅</a>
-            <a href="#s12">12 各级别收入潜力</a>
-            <a href="#s13">13 公平保障规则</a>
+            <a href="#s8">08 全球领袖分红池</a>
+            <a href="#s9">09 CARAT代币系统</a>
+            <a href="#s10">10 PSU利润分享</a>
+            <a href="#s11">11 养老金与传承权</a>
+            <a href="#s12" class="highlight-link">12 🏆 年度荣耀之旅</a>
+            <a href="#s13">13 各级别收入潜力</a>
             <a href="#s14">14 公司健康运营</a>
             <a href="#faq">15 常见问题 FAQ</a>
             <a href="#start">16 如何开始？</a>
@@ -581,7 +547,7 @@
                 <div class="flow-branch">
                     <strong>🤝 您拿 40%</strong><br>
                     所有合伙人奖金总和<br>
-                    <small style="color:#999;">佣金+级差+匹配+分红</small>
+                    <small style="color:#999;">佣金+级差+卓越分红+分红池</small>
                 </div>
                 <div class="flow-branch">
                     <strong>🏢 公司留 60%</strong><br>
@@ -596,74 +562,97 @@
         </div>
     </section>
 
-    <!-- ===================== SECTION 3 ===================== -->
+    <!-- ===================== SECTION 3 - TABLE FORMAT ===================== -->
     <section id="s3">
         <span class="section-label">Part 03</span>
         <h2>10级晋升路径 · 成长阶梯</h2>
         <p class="lead">五级三阶 = 5 个大级别 × 2 个小台阶 = 10 级完整阶梯。每一步都"跳起来够得着"。</p>
 
-        <div class="rank-ladder">
-            <div class="rank-step">
-                <div class="rank-badge">1</div>
-                <div class="rank-name">银级</div>
-                <div class="rank-rate">20%</div>
-                <div class="rank-gv">团队 $2,500+</div>
-            </div>
-            <div class="rank-step">
-                <div class="rank-badge">2</div>
-                <div class="rank-name">高级银级</div>
-                <div class="rank-rate">22%</div>
-                <div class="rank-gv">团队 $5,000+</div>
-            </div>
-            <div class="rank-step">
-                <div class="rank-badge">3</div>
-                <div class="rank-name">金级</div>
-                <div class="rank-rate">25%</div>
-                <div class="rank-gv">团队 $12,500+</div>
-            </div>
-            <div class="rank-step">
-                <div class="rank-badge">4</div>
-                <div class="rank-name">高级金级</div>
-                <div class="rank-rate">27%</div>
-                <div class="rank-gv">团队 $25,000+</div>
-            </div>
-            <div class="rank-step">
-                <div class="rank-badge">5</div>
-                <div class="rank-name">铂金</div>
-                <div class="rank-rate">30%</div>
-                <div class="rank-gv">团队 $50,000+</div>
-            </div>
-            <div class="rank-step">
-                <div class="rank-badge">6</div>
-                <div class="rank-name">高级铂金</div>
-                <div class="rank-rate">32%</div>
-                <div class="rank-gv">团队 $100,000+</div>
-            </div>
-            <div class="rank-step">
-                <div class="rank-badge">7</div>
-                <div class="rank-name">钻石</div>
-                <div class="rank-rate">33%</div>
-                <div class="rank-gv">团队 $200,000+</div>
-            </div>
-            <div class="rank-step">
-                <div class="rank-badge">8</div>
-                <div class="rank-name">高级钻石</div>
-                <div class="rank-rate">34%</div>
-                <div class="rank-gv">团队 $350,000+</div>
-            </div>
-            <div class="rank-step">
-                <div class="rank-badge">9</div>
-                <div class="rank-name">双钻石</div>
-                <div class="rank-rate">35%</div>
-                <div class="rank-gv">团队 $500,000+</div>
-            </div>
-            <div class="rank-step" style="border-color:var(--accent-color); background:linear-gradient(135deg,#fff 0%,#fdf8ec 100%);">
-                <div class="rank-badge" style="background:linear-gradient(135deg,#1a1a1a,#c5a059);">👑</div>
-                <div class="rank-name">皇冠</div>
-                <div class="rank-rate">35%</div>
-                <div class="rank-gv">团队 $1,000,000+</div>
-            </div>
-        </div>
+        <div class="table-responsive"><div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>级别</th>
+                        <th>头衔</th>
+                        <th>佣金率</th>
+                        <th>团队月销要求</th>
+                        <th>核心权益</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>银级</td>
+                        <td>20%</td>
+                        <td>$2,500+</td>
+                        <td>个人销售佣金</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>高级银级</td>
+                        <td>22%</td>
+                        <td>$5,000+</td>
+                        <td>+初级级差</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>金级</td>
+                        <td>25%</td>
+                        <td>$12,500+</td>
+                        <td>+团队积分</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>高级金级</td>
+                        <td>27%</td>
+                        <td>$25,000+</td>
+                        <td>+初级匹配</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>铂金</td>
+                        <td>30%</td>
+                        <td>$50,000+</td>
+                        <td>+分红池+养老金</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6</strong></td>
+                        <td>高级铂金</td>
+                        <td>32%</td>
+                        <td>$100,000+</td>
+                        <td>+更高匹配比例</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7</strong></td>
+                        <td>钻石</td>
+                        <td>33%</td>
+                        <td>$200,000+</td>
+                        <td>+PSU利润分享</td>
+                    </tr>
+                    <tr>
+                        <td><strong>8</strong></td>
+                        <td>高级钻石</td>
+                        <td>34%</td>
+                        <td>$350,000+</td>
+                        <td>+更高PSU额度</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9</strong></td>
+                        <td>双钻石</td>
+                        <td>35%</td>
+                        <td>$500,000+</td>
+                        <td>+传承权（2人）</td>
+                    </tr>
+                    <tr style="background:#fdf8ec;">
+                        <td><strong>10</strong></td>
+                        <td style="color:var(--accent-color); font-weight:700;">👑 皇冠</td>
+                        <td class="highlight">35%</td>
+                        <td>$1,000,000+</td>
+                        <td class="highlight">+传承权（3人）+最高匹配</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div></div>
 
         <div class="highlight-box">
             <strong>🚀 新手起步超简单：</strong>银级仅需团队月销 $2,500（约 10 件产品），<strong>不需要建团队</strong>，自己卖货就能赚 20% 佣金！
@@ -689,7 +678,7 @@
             </div>
             <div class="timeline-item">
                 <span class="timeline-freq">📆 每月到账</span>
-                <div class="timeline-title">③ 管道差价 · ④ 公司红包 · ⑤ 全球分红池</div>
+                <div class="timeline-title">③ 管道差价 · ④ 卓越分红 · ⑤ 全球分红池</div>
                 <div class="timeline-desc">团队越大，被动收入越高。钻石级别月入 $12,000+ 很常见</div>
             </div>
             <div class="timeline-item">
@@ -749,7 +738,7 @@
     <!-- ===================== SECTION 6 ===================== -->
     <section id="s6">
         <span class="section-label">Part 06</span>
-        <h2>收入来源 ②③④：团队管理奖金</h2>
+        <h2>收入来源 ②③：团队管理奖金</h2>
         <p class="lead">您的下级卖货，您拿差价；您的下级赚钱，公司额外奖您。团队越大，被动收入越高。</p>
 
         <h3>🔗 管道差价（压缩级差）· 月结</h3>
@@ -779,16 +768,19 @@
             <p style="font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>系统会自动"穿透"平级，最多算 2 条最深线路，让您两条线同时赚钱。</p>
         </div>
 
-        <h3>🎁 公司红包（无限代匹配）· 月结</h3>
-        <p><strong>通俗理解：</strong>公司额外拿出全球业绩的 <strong>5%</strong> 作为"红包池"。您的下级赚多少，公司额外奖您一定比例，<strong>不扣下级一分钱！</strong></p>
+        <h3>🎁 卓越分红（无限代匹配）· 月结</h3>
+        <p><strong>通俗理解：</strong>公司额外拿出全球业绩的 <strong>5%</strong> 作为"卓越分红池"。您的下级赚多少，公司额外奖您一定比例，<strong>不扣下级一分钱！</strong></p>
         
         <div class="table-responsive"><div class="table-scroll">
             <table>
-                <thead><tr><th>您的级别</th><th>穿透代数</th><th>第 1 代</th><th>第 2 代</th><th>第 3 代</th></tr></thead>
+                <thead><tr><th>您的级别</th><th>穿透代数</th><th>第 1 代</th><th>第 2 代</th><th>第 3 代</th><th>第 4 代+</th></tr></thead>
                 <tbody>
-                    <tr><td>铂金</td><td>3 代</td><td>4%</td><td>3%</td><td>2%</td></tr>
-                    <tr><td>钻石</td><td>7 代</td><td>6%</td><td>5%</td><td>4%</td></tr>
-                    <tr><td style="color:var(--accent-color); font-weight:700;">皇冠</td><td>无限代</td><td class="highlight">10%</td><td class="highlight">8%</td><td class="highlight">6%</td></tr>
+                    <tr><td>铂金</td><td>3 代</td><td>4%</td><td>3%</td><td>2%</td><td>—</td></tr>
+                    <tr><td>高级铂金</td><td>5 代</td><td>5%</td><td>4%</td><td>3%</td><td>1%</td></tr>
+                    <tr><td>钻石</td><td>7 代</td><td>6%</td><td>5%</td><td>4%</td><td>2%</td></tr>
+                    <tr><td>高级钻石</td><td>10 代</td><td>7%</td><td>6%</td><td>4%</td><td>2%</td></tr>
+                    <tr><td>双钻石</td><td>无限代</td><td>8%</td><td>6%</td><td>5%</td><td>3%</td></tr>
+                    <tr><td style="color:var(--accent-color); font-weight:700;">皇冠</td><td>无限代</td><td class="highlight">10%</td><td class="highlight">8%</td><td class="highlight">6%</td><td class="highlight">4%</td></tr>
                 </tbody>
             </table>
         </div></div>
@@ -802,48 +794,159 @@
             <p style="text-align:center; font-size:1.2em; margin-top:15px;">合计月收入：<strong class="highlight">$12,040</strong></p>
             <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>关键点：</strong>这笔钱是公司额外出的，下级拿到的佣金一分不少。</p>
         </div>
+
+        <div class="info-banner">
+            ✅ <strong>设计目的：</strong>卓越分红由公司额外支付，不扣下级收入。级别越高，穿透代数越深，被动收入呈指数级增长。
+        </div>
     </section>
 
-    <!-- ===================== SECTION 7 ===================== -->
+    <!-- ===================== SECTION 7 - VIP DETAILED ===================== -->
     <section id="s7">
         <span class="section-label">Part 07</span>
-        <h2>收入来源 ⑤：VIP订阅被动收入</h2>
-        <p class="lead">客户续费您拿钱，全球业绩您分红。真正做到"睡后收入"。</p>
+        <h2>收入来源 ④：VIP 订阅被动收入</h2>
+        <p class="lead">客户续费您拿钱，真正做到"睡后收入"。客户续费越久，您赚得越多。</p>
 
-        <h3>💎 VIP 订阅 · 永久被动收入</h3>
-        <p><strong>通俗理解：</strong>就像"收租"一样，客户每月付 $39 加入"焕新俱乐部"，您拿 15%-28% 佣金。<strong>客户续费越久，您赚得越多！</strong></p>
+        <h3>💎 "焕新俱乐部" · 每月 $39</h3>
+        <p>客户加入 VIP 订阅，每月自动扣款 <strong>$39</strong>，享受以下专属权益：</p>
 
-        <div class="story-box">
-            <p><strong>假设您 3 年内积累了 200 名 VIP 客户：</strong></p>
-            <p>这些客户每月续费 $39，您每周拿佣金。</p>
-            <p style="text-align:center; font-size:1.2em; margin:15px 0;">
-                月收入：<strong class="highlight">$1,556</strong> · 年化：<strong class="highlight">$18,673</strong>
-            </p>
-            <p style="font-size:0.9em; color:var(--text-light); text-align:center;">✨ <strong>关键点：</strong>这笔钱不需要再卖一个包，只要客户持续续费，月月到账。</p>
+        <div class="table-responsive"><div class="table-scroll">
+            <table>
+                <thead><tr><th>权益</th><th>内容</th><th>客户感知价值</th></tr></thead>
+                <tbody>
+                    <tr><td>月度积分</td><td>每月自动到账 100 LUSTER 积分</td><td>~$20（可兑换配件/消耗品）</td></tr>
+                    <tr><td>以旧换新</td><td>连续订阅满 4 个月，凭旧包 +$50 换新款</td><td>立省 $200</td></tr>
+                    <tr><td>生日双倍</td><td>生日当月获赠 200 LUSTER 积分</td><td>$40</td></tr>
+                    <tr><td>优先购买</td><td>新品发售前 3 天优先下单</td><td>稀缺性</td></tr>
+                    <tr><td>免费养护</td><td>每年 1 次免费专业清洁养护</td><td>~$30</td></tr>
+                </tbody>
+            </table>
+        </div></div>
+
+        <div class="highlight-box">
+            <strong>💡 客户算账：</strong>年支出 $39 × 12 = $468。获得积分兑换约 $240 + 换新立省 $200 + 养护 $30 = $470+。<br>
+            <strong>等于白嫖了一个包包的永久换新权。</strong>
         </div>
 
-        <h3>🌍 全球领袖分红池 · 月结</h3>
-        <p><strong>通俗理解：</strong>公司每月拿出总业绩的 <strong>3%</strong>，分给铂金、钻石、双钻石三个独立池。就像"三个奖池"，各池独立、互不稀释，每个级别都有自己的机会。</p>
+        <h3>📈 LTV 阶梯佣金 · 越久越赚</h3>
+        <p>客户续费时间越长，您的佣金比例<strong>阶梯上涨</strong>：</p>
 
+        <div class="table-responsive"><div class="table-scroll">
+            <table>
+                <thead><tr><th>客户连续订阅时长</th><th>您的佣金比例</th><th>月收入（$39 × 比例）</th></tr></thead>
+                <tbody>
+                    <tr><td>0–6 个月</td><td>15%</td><td>$5.85</td></tr>
+                    <tr><td>7–12 个月</td><td><strong>18%</strong></td><td>$7.02</td></tr>
+                    <tr><td>13–24 个月</td><td><strong>22%</strong></td><td>$8.58</td></tr>
+                    <tr><td>25 个月+</td><td class="highlight"><strong>28%</strong></td><td class="highlight">$10.92</td></tr>
+                </tbody>
+            </table>
+        </div></div>
+
+        <div class="info-banner">
+            ✅ <strong>设计逻辑：</strong>如果只做"一次性转化"，佣金只有 15%；把客户维护好了，佣金可以涨到 28%——<strong>把您的注意力从"不断拉新"转向"维护老客户"</strong>。
+        </div>
+
+        <h3>💰 您的三层收益结构</h3>
         <div class="card-grid">
             <div class="card">
-                <h4>🥉 铂金池</h4>
-                <p>月销售额的 <strong>0.5%</strong><br>达标铂金即可参与</p>
+                <h4>第一层：开户奖</h4>
+                <p>每转化 1 个 VIP，一次性奖励 <strong>$10</strong><br>
+                <small style="color:var(--text-light);">触发条件：客户完成首月扣款（实时结算）</small></p>
             </div>
             <div class="card">
-                <h4>🥈 钻石池</h4>
-                <p>月销售额的 <strong>1.0%</strong><br>达标钻石即可参与</p>
+                <h4>第二层：LTV 佣金</h4>
+                <p>每月 $39 中抽取 <strong>15%-28%</strong><br>
+                <small style="color:var(--text-light);">触发条件：客户持续续费（周结）</small></p>
             </div>
             <div class="card">
-                <h4>🥇 双钻石池</h4>
-                <p>月销售额的 <strong>1.5%</strong><br>顶级领袖专属</p>
+                <h4>第三层：团队级差</h4>
+                <p>下级经销商 VIP 续费，抽取 $39 的 <strong>5%（=$1.95）</strong><br>
+                <small style="color:var(--text-light);">触发条件：至少 3 个直推经销商活跃（月结）</small></p>
             </div>
+        </div>
+
+        <div class="story-box">
+            <p><strong>实战案例：3 年内积累 200 名 VIP 客户</strong></p>
+            <table style="box-shadow:none; margin:10px 0; min-width:auto;">
+                <tr><th>客户分层</th><th>人数</th><th>佣金比例</th><th>月收入</th></tr>
+                <tr><td>0-6 个月</td><td>50 人</td><td>15%</td><td>$292.5</td></tr>
+                <tr><td>7-12 个月</td><td>60 人</td><td>18%</td><td>$421.2</td></tr>
+                <tr><td>13-24 个月</td><td>60 人</td><td>22%</td><td>$514.8</td></tr>
+                <tr><td>25 个月+</td><td>30 人</td><td>28%</td><td>$327.6</td></tr>
+                <tr style="background:#fdf8ec;"><td><strong>合计月收入</strong></td><td><strong>200 人</strong></td><td>—</td><td class="highlight"><strong>$1,556.1</strong></td></tr>
+                <tr style="background:#fdf8ec;"><td><strong>年化收入</strong></td><td>—</td><td>—</td><td class="highlight"><strong>$18,673</strong></td></tr>
+            </table>
+            <p style="margin-top:12px; font-size:0.9em; color:var(--text-light);">✨ <strong>关键点：</strong>这笔钱不需要再卖一个包，只要客户持续续费，月月到账。</p>
+        </div>
+
+        <div class="info-banner">
+            ✅ <strong>拨出预算：</strong>VIP 订阅佣金<strong>不占用 40% 产品拨出额度</strong>，从订阅收入中支出，确保合规。
         </div>
     </section>
 
-    <!-- ===================== SECTION 8 - CARAT DETAILED ===================== -->
+    <!-- ===================== SECTION 8 - GLOBAL POOL DETAILED ===================== -->
     <section id="s8">
         <span class="section-label">Part 08</span>
+        <h2>收入来源 ⑤：全球领袖分红池</h2>
+        <p class="lead">公司每月拿出总业绩的 <strong>3%</strong>，分给铂金、钻石、双钻石三个独立池。各池独立、互不稀释，每个级别都有自己的机会。</p>
+
+        <h3>🏆 三层级联池 · 互不稀释</h3>
+        <div class="table-responsive"><div class="table-scroll">
+            <table>
+                <thead><tr><th>池子</th><th>提取比例</th><th>参与者</th><th>分配方式</th></tr></thead>
+                <tbody>
+                    <tr><td>🥉 <strong>铂金池</strong></td><td>月 TSO 的 <strong>0.5%</strong></td><td>达标铂金 / 高级铂金</td><td>按积分加权</td></tr>
+                    <tr><td>🥈 <strong>钻石池</strong></td><td>月 TSO 的 <strong>1.0%</strong></td><td>达标钻石 / 高级钻石</td><td>按积分加权</td></tr>
+                    <tr><td>🥇 <strong>双钻石池</strong></td><td>月 TSO 的 <strong>1.5%</strong></td><td>达标双钻石 / 皇冠</td><td>按积分加权</td></tr>
+                    <tr style="background:#fdf8ec;"><td colspan="2"><strong>合计</strong></td><td colspan="2"><strong>3.0%（按积分加权分配）</strong></td></tr>
+                </tbody>
+            </table>
+        </div></div>
+
+        <div class="highlight-box">
+            <strong>💡 为什么分三个池？</strong><br>
+            • <strong>单池模式：</strong>钻石和双钻石同池竞争，双钻石积分高，拿走大部分，钻石觉得"永远比不过"<br>
+            • <strong>三层级联池模式：</strong>各池独立，互不稀释。钻石在钻石池内公平分配，人人有盼头
+        </div>
+
+        <h3>📊 积分规则 · 培养高级别下级得分更高</h3>
+        <div class="table-responsive"><div class="table-scroll">
+            <table>
+                <thead><tr><th>培养成果</th><th>积分</th></tr></thead>
+                <tbody>
+                    <tr><td>培养 1 个金级部门</td><td>3 分</td></tr>
+                    <tr><td>培养 1 个铂金部门</td><td>10 分</td></tr>
+                    <tr><td>培养 1 个钻石部门</td><td>50 分</td></tr>
+                    <tr><td>培养 1 个双钻石部门</td><td>100 分</td></tr>
+                </tbody>
+            </table>
+        </div></div>
+
+        <h3>💰 分红公式</h3>
+        <div class="flow-chart">
+            <strong>您的分红 = （对应池金额 × 您的个人积分）÷ 该池所有达标者总积分</strong>
+        </div>
+
+        <div class="story-box">
+            <p><strong>实战演算：月 TSO = $800 万</strong></p>
+            <table style="box-shadow:none; margin:10px 0; min-width:auto;">
+                <tr><th>池子</th><th>池金额</th><th>您的积分占比</th><th>您的分红</th></tr>
+                <tr><td>铂金池</td><td>$800 万 × 0.5% = $40,000</td><td>20%</td><td>$8,000</td></tr>
+                <tr><td>钻石池</td><td>$800 万 × 1.0% = $80,000</td><td>15%</td><td>$12,000</td></tr>
+                <tr><td>双钻石池</td><td>$800 万 × 1.5% = $120,000</td><td>20%</td><td>$24,000</td></tr>
+                <tr style="background:#fdf8ec;"><td><strong>合计月分红</strong></td><td>—</td><td>—</td><td class="highlight"><strong>$44,000</strong></td></tr>
+            </table>
+            <p style="margin-top:12px; font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>您培养的下属级别越高，您的积分越多，分红越多。</p>
+        </div>
+
+        <div class="info-banner">
+            ✅ <strong>设计目的：</strong>全球领袖分红池鼓励您培养高级别下属，而不是只关注个人销售。团队越强，分红越多。
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 9 - CARAT ===================== -->
+    <section id="s9">
+        <span class="section-label">Part 09</span>
         <h2>收入来源 ⑥：CARAT 代币系统</h2>
         <p class="lead">让您的日常努力变成可积累的长期资产，而不是"花掉就没了"。</p>
 
@@ -938,9 +1041,9 @@
         </div>
     </section>
 
-    <!-- ===================== SECTION 9 - PSU DETAILED ===================== -->
-    <section id="s9">
-        <span class="section-label">Part 09</span>
+    <!-- ===================== SECTION 10 - PSU ===================== -->
+    <section id="s10">
+        <span class="section-label">Part 10</span>
         <h2>收入来源 ⑦：PSU 利润分享</h2>
         <p class="lead">不稀释公司股权，但让您享受公司成长的红利。达标免费获得，退出时公司高价回购。</p>
 
@@ -987,7 +1090,7 @@
             • 全网 PSU 总数：50,000<br>
             • 您持有 PSU 数：500（占 1%）<br>
             • <strong>您年度 PSU 分红：$1,000</strong></p>
-            <p style="margin-top:12px; font-size:0.95em;">💡 <strong>关键点：</strong>这 $1,000 是"额外"的，不影响您的佣金、级差、匹配等其他收入。</p>
+            <p style="margin-top:12px; font-size:0.95em;">💡 <strong>关键点：</strong>这 $1,000 是"额外"的，不影响您的佣金、级差、卓越分红等其他收入。</p>
         </div>
 
         <h3>🔄 退出回购机制（20 倍 PE）</h3>
@@ -1022,9 +1125,9 @@
         </div>
     </section>
 
-    <!-- ===================== SECTION 10 ===================== -->
-    <section id="s10">
-        <span class="section-label">Part 10</span>
+    <!-- ===================== SECTION 11 ===================== -->
+    <section id="s11">
+        <span class="section-label">Part 11</span>
         <h2>收入来源 ⑧⑨：养老金与传承权</h2>
         <p class="lead">告别"零工"思维，打造真正属于您的"传世资产"。</p>
 
@@ -1073,9 +1176,9 @@
         </div>
     </section>
 
-    <!-- ===================== SECTION 11 - TRAVEL ===================== -->
-    <section id="s11">
-        <span class="section-label" style="color:var(--travel-color);">Part 11 · Exclusive</span>
+    <!-- ===================== SECTION 12 - TRAVEL ===================== -->
+    <section id="s12">
+        <span class="section-label" style="color:var(--travel-color);">Part 12 · Exclusive</span>
         <h2>🏆 年度荣耀之旅</h2>
         <p class="lead">除了丰厚的财务回报，我们还为高阶领袖打造终生难忘的巅峰时刻——全球奢华旅行、家族关怀、荣誉殿堂。</p>
 
@@ -1116,9 +1219,9 @@
         </div>
     </section>
 
-    <!-- ===================== SECTION 12 ===================== -->
-    <section id="s12">
-        <span class="section-label">Part 12</span>
+    <!-- ===================== SECTION 13 ===================== -->
+    <section id="s13">
+        <span class="section-label">Part 13</span>
         <h2>各级别月收入潜力</h2>
         <p class="lead">努力与回报成正比，上不封顶。以下是参考区间，实际取决于您的投入。</p>
 
@@ -1128,10 +1231,10 @@
                 <tbody>
                     <tr><td>🥉 银级</td><td>$1,000 – $2,500</td><td>个人卖货 + VIP 订阅</td></tr>
                     <tr><td>🥈 金级</td><td>$2,500 – $6,000</td><td>个人佣金 + 级差 + 团队积分</td></tr>
-                    <tr><td>🏅 铂金</td><td>$7,000 – $16,000</td><td>30% 佣金 + 级差 + 匹配 + 分红 + 养老金</td></tr>
+                    <tr><td>🏅 铂金</td><td>$7,000 – $16,000</td><td>30% 佣金 + 级差 + 卓越分红 + 分红池 + 养老金</td></tr>
                     <tr><td>💎 钻石</td><td>$18,000 – $55,000</td><td>全模块开启</td></tr>
                     <tr><td>💎💎 双钻石</td><td>$35,000 – $100,000+</td><td>全部最高比例 + 传承权</td></tr>
-                    <tr><td style="color:var(--accent-color); font-weight:700;">👑 皇冠</td><td class="highlight">$50,000 – $150,000+</td><td>全部最高比例 + 匹配 10% + 传承 3 人</td></tr>
+                    <tr><td style="color:var(--accent-color); font-weight:700;">👑 皇冠</td><td class="highlight">$50,000 – $150,000+</td><td>全部最高比例 + 卓越分红 10% + 传承 3 人</td></tr>
                 </tbody>
             </table>
         </div></div>
@@ -1141,50 +1244,7 @@
         </div>
     </section>
 
-    <!-- ===================== SECTION 13 ===================== -->
-    <section id="s13">
-        <span class="section-label">Part 13</span>
-        <h2>公平保障规则</h2>
-        <p class="lead">真实销售是整套制度的生命线。以下规则保护每一位认真做事的合伙人。</p>
-
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-icon">🛍️</div>
-                <h4>70% 终端零售</h4>
-                <p><strong>通俗理解：</strong>团队卖出的产品，至少 70% 要卖给真实客户（不是自己囤货）。</p>
-                <p style="margin-top:8px; font-size:0.85em; color:var(--text-light);">💡 <strong>目的：</strong>防止囤货刷单，确保每笔佣金都有真实订单。</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🦵</div>
-                <h4>三条腿走路</h4>
-                <p><strong>通俗理解：</strong>想拿满"公司红包"，您至少要培养 3 个活跃的下级团队。</p>
-                <p style="margin-top:8px; font-size:0.85em; color:var(--text-light);">💡 <strong>目的：</strong>防止单一链条，让网络更健康、更稳定。</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎯</div>
-                <h4>领袖保持活跃</h4>
-                <p><strong>通俗理解：</strong>铂金及以上级别，每月自己要卖一定数量的产品。</p>
-                <p style="margin-top:8px; font-size:0.85em; color:var(--text-light);">💡 <strong>目的：</strong>确保领袖仍在卖货，不做"纯拉人头"。</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🔄</div>
-                <h4>退货即扣回</h4>
-                <p><strong>通俗理解：</strong>客户 14 天内退货，所有层级佣金次月全额扣回。</p>
-                <p style="margin-top:8px; font-size:0.85em; color:var(--text-light);">💡 <strong>目的：</strong>杜绝刷单套利，保护真实销售的合伙人。</p>
-            </div>
-        </div>
-
-        <h3>🛡️ 软着陆保护 · 给领袖尊严</h3>
-        <p>单月业绩波动？别担心——</p>
-        <div class="highlight-box">
-            • <strong>头衔降级缓冲：</strong>单月未达标，头衔只降 1 级<br>
-            • <strong>权益保留：</strong>降级后，原头衔 70% 权益保留 30 天<br>
-            • <strong>宽限期：</strong>连续 3 个月未达标才正式降级
-        </div>
-        <p style="font-size:0.9em; color:var(--text-light);">不让一次波动毁掉多年积累，给您拉回业绩的时间与尊严。</p>
-    </section>
-
-    <!-- ===================== SECTION 14 ===================== -->
+    <!-- ===================== SECTION 14 - COMPANY HEALTH ===================== -->
     <section id="s14">
         <span class="section-label">Part 14</span>
         <h2>公司健康运营 · 承诺永续</h2>
@@ -1232,27 +1292,42 @@
         </div>
 
         <div class="faq-box">
-            <div class="faq-q">Q4：CARAT 代币是什么？能提现吗？</div>
+            <div class="faq-q">Q4：卓越分红是什么？和管道差价有什么区别？</div>
+            <div class="faq-a">A：管道差价是"您下级卖货，您拿差价"；卓越分红是"您下级赚钱，公司额外奖您"。卓越分红由公司额外支付，不扣下级收入，级别越高，穿透代数越深，被动收入呈指数级增长。</div>
+        </div>
+
+        <div class="faq-box">
+            <div class="faq-q">Q5：VIP 订阅被动收入真的能那么高吗？</div>
+            <div class="faq-a">A：如果您 3 年内积累 200 名 VIP 客户，年化收入可达 $18,673。这笔钱不需要再卖一个包，只要客户持续续费，月月到账。关键是维护老客户，而不是不断拉新。</div>
+        </div>
+
+        <div class="faq-box">
+            <div class="faq-q">Q6：全球领袖分红池怎么分？</div>
+            <div class="faq-a">A：公司每月拿出总业绩的 3%，分给铂金、钻石、双钻石三个独立池。您培养的下属级别越高，您的积分越多，分红越多。各池独立、互不稀释，每个级别都有自己的机会。</div>
+        </div>
+
+        <div class="faq-box">
+            <div class="faq-q">Q7：CARAT 代币是什么？能提现吗？</div>
             <div class="faq-a">A：CARAT 是公司内部积分，代表您对公司成长的贡献。公司每季度用净利润回购，您可以提现。持有满 12 个月还有保底承诺（成本价+5%）。这不是"炒币"，而是公司用真金白银回购您的贡献。</div>
         </div>
 
         <div class="faq-box">
-            <div class="faq-q">Q5：PSU 利润分享是什么？和股权一样吗？</div>
+            <div class="faq-q">Q8：PSU 利润分享是什么？和股权一样吗？</div>
             <div class="faq-a">A：不一样。PSU 不是股权，您不拥有公司所有权。但您享有公司年度净利润的分红权。达标免费获得，退出时公司按 20 倍 PE 回购。简单说：您享受公司成长的红利，但不参与公司决策。</div>
         </div>
 
         <div class="faq-box">
-            <div class="faq-q">Q6：收入真的能那么高吗？</div>
+            <div class="faq-q">Q9：收入真的能那么高吗？</div>
             <div class="faq-a">A：收入取决于您的努力。银级月入 $1,000-$2,500 很常见；如果您认真建团队，铂金级别月入 $7,000-$16,000 是可以实现的；皇冠级别月入 $50,000-$150,000+ 需要 3-5 年的持续投入。</div>
         </div>
 
         <div class="faq-box">
-            <div class="faq-q">Q7：如果我不想做了，会损失什么？</div>
+            <div class="faq-q">Q10：如果我不想做了，会损失什么？</div>
             <div class="faq-a">A：您之前赚到的佣金、CARAT、PSU 分红都是您的，不会损失。但养老金账户需要锁定 2-3 年，如果提前退出，只能拿到部分。这就是"长期事业"和"短期零工"的区别。</div>
         </div>
 
         <div class="faq-box">
-            <div class="faq-q">Q8：这个合法吗？</div>
+            <div class="faq-q">Q11：这个合法吗？</div>
             <div class="faq-a">A：完全合法。我们严格遵守印尼贸易部条例，总拨出封顶 40%，所有佣金基于真实销售。我们正在申请 SIUPL 直销牌照，制度设计完全合规。</div>
         </div>
     </section>
@@ -1272,7 +1347,7 @@
         <div class="highlight-box" style="font-size:1.05em; line-height:2;">
             卖一个包赚 <strong>$87.50</strong> 佣金，<br>
             建两条深线拿 <strong>双倍管道差价</strong>，<br>
-            带团队拿 <strong>5% 公司红包</strong>，<br>
+            带团队拿 <strong>5% 卓越分红</strong>，<br>
             达标进池分 <strong>3% 全球分红</strong>，<br>
             转 VIP 拿 <strong>28% 月月递增</strong>，<br>
             攒 CARAT 享回购增值，<br>
