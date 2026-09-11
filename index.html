@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>国际 MLM 深度薪酬制度 V3.0 · 终极细化移动版</title>
+    <title>国际 MLM 深度薪酬制度 V3.0 · 终极完全体</title>
     <style>
         :root {
             --primary-color: #1a1a1a;
-            --accent-color: #c5a059; /* 香槟金 */
+            --accent-color: #c5a059;
             --bg-color: #f4f5f7;
             --card-bg: #ffffff;
             --text-color: #333333;
@@ -16,37 +16,21 @@
             --danger-color: #d9534f;
             --success-color: #28a745;
             --web3-color: #6f42c1;
+            --travel-color: #00796b;
         }
-
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Helvetica Neue', sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1100px; margin: 0 auto; background: var(--card-bg); padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        
         /* Header */
         .header { text-align: center; border-bottom: 2px solid var(--accent-color); padding-bottom: 30px; margin-bottom: 30px; }
         .confidential { color: var(--accent-color); font-weight: bold; letter-spacing: 2px; font-size: 0.75em; text-transform: uppercase; margin-bottom: 10px; }
         h1 { font-size: 2.2em; color: var(--primary-color); margin: 10px 0; font-weight: 800; letter-spacing: 0.5px; }
         .subtitle { color: var(--text-light); font-size: 1em; margin-bottom: 25px; }
-        .core-params { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-        .param-item { text-align: center; background: #fafafa; padding: 15px 20px; border-radius: 8px; border: 1px solid var(--border-color); min-width: 120px; flex: 1; }
-        .param-value { font-size: 1.5em; font-weight: bold; color: var(--primary-color); }
-        .param-label { font-size: 0.8em; color: var(--text-light); margin-top: 4px; }
+        .core-params { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .param-item { text-align: center; background: #fafafa; padding: 15px 20px; border-radius: 8px; border: 1px solid var(--border-color); min-width: 110px; flex: 1; }
+        .param-value { font-size: 1.4em; font-weight: bold; color: var(--primary-color); }
+        .param-label { font-size: 0.75em; color: var(--text-light); margin-top: 4px; }
 
         /* TOC */
         .toc { background: #fafafa; padding: 20px; border-left: 4px solid var(--accent-color); margin-bottom: 40px; border-radius: 0 8px 8px 0; }
@@ -55,22 +39,23 @@
         .toc a { text-decoration: none; color: var(--text-color); display: block; padding: 10px 12px; border-radius: 6px; font-size: 0.9em; transition: all 0.2s; border: 1px solid transparent; }
         .toc a:hover, .toc a:active { background: #fff; border-color: var(--accent-color); color: var(--accent-color); transform: translateX(3px); }
         .toc a.web3-link { color: var(--web3-color); font-weight: bold; }
+        .toc a.travel-link { color: var(--travel-color); font-weight: bold; }
 
         /* Sections */
         section { margin-bottom: 50px; }
         h2 { color: var(--primary-color); border-left: 5px solid var(--accent-color); padding-left: 15px; font-size: 1.6em; margin-top: 40px; margin-bottom: 20px; }
         h2.web3-title { border-left: 5px solid var(--web3-color); background: linear-gradient(90deg, rgba(111,66,193,0.05) 0%, transparent 100%); padding: 12px 15px; border-radius: 0 8px 8px 0; }
+        h2.travel-title { border-left: 5px solid var(--travel-color); background: linear-gradient(90deg, rgba(0,121,107,0.05) 0%, transparent 100%); padding: 12px 15px; border-radius: 0 8px 8px 0; }
         h3 { color: var(--accent-color); margin-top: 25px; font-size: 1.2em; }
         h4 { color: var(--primary-color); margin-bottom: 10px; }
 
-        /* Tables - Mobile Optimized */
+        /* Tables */
         .table-responsive { position: relative; overflow: hidden; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
         .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
         .table-scroll::-webkit-scrollbar { height: 6px; }
         .table-scroll::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 3px; }
         .table-responsive::after { content: '👉 左右滑动'; position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; font-size: 11px; padding: 4px 8px; border-radius: 12px; pointer-events: none; opacity: 0.8; z-index: 2; transition: opacity 0.3s; }
         .table-scroll.scrolled::after { opacity: 0; }
-
         table { width: 100%; border-collapse: collapse; font-size: 0.9em; background: #fff; min-width: 500px; }
         th { background-color: var(--primary-color); color: #fff; padding: 12px 15px; text-align: left; font-weight: 600; white-space: nowrap; position: sticky; top: 0; }
         td { padding: 12px 15px; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
@@ -83,11 +68,12 @@
         .card:active { transform: scale(0.98); }
         .card h4 { margin-top: 0; color: var(--accent-color); font-size: 1.05em; }
         
-        .warning-box, .danger-box, .info-box, .web3-box, .calc-card { padding: 15px 18px; border-radius: 8px; margin: 20px 0; font-size: 0.95em; }
+        .warning-box, .danger-box, .info-box, .web3-box, .travel-box, .calc-card { padding: 15px 18px; border-radius: 8px; margin: 20px 0; font-size: 0.95em; }
         .warning-box { background-color: #fff3cd; border-left: 5px solid #ffc107; color: #856404; }
         .danger-box { background-color: #f8d7da; border-left: 5px solid var(--danger-color); color: #721c24; font-weight: 500; }
         .info-box { background-color: #eef2f5; border-left: 5px solid #6c757d; color: #495057; }
         .web3-box { background: linear-gradient(135deg, #f8f9fa 0%, #f3e5f5 100%); border: 1px solid var(--web3-color); border-left: 5px solid var(--web3-color); color: #4a148c; }
+        .travel-box { background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); border: 1px solid var(--travel-color); border-left: 5px solid var(--travel-color); color: #004d40; }
         .calc-card { background: linear-gradient(135deg, #fdfbfb 0%, #f4f6f8 100%); border: 1px solid var(--accent-color); box-shadow: 0 4px 10px rgba(197, 160, 89, 0.1); }
         .calc-card h4 { color: var(--primary-color); margin-top: 0; border-bottom: 1px dashed var(--accent-color); padding-bottom: 10px; margin-bottom: 15px; }
 
@@ -108,6 +94,7 @@
         .text-danger { color: var(--danger-color); font-weight: bold; }
         .text-success { color: var(--success-color); font-weight: bold; }
         .text-web3 { color: var(--web3-color); font-weight: bold; }
+        .text-travel { color: var(--travel-color); font-weight: bold; }
 
         .footer { margin-top: 60px; padding-top: 20px; border-top: 2px solid var(--primary-color); text-align: center; color: var(--text-light); font-size: 0.85em; }
         .next-steps { background: var(--primary-color); color: #fff; padding: 25px 20px; border-radius: 8px; margin-top: 40px; }
@@ -115,7 +102,6 @@
         .next-steps ol { padding-left: 20px; margin-bottom: 0; }
         .next-steps li { margin-bottom: 12px; font-size: 0.95em; }
 
-        /* Mobile Overrides */
         @media (max-width: 768px) {
             .container { padding: 16px; box-shadow: none; border-radius: 0; }
             h1 { font-size: 1.7em; }
@@ -124,7 +110,7 @@
             .core-params { gap: 10px; }
             .param-item { padding: 12px 10px; min-width: 90px; }
             .param-value { font-size: 1.2em; }
-            .param-label { font-size: 0.75em; }
+            .param-label { font-size: 0.7em; }
             .toc { padding: 15px; }
             .toc-grid { grid-template-columns: 1fr; gap: 4px; }
             .toc a { padding: 12px 15px; font-size: 0.95em; border-bottom: 1px solid #eee; border-radius: 0; }
@@ -143,524 +129,52 @@
     <header class="header">
         <div class="confidential">Confidential · Internal Briefing · Board Level</div>
         <h1>国际 MLM 深度薪酬制度 V3.0</h1>
-        <p class="subtitle">轻奢珠宝与可更换配饰包袋 ｜ 印尼及东南亚市场 ｜ 终极细化版</p>
+        <p class="subtitle">轻奢珠宝与可更换配饰包袋 ｜ 印尼及东南亚市场 ｜ 终极完全体</p>
         <div class="core-params">
             <div class="param-item"><div class="param-value">$250 / $35</div><div class="param-label">零售价 / 成本</div></div>
-            <div class="param-item"><div class="param-value">≤ 40%</div><div class="param-label">拨出上限 (合规红线)</div></div>
+            <div class="param-item"><div class="param-value">≤ 40%</div><div class="param-label">拨出上限 (合规)</div></div>
             <div class="param-item"><div class="param-value">10 级</div><div class="param-label">五级三阶体系</div></div>
+            <div class="param-item"><div class="param-value">NASDAQ</div><div class="param-label">终极资本路径</div></div>
         </div>
     </header>
 
     <nav class="toc">
-        <h3>📑 目录 · 全 19 部分 (含终极资本路线)</h3>
+        <h3>📑 目录 · 全 20 部分 (含年度激励与资本路线)</h3>
         <div class="toc-grid">
-            <a href="#part01">01 制度设计哲学与核心原则</a>
-            <a href="#part02">02 五级三阶晋升体系</a>
-            <a href="#part03">03 收入引擎总览</a>
-            <a href="#part04">04 个人销售佣金</a>
-            <a href="#part05">05 压缩级差奖金</a>
-            <a href="#part06">06 无限代匹配奖金</a>
-            <a href="#part07">07 全球领袖分红池</a>
-            <a href="#part08">08 VIP 订阅永久被动收入</a>
-            <a href="#part09">09 CARAT 双代币系统</a>
-            <a href="#part10">10 利润分享单元（PSU）</a>
-            <a href="#part11">11 领导人养老金账户</a>
-            <a href="#part12">12 接班人传承权</a>
-            <a href="#part13">13 硬性考核红线</a>
-            <a href="#part14">14 软着陆保护机制</a>
-            <a href="#part15">15 拨出动态封顶</a>
-            <a href="#part16">16 各头衔月收入潜力</a>
-            <a href="#part17">17 总拨出演算</a>
-            <a href="#part18">18 制度核心哲学与速查</a>
-            <a href="#part19" class="web3-link">19 🚀 终极资本路线与 Web3 架构</a>
+            <a href="#p1">01 制度设计哲学与核心原则</a>
+            <a href="#p2">02 五级三阶晋升体系</a>
+            <a href="#p3">03 收入引擎总览</a>
+            <a href="#p4">04 个人销售佣金</a>
+            <a href="#p5">05 压缩级差奖金</a>
+            <a href="#p6">06 无限代匹配奖金</a>
+            <a href="#p7">07 全球领袖分红池</a>
+            <a href="#p8">08 VIP 订阅永久被动收入</a>
+            <a href="#p9">09 CARAT 双代币系统</a>
+            <a href="#p10">10 利润分享单元（PSU）</a>
+            <a href="#p11">11 领导人养老金账户</a>
+            <a href="#p12">12 接班人传承权</a>
+            <a href="#p13">13 硬性考核红线</a>
+            <a href="#p14">14 软着陆保护机制</a>
+            <a href="#p15">15 拨出动态封顶</a>
+            <a href="#p16">16 各头衔月收入潜力</a>
+            <a href="#p17">17 总拨出演算</a>
+            <a href="#p18">18 制度核心哲学与速查</a>
+            <a href="#p19" class="travel-link">19 🏆 年度激励与荣耀之旅 (新增)</a>
+            <a href="#p20" class="web3-link">20 🚀 终极资本路线与 Web3 架构</a>
         </div>
     </nav>
 
     <main>
         <!-- Part 01 -->
-        <section id="part01">
+        <section id="p1">
             <h2>01 制度设计哲学与核心原则</h2>
             <div class="info-box"><strong>核心理念：</strong>让新人 <span class="highlight">进得来</span>、让中层 <span class="highlight">爬得动</span>、让顶层 <span class="highlight">留得住</span>、让事业 <span class="highlight">可传承</span> ——同时确保公司利润安全和印尼合规。</div>
+            <div class="card-grid">
+                <div class="card"><h4>⚖️ 均衡激励</h4><p>不把所有预算堆在个人销售上。三维分散：个人销售 · 团队建设 · 长期资产。收入结构越均衡 → 网络越稳定。</p></div>
+                <div class="card"><h4>🚪 低门槛进入</h4><p>银级仅需 $2,500 月流水，个人销售佣金 20% → 新人不需要建团队就能赚钱。</p></div>
+                <div class="card"><h4>🪜 平滑晋升路径</h4><p>五级三阶结构（10 个头衔） → 每一步都“跳起来够得着”。</p></div>
+                <div class="card"><h4>🛡️ 利润安全垫</h4><p>总拨出封顶 <span class="highlight">40%</span> → 合规 + 永续经营。</p></div>
+            </div>
             <div class="danger-box">
                 <strong>⚠️ 印尼合规红线：不可突破的 40%</strong><br>
-                法规依据：印尼贸易部第 32/M-DAG/PER/8/2008 号 | SIUPL 直销牌照严格审查 | APLI 行业标准。<br>
-                <strong>三重约束共同指向同一条上限：佣金及奖金总额 ≤ 产品销售价值的 40%。</strong>
-            </div>
-        </section>
-
-        <!-- Part 02 -->
-        <section id="part02">
-            <h2>02 五级三阶晋升体系</h2>
-            <p><strong>五级：</strong>银级 · 金级 · 铂金 · 钻石 · 双钻石/皇冠<br><strong>三阶：</strong>每个核心级别内增设“高级”阶段，形成 10 级完整阶梯。</p>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>头衔</th><th>佣金率</th><th>单件佣金</th><th>整组月流水 GV</th><th>活跃直推部门</th><th>个人月零售 PRV</th></tr></thead>
-                    <tbody>
-                        <tr><td>银级</td><td>20%</td><td>$50</td><td>≥ $2,500</td><td>—</td><td>—</td></tr>
-                        <tr><td>高级银级</td><td>22%</td><td>$55</td><td>≥ $5,000</td><td>1个活跃银级</td><td>—</td></tr>
-                        <tr><td>金级</td><td>25%</td><td>$62.50</td><td>≥ $12,500</td><td>2个活跃银级</td><td>—</td></tr>
-                        <tr><td>高级金级</td><td>27%</td><td>$67.50</td><td>≥ $25,000</td><td>2个活跃金级</td><td>—</td></tr>
-                        <tr><td>铂金</td><td>30%</td><td>$75</td><td>≥ $50,000</td><td>3个活跃金级</td><td>≥ $1,000</td></tr>
-                        <tr><td>高级铂金</td><td>32%</td><td>$80</td><td>≥ $100,000</td><td>3个活跃铂金</td><td>≥ $1,500</td></tr>
-                        <tr><td>钻石</td><td>33%</td><td>$82.50</td><td>≥ $200,000</td><td>3个活跃铂金</td><td>≥ $2,500</td></tr>
-                        <tr><td>高级钻石</td><td>34%</td><td>$85</td><td>≥ $350,000</td><td>3个活跃钻石</td><td>≥ $3,500</td></tr>
-                        <tr><td>双钻石</td><td>35%</td><td>$87.50</td><td>≥ $500,000</td><td>3个活跃钻石</td><td>≥ $5,000</td></tr>
-                        <tr><td>皇冠</td><td>35%</td><td>$87.50</td><td>≥ $1,000,000</td><td>3个活跃双钻石</td><td>≥ $7,500</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-
-        <!-- Part 03 -->
-        <section id="part03">
-            <h2>03 收入引擎总览</h2>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>序号</th><th>收入引擎</th><th>拨出比例</th><th>结算频率</th><th>适用级别</th></tr></thead>
-                    <tbody>
-                        <tr><td>1</td><td>个人销售佣金</td><td>20%-35%</td><td><strong>实时</strong></td><td>所有级别</td></tr>
-                        <tr><td>2</td><td>压缩级差奖金</td><td>6%（加权平均）</td><td><strong>月结</strong></td><td>金级及以上</td></tr>
-                        <tr><td>3</td><td>无限代匹配奖金</td><td>5%（全球总业绩）</td><td><strong>月结</strong></td><td>铂金及以上</td></tr>
-                        <tr><td>4</td><td>全球领袖分红池</td><td>3%（月TSO）</td><td><strong>月结</strong></td><td>铂金及以上</td></tr>
-                        <tr><td>5</td><td>VIP订阅LTV佣金</td><td>15%-28%（月费$39）</td><td><strong>周结</strong></td><td>所有级别</td></tr>
-                        <tr><td>6</td><td>CARAT代币系统</td><td>净利润3%-4%回购</td><td><strong>季度</strong></td><td>所有级别</td></tr>
-                        <tr><td>7</td><td>PSU利润分享</td><td>净利润2%-3%</td><td><strong>年度</strong></td><td>铂金及以上</td></tr>
-                        <tr><td>8</td><td>养老金账户</td><td>月GV 0.5%-0.8%</td><td><strong>月计提</strong></td><td>铂金及以上</td></tr>
-                        <tr><td>9</td><td>传承权</td><td>20%永久经销商费</td><td><strong>退休后</strong></td><td>钻石及以上</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <h3>结算频率设计逻辑</h3>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>结算频率</th><th>包含模块</th><th>设计目的</th></tr></thead>
-                    <tbody>
-                        <tr><td>实时结算</td><td>个人销售佣金</td><td>新经销商最需要“快速看到钱”来验证选择，实时到账增强信心</td></tr>
-                        <tr><td>周结</td><td>VIP 订阅 LTV 佣金</td><td>制造每周都有钱进账的节奏感，稳定中层经销商的心理预期</td></tr>
-                        <tr><td>月结</td><td>压缩级差、匹配奖金、分红池</td><td>复杂算法统一处理，现金流可控</td></tr>
-                        <tr><td>季度</td><td>CARAT 回购、Boss Challenge</td><td>制造季度性冲刺节点，避免团队懈怠</td></tr>
-                        <tr><td>年度</td><td>PSU 分红</td><td>长期锁定，资产积累</td></tr>
-                        <tr><td>退休后</td><td>养老金、传承权</td><td>终极绑定，让领袖把事业当成终身资产</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-
-        <!-- Part 04 -->
-        <section id="part04">
-            <h2>04 个人销售佣金：统一零售价机制</h2>
-            <div class="flow-chart">
-                客户支付 <strong>$250</strong><br>↓<br>
-                平台统一收款（公司账户）<br>↓<br>
-                系统即时计算销售佣金（＜1 秒）<br>↓
-                <div class="flow-split">
-                    <div class="flow-branch"><strong>经销商电子钱包</strong><br>佣金返还 20%-35%<br>实时到账，即时可提现</div>
-                    <div class="flow-branch"><strong>公司账户</strong><br>产品成本+利润 65%-80%<br>留存公司</div>
-                </div>
-            </div>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>经销商级别</th><th>销售佣金率</th><th>单件佣金</th><th>公司留存</th><th>公司单件毛利*</th></tr></thead>
-                    <tbody>
-                        <tr><td>银级</td><td><strong>20%</strong></td><td>$50</td><td>$200</td><td>$165</td></tr>
-                        <tr><td>高级银级</td><td><strong>22%</strong></td><td>$55</td><td>$195</td><td>$160</td></tr>
-                        <tr><td>金级</td><td><strong>25%</strong></td><td>$62.50</td><td>$187.50</td><td>$152.50</td></tr>
-                        <tr><td>高级金级</td><td><strong>27%</strong></td><td>$67.50</td><td>$182.50</td><td>$147.50</td></tr>
-                        <tr><td>铂金</td><td><strong>30%</strong></td><td>$75</td><td>$175</td><td>$140</td></tr>
-                        <tr><td>高级铂金</td><td><strong>32%</strong></td><td>$80</td><td>$170</td><td>$135</td></tr>
-                        <tr><td>钻石</td><td><strong>33%</strong></td><td>$82.50</td><td>$167.50</td><td>$132.50</td></tr>
-                        <tr><td>高级钻石</td><td><strong>34%</strong></td><td>$85</td><td>$165</td><td>$130</td></tr>
-                        <tr><td>双钻石 / 皇冠</td><td><strong>35%</strong></td><td>$87.50</td><td>$162.50</td><td>$127.50</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <p style="font-size:0.85em; color:#666;">*公司单件毛利 = 公司留存 - 生产成本（$35）</p>
-            
-            <h3>结算与风控</h3>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>维度</th><th>说明</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>结算频率</strong></td><td><strong>实时结算</strong>，交易完成即进入经销商电子钱包（≤1分钟）</td></tr>
-                        <tr><td><strong>提现方式</strong></td><td>经销商可随时提现至银行卡/电子钱包/稳定币 </td></tr>
-                        <tr><td><strong>退货处理</strong></td><td>客户在冷静期（14天）内退货，已发放佣金从经销商下月收入中<strong>全额扣回</strong></td></tr>
-                        <tr><td><strong>合规说明</strong></td><td>佣金基于<strong>真实终端销售</strong>，每笔佣金都有对应的客户订单作为依据</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-
-        <!-- Part 05 -->
-        <section id="part05">
-            <h2>05 压缩级差奖金（双轨压缩·月结）</h2>
-            <p>若下级与上级平级或更高级，系统自动 <span class="highlight">“压缩”</span> 跳过该层，向下穿透至最低级别。系统同时计算 <strong>最多 2 条最深压缩线路</strong> 的级差之和。</p>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>穿透场景</th><th>上级佣金率</th><th>下级佣金率</th><th>级差率</th><th>单件级差</th></tr></thead>
-                    <tbody>
-                        <tr><td>皇冠穿透银级</td><td>35%</td><td>20%</td><td><strong>15%</strong></td><td>$37.50</td></tr>
-                        <tr><td>双钻石穿透银级</td><td>35%</td><td>20%</td><td><strong>15%</strong></td><td>$37.50</td></tr>
-                        <tr><td>钻石穿透银级</td><td>33%</td><td>20%</td><td><strong>13%</strong></td><td>$32.50</td></tr>
-                        <tr><td>高级铂金穿透银级</td><td>32%</td><td>20%</td><td><strong>12%</strong></td><td>$30.00</td></tr>
-                        <tr><td>铂金穿透银级</td><td>30%</td><td>20%</td><td><strong>10%</strong></td><td>$25.00</td></tr>
-                        <tr><td>高级金级穿透银级</td><td>27%</td><td>20%</td><td><strong>7%</strong></td><td>$17.50</td></tr>
-                        <tr><td>金级穿透银级</td><td>25%</td><td>20%</td><td><strong>5%</strong></td><td>$12.50</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <div class="calc-card">
-                <h4>💡 实战演算</h4>
-                <p><strong>场景：</strong>铂金总监（佣金率 30%）的团队中，有一条压缩线穿透至银级（佣金率 20%），该银级本月出货 400 件。</p>
-                <ul>
-                    <li>单件级差（$250 × 10%）：<strong>$25.00</strong></li>
-                    <li>月出货量：<strong>400 件</strong></li>
-                    <li>铂金本月压缩级差收入：<strong class="highlight">$10,000</strong></li>
-                </ul>
-                <p><strong>保底机制：</strong> 若整条线全部平级或更高级（无差可拿），系统自动从全球公池补贴该条线业绩的 <span class="highlight">0.5%</span>。</p>
-            </div>
-        </section>
-
-        <!-- Part 06 -->
-        <section id="part06">
-            <h2>06 无限代匹配奖金 · 月结</h2>
-            <p>公司额外拿出 <span class="highlight">全球总业绩的 5%</span> 作为匹配奖池。你的下级赚了多少钱，公司 <strong>额外</strong> 支付你该金额的一定比例。<strong>这笔钱不扣下级的收入</strong>。</p>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>头衔</th><th>穿透代数</th><th>第1代</th><th>第2代</th><th>第3代</th><th>第4代+</th></tr></thead>
-                    <tbody>
-                        <tr><td>铂金</td><td>3 代</td><td>4%</td><td>3%</td><td>2%</td><td>—</td></tr>
-                        <tr><td>高级铂金</td><td>5 代</td><td>5%</td><td>4%</td><td>3%</td><td>1%</td></tr>
-                        <tr><td>钻石</td><td>7 代</td><td>6%</td><td>5%</td><td>4%</td><td>2%</td></tr>
-                        <tr><td>高级钻石</td><td>10 代</td><td>7%</td><td>6%</td><td>4%</td><td>2%</td></tr>
-                        <tr><td>双钻石</td><td>无限代</td><td>8%</td><td>6%</td><td>5%</td><td>3%</td></tr>
-                        <tr><td>皇冠</td><td>无限代</td><td class="highlight">10%</td><td class="highlight">8%</td><td class="highlight">6%</td><td class="highlight">4%</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <div class="calc-card">
-                <h4>💡 实战演算 (钻石总裁)</h4>
-                <table style="box-shadow:none; margin:10px 0; min-width:auto;">
-                    <tr><th>代数</th><th>下级总收入</th><th>匹配比例</th><th>你的收入</th></tr>
-                    <tr><td>第 1 代</td><td>$60,000</td><td>6%</td><td>$3,600</td></tr>
-                    <tr><td>第 2 代</td><td>$72,000</td><td>5%</td><td>$3,600</td></tr>
-                    <tr><td>第 3 代</td><td>$81,000</td><td>4%</td><td>$3,240</td></tr>
-                    <tr><td>第 4 代+</td><td>$80,000</td><td>2%</td><td>$1,600</td></tr>
-                    <tr><td colspan="3" style="text-align:right; font-weight:bold;">合计月收入：</td><td class="highlight" style="font-size:1.2em;">$12,040</td></tr>
-                </table>
-            </div>
-        </section>
-
-        <!-- Part 07 -->
-        <section id="part07">
-            <h2>07 全球领袖分红池 · 月结</h2>
-            <p><strong>三层级联池 · 互不稀释：</strong> 钻石不必与双钻石同池竞争，各池独立，人人有盼头。</p>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>池子</th><th>提取比例</th><th>参与者</th><th>分配方式</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>铂金池</strong></td><td>月 TSO 的 <strong>0.5%</strong></td><td>达标铂金 / 高级铂金</td><td>按积分加权</td></tr>
-                        <tr><td><strong>钻石池</strong></td><td>月 TSO 的 <strong>1.0%</strong></td><td>达标钻石 / 高级钻石</td><td>按积分加权</td></tr>
-                        <tr><td><strong>双钻石池</strong></td><td>月 TSO 的 <strong>1.5%</strong></td><td>达标双钻石 / 皇冠</td><td>按积分加权</td></tr>
-                        <tr><td colspan="2"><strong>合计</strong></td><td colspan="2"><strong>3.0% (按积分加权分配)</strong></td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <h3>积分规则</h3>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>培养成果</th><th>积分</th></tr></thead>
-                    <tbody>
-                        <tr><td>培养 1 个金级部门</td><td>3 分</td></tr>
-                        <tr><td>培养 1 个铂金部门</td><td>10 分</td></tr>
-                        <tr><td>培养 1 个钻石部门</td><td>50 分</td></tr>
-                        <tr><td>培养 1 个双钻石部门</td><td>100 分</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-
-        <!-- Part 08 -->
-        <section id="part08">
-            <h2>08 VIP 订阅永久被动收入 · 周结</h2>
-            <p><strong>“焕新俱乐部” · 每月 $39</strong> (不占用 40% 产品拨出额度，从订阅收入中支出)</p>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>权益</th><th>内容</th><th>客户感知价值</th></tr></thead>
-                    <tbody>
-                        <tr><td>月度积分</td><td>每月自动到账 100 LUSTER 积分</td><td>~$20</td></tr>
-                        <tr><td>以旧换新</td><td>连续订阅满 4 个月，凭旧包 +$50 换新款</td><td>立省 $200</td></tr>
-                        <tr><td>生日双倍</td><td>生日当月获赠 200 LUSTER 积分</td><td>$40</td></tr>
-                        <tr><td>优先购买</td><td>新品发售前 3 天优先下单</td><td>稀缺性</td></tr>
-                        <tr><td>免费养护</td><td>每年 1 次免费专业清洁养护</td><td>~$30</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <div class="info-box"><strong>客户算账：</strong>年支出 $39 × 12 = $468。获得积分兑换约 $240 + 换新立省 $200 + 养护 $30 = $470+。<strong>等于白嫖了一个包包的永久换新权。</strong></div>
-            
-            <h3>LTV 阶梯佣金：越久越赚</h3>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>连续订阅时长</th><th>佣金比例</th><th>月收入/人</th></tr></thead>
-                    <tbody>
-                        <tr><td>0–6 个月</td><td>15%</td><td>$5.85</td></tr>
-                        <tr><td>7–12 个月</td><td>18%</td><td>$7.02</td></tr>
-                        <tr><td>13–24 个月</td><td>22%</td><td>$8.58</td></tr>
-                        <tr><td>25 个月+</td><td class="highlight">28%</td><td class="highlight">$10.92</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <div class="calc-card">
-                <h4>💡 实战演算：200名VIP客户的永久被动收入</h4>
-                <p>通过客户分层计算，该经销商 <strong>合计月收入达 $1,556.1</strong>，年化收入 <strong class="highlight">$18,673</strong>。<br>
-                <em>这笔钱不需要再卖一个包，只要客户持续续费，月月到账。</em></p>
-            </div>
-        </section>
-
-        <!-- Part 09 -->
-        <section id="part09">
-            <h2>09 CARAT 双代币系统</h2>
-            <div class="warning-box"><strong>⚠️ 合规声明：</strong>CARAT 为内部忠诚度积分，非加密货币，不上链，不公开交易。</div>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>代币</th><th>获取方式</th><th>功能</th><th>兑现</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>LUSTER</strong><br>(光泽积分)</td><td>购买产品、签到、推荐VIP</td><td>兑换产品/配件、抽稀有款</td><td>不可提现</td></tr>
-                        <tr><td><strong>CARAT</strong><br>(克拉权益)</td><td>团队业绩、培养新人、月度活跃</td><td>参与分红池、解锁高级别</td><td>公司季度回购</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <h3>回购增值机制</h3>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>机制</th><th>说明</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>季度回购</strong></td><td>每季度用公司净利润的 3%–4% 回购 CARAT</td></tr>
-                        <tr><td><strong>溢价回购</strong></td><td>回购价 = 过去 90 天均价的 105%（制造涨价预期）</td></tr>
-                        <tr><td><strong>保值承诺</strong></td><td>持有满 12 个月后，若回购价低于成本，公司以 成本价+5% 保底回购</td></tr>
-                        <tr><td><strong>燃烧加速</strong></td><td>每季度限量款燃烧的 CARAT，公司 额外追加 5% 同步销毁（加速通缩）</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-
-        <!-- Part 10 -->
-        <section id="part10">
-            <h2>10 利润分享单元（PSU） ⭐</h2>
-            <p><strong>核心设计：</strong>不发放公司股权，发行“利润分享单元”——每一单元代表公司年度净利润的固定比例（0.001%）。经销商通过达成年度业绩目标免费获得。</p>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>年度业绩（年 GV）</th><th>PSU 奖励</th><th>累计上限</th></tr></thead>
-                    <tbody>
-                        <tr><td>≥ $100,000</td><td>10 PSU</td><td>—</td></tr>
-                        <tr><td>≥ $250,000</td><td>30 PSU</td><td>—</td></tr>
-                        <tr><td>≥ $500,000</td><td>80 PSU</td><td>—</td></tr>
-                        <tr><td>≥ $1,000,000</td><td>200 PSU</td><td>个人累计 ≤ 500 PSU</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <h3>PSU 退出与回购细则</h3>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>退出类型</th><th>触发条件</th><th>回购价格计算</th><th>支付周期</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>主动退出</strong></td><td>经销商书面申请退出</td><td>满12个月：平均分红×<strong>20倍</strong><br>未满12个月：平均分红×<strong>10倍</strong></td><td>生效后 <strong>30天内</strong></td></tr>
-                        <tr><td><strong>被动退出</strong></td><td>连续6个月未达标</td><td>平均分红×<strong>10倍</strong></td><td>生效后 <strong>60天内</strong></td></tr>
-                        <tr><td><strong>退休退出</strong></td><td>年满60岁且连续达标5年</td><td>平均分红×<strong>20倍</strong></td><td>生效后 <strong>30天内</strong></td></tr>
-                        <tr><td><strong>传承退出</strong></td><td>激活传承权</td><td>平均分红×<strong>20倍</strong></td><td>生效后 <strong>30天内</strong></td></tr>
-                        <tr><td><strong>违约退出</strong></td><td>严重违反协议</td><td>平均分红×<strong>10倍</strong> (惩罚性)</td><td>生效后 <strong>90天内</strong></td></tr>
-                        <tr><td><strong>控制权变更</strong></td><td>公司被并购/上市</td><td>平均分红×<strong>25倍</strong> (溢价25%)</td><td>按并购协议</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-
-        <!-- Part 11 -->
-        <section id="part11">
-            <h2>11 领导人养老金账户 ⭐</h2>
-            <p>为连续活跃的铂金及以上领袖设立虚拟养老金账户，锁定至其“退休”时一次性发放。</p>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>条件</th><th>计提比例</th><th>锁定规则</th></tr></thead>
-                    <tbody>
-                        <tr><td>铂金及以上，连续活跃</td><td>月 GV 的 0.5%</td><td>锁定 3 年，逐年释放 1/3</td></tr>
-                        <tr><td>钻石及以上</td><td class="highlight">月 GV 的 0.8%</td><td>锁定 2 年，逐年释放 1/2</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <div class="calc-card">
-                <h4>💡 实战演算</h4>
-                <p>钻石月团队 GV $200,000 → 月养老金计提 $1,600 → 5 年累计 <strong>$96,000</strong>。<br>
-                退休时一次性领取（公司分 12 个月支付）。<strong>离开越早，损失越大，实现从零工到事业的终极绑定。</strong></p>
-            </div>
-        </section>
-
-        <!-- Part 12 -->
-        <section id="part12">
-            <h2>12 接班人传承权 ⭐</h2>
-            <p><strong>核心设计：</strong>解决 MLM “不可传承”的最大痛点。高阶领袖可将自己的整个团队网络一次性指定传承给继承人。</p>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>条件</th><th>传承权益</th></tr></thead>
-                    <tbody>
-                        <tr><td>钻石连续 5 年达标</td><td>指定 1 名继承人，继承全部团队网络和头衔</td></tr>
-                        <tr><td>双钻石连续 3 年达标</td><td>指定 2 名继承人</td></tr>
-                        <tr><td>皇冠连续 3 年达标</td><td>指定 3 名继承人</td></tr>
-                        <tr><td>传承后</td><td>原领袖保留 <span class="highlight">20% 的永久经销商费</span>（终身享有）</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-            <h3>“指定 2 名继承人”的分配方案</h3>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>分配方式</th><th>继承人 A</th><th>继承人 B</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>方案一：按比例分割</strong></td><td>70% 团队网络 (主要深度线)</td><td>30% 团队网络 (部分分支)</td></tr>
-                        <tr><td><strong>方案二：按头衔继承</strong></td><td>继承 <strong>双钻石</strong> (原头衔) + 核心网络</td><td>继承 <strong>钻石</strong> (降一级) + 新市场网络</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-
-        <!-- Part 13 -->
-        <section id="part13">
-            <h2>13 硬性考核红线</h2>
-            <div class="danger-box"><strong>🚨 四条底线不可突破。任何一条触发，都意味着当月的奖金会被系统自动压缩——真实销售是整套制度的生命线。</strong></div>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>红线</th><th>规则</th><th>违规后果</th><th>设计目的</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>70% 终端零售</strong></td><td>团队出货 ≥70% 流向终端消费者</td><td class="text-danger">低于 70%，匹配奖 + 分红池 砍半</td><td>防止囤货刷单，确保真实销售</td></tr>
-                        <tr><td><strong>三腿宽深</strong></td><td>拿满无限代匹配须 ≥3 个活跃直推部门</td><td class="text-danger">少于 3 条腿，无限代奖 封顶 $5,000</td><td>防止单一链条金字塔结构</td></tr>
-                        <tr><td><strong>个人活跃度</strong></td><td>铂金及以上每月个人零售 ≥ 规定金额</td><td class="text-danger">未完成，当月佣金 打 8 折</td><td>确保领袖仍在卖货，不做“纯拉人头”</td></tr>
-                        <tr><td><strong>退货扣回</strong></td><td>客户退货，所有层级佣金次月全额扣回</td><td class="text-danger">系统自动划扣</td><td>防止刷单套利</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-
-        <!-- Part 14 -->
-        <section id="part14">
-            <h2>14 软着陆保护机制</h2>
-            <p><strong>适用级别：</strong>铂金及以上。<br><strong>设计逻辑：</strong>不让一次波动毁掉多年积累，给领袖拉回业绩的时间与尊严。</p>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>保护项</th><th>规则</th><th>设计目的</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>头衔降级缓冲</strong></td><td>单月未达标，头衔 <span class="highlight">只降 1 级</span>（如钻石 → 高级铂金）</td><td>不让一次业绩波动毁掉多年积累</td></tr>
-                        <tr><td><strong>权益保留</strong></td><td>降级后，原头衔 70% 权益保留 30 天</td><td>给缓冲期，让领袖有机会拉回业绩</td></tr>
-                        <tr><td><strong>宽限期</strong></td><td>连续 3 个月 未达标才正式降级</td><td>单月波动只触发“观察期”，不立即惩罚</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-
-        <!-- Part 15 to 18 (Condensed for code length, fully structured) -->
-        <section id="part15"><h2>15 拨出动态封顶：40% 核心风控</h2><p><strong>封顶机制：</strong>总拨出率 = 所有实发奖金总和 ÷ 当月批发总收入。压缩系数：40% ÷ 实际拨出率。</p></section>
-        <section id="part16"><h2>16 各头衔月收入潜力总览</h2>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>头衔</th><th>月收入区间</th><th>核心来源</th></tr></thead>
-                    <tbody>
-                        <tr><td>银级</td><td>$1,000 – $2,500</td><td>个人佣金（20%）+ VIP 订阅</td></tr>
-                        <tr><td>金级</td><td>$2,500 – $6,000</td><td>个人佣金（25%）+ 级差 + 团队积分</td></tr>
-                        <tr><td>铂金</td><td>$7,000 – $16,000</td><td>30% + 压缩级差 + 匹配 4% + 铂金池 + 养老金</td></tr>
-                        <tr><td>钻石</td><td>$18,000 – $55,000</td><td>全模块 · 33% + 匹配 6% + 钻石池 + PSU</td></tr>
-                        <tr><td>双钻石</td><td>$35,000 – $100,000+</td><td>全部模块最高比例 + 传承权（2 人）</td></tr>
-                        <tr><td>皇冠</td><td class="highlight">$50,000 – $150,000+</td><td>全部模块最高比例 + 匹配 10% + 传承权（3 人）</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-        </section>
-        <section id="part17"><h2>17 总拨出演算与单件利润核算</h2><p><strong>成熟期总拨出结构：</strong>个人销售佣金(26%) + 压缩级差(6%) + 匹配奖金(5%) + 分红池(3%) = <span class="highlight">40%</span>。<br><strong>公司单件净利润：</strong>$250 零售价 - $35 成本 - $100 核心拨出 - $37.5 运营 = <span class="text-success">$77.50 (31% 净利率)</span>。</p></section>
-        <section id="part18"><h2>18 制度核心哲学与速查总表</h2><div class="info-box" style="font-size: 1em; line-height: 1.7;">卖一个包赚 <strong>$87.50</strong> 佣金，建两条深线拿 <strong>双倍压缩</strong>，带团队拿 <strong>5% 无限代匹配</strong>，达标进池分 <strong>3% 全球分红</strong>，转 VIP 拿 <strong>28% 月月递增</strong>，攒 CARAT 享回购增值，囤 PSU 享公司利润分红，存养老金退休一次性领取，传网络给后代享 <strong>20% 永久经销商费</strong>。</div></section>
-
-        <!-- ========================================== -->
-        <!-- PART 19: ULTIMATE CAPITAL ROUTE -->
-        <!-- ========================================== -->
-        <section id="part19">
-            <h2 class="web3-title">19 🚀 终极资本路线与 Web3 资产架构 (Board Level)</h2>
-            <p><strong>战略愿景：</strong>将东南亚庞大的 MLM 现金流与 Web3 资产锚定技术结合，通过离岸信托架构实现“<span class="text-web3">业务在东南亚，资本在离岸，上市在华尔街</span>”的终极跨越。</p>
-
-            <div class="web3-box">
-                <strong>⚠️ 顶层合规防火墙 (Jurisdictional Isolation)：</strong><br>
-                印尼本地实体 (PT) <strong>仅处理法币、实物珠宝与传统 MLM 佣金</strong>，绝对不触碰任何代币发行或证券化操作。<br>
-                所有 Web3 代币 (CARAT RWA)、股权映射与资本运作，均通过 <strong>新加坡基金会</strong> 与 <strong>开曼信托</strong> 在离岸合规框架下进行。
-            </div>
-
-            <h3>19.1 全球三层隔离架构</h3>
-            <div class="arch-diagram">
-                <div class="arch-layer layer-1">
-                    <h4>🟢 Layer 1: 印尼运营实体 (PT / Fiat & Physical)</h4>
-                    <p><strong>职能：</strong>持有 SIUPL 牌照，处理实物珠宝供应链、法币收单、MLM 佣金结算。</p>
-                </div>
-                <div class="arch-arrow">↓ (数据与利润合规审计上链) ↓</div>
-                <div class="arch-layer layer-2">
-                    <h4>🟣 Layer 2: 新加坡 Web3 基金会 (Token & RWA Issuer)</h4>
-                    <p><strong>职能：</strong>发行 CARAT RWA 数字凭证，管理 LUSTER 效用积分，运行智能合约分红池。</p>
-                </div>
-                <div class="arch-arrow">↓ (收益权映射与锁仓) ↓</div>
-                <div class="arch-layer layer-3">
-                    <h4>🔵 Layer 3: 开曼/特拉华控股 (NASDAQ SPAC / Merger Target)</h4>
-                    <p><strong>职能：</strong>作为上市主体，吸收东南亚实体利润，发行传统股票或 SPAC 合并。</p>
-                </div>
-            </div>
-
-            <h3>19.2 美国 NASDAQ 上市双轨路径</h3>
-            <div class="table-responsive"><div class="table-scroll">
-                <table>
-                    <thead><tr><th>路径</th><th>SPAC 并购上市 (首选)</th><th>反向收购/买壳 (Reverse Merger)</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>核心逻辑</strong></td><td>寻找专注“Web3 + 消费零售”概念的 SPAC 壳公司，通过 De-SPAC 合并上市。</td><td>直接收购纳斯达克已停滞的干净壳公司，注入东南亚珠宝资产。</td></tr>
-                        <tr><td><strong>估值溢价</strong></td><td class="text-web3">极高 (享受 Web3 / RWA / 东南亚增长 三重概念溢价)</td><td>中等 (按传统珠宝零售 PE 估值)</td></tr>
-                        <tr><td><strong>领袖退出</strong></td><td>CARAT 质押者通过智能合约自动转换为上市公司股票/现金。</td><td>通过离岸信托代持股权，按协议分配 IPO 后解禁份额。</td></tr>
-                    </tbody>
-                </table>
-            </div></div>
-
-            <h3>19.3 CARAT 代币 RWA 化与“币股同权”</h3>
-            <div class="calc-card">
-                <h4>💡 映射机制演算：皇冠领袖的 CARAT 变现之路</h4>
-                <ul>
-                    <li><strong>阶段一 (MLM 运营期)：</strong> 领袖通过团队业绩获得 CARAT，享受公司季度回购溢价与 RWA 资产池分红。</li>
-                    <li><strong>阶段二 (Pre-IPO 锁仓期)：</strong> 领袖将 CARAT 质押至开曼信托的智能合约，锁定 12 个月，换取 <strong>“数字认股权证 (Digital Warrant)”</strong>。</li>
-                    <li><strong>阶段三 (NASDAQ 上市日)：</strong> 智能合约自动触发，Warrant 按约定汇率映射为上市公司股票，或按 IPO 定价直接结算为 USDC/法币。</li>
-                </ul>
-                <p style="margin-top:15px; border-top: 1px dashed #ccc; padding-top:15px;">
-                    <strong>⚖️ 法律隔离说明：</strong>在印尼本地，CARAT 仅是“积分/收据”；但在开曼信托层面，它被法律认定为“Pre-IPO 收益权凭证”。<strong>币股同权并非直接发币换股权，而是通过“收益权映射+智能合约对赌”实现经济利益的绝对等价。</strong>
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <div class="next-steps">
-        <h3>🚀 下一步行动计划 (Next Steps)</h3>
-        <ol>
-            <li>批准进入印尼法律与税务复核 (SIUPL 牌照申请)</li>
-            <li>启动财务精算：拨出 / 退货 / 现金流压力测试</li>
-            <li>搭建实时 + 周结 + 月结结算系统</li>
-            <li>选择试点市场，小范围验证 3–6 个月</li>
-            <li class="text-web3" style="color: #d1c4e9;">【资本线】接触新加坡 Web3 律所，设计 CARAT RWA 离岸信托架构</li>
-            <li class="text-web3" style="color: #d1c4e9;">【资本线】对接华尔街 SPAC 发起人 (Sponsor)，签署 Pre-NDA 与上市意向书</li>
-        </ol>
-    </div>
-
-    <footer class="footer">
-        <p><strong>Confidential · Internal Briefing · Board Level</strong></p>
-        <p>公司安全 · 领袖赚钱 · 事业可传承 · 资本可证券化</p>
-        <p style="margin-top: 20px; font-size: 0.8em; color: #999;">
-            ⚠️ <strong>免责声明：</strong>本文中的法律、牌照、税务及薪酬合规表述属于制度草案内容，不应直接视为法律意见。Part 19 涉及的 Web3、RWA、SPAC 及币股映射架构为<strong>资本战略愿景</strong>，正式落地前必须由新加坡 MAS 合规律师、美国 SEC 证券律师及印尼当地合规经销商联合出具法律意见书。<br>
-            机密信息：仅供董事会及核心联合创始人查阅。严禁外传。
-        </p>
-    </footer>
-</div>
-
-<script>
-    document.querySelectorAll('.table-scroll').forEach(el => {
-        el.addEventListener('scroll', function() {
-            if (this.scrollLeft > 10) { this.classList.add('scrolled'); } else { this.classList.remove('scrolled'); }
-        });
-    });
-</script>
-
-</body>
-</html>
+                法规依据：印尼贸易部第 32/M-DAG/PER/8/2008 号 | SIUPL
