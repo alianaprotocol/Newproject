@@ -2,432 +2,167 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="theme-color" content="#1a1a1a">
     <title>国际轻奢珠宝事业合伙人计划 | 开启您的财富传承之旅</title>
     <style>
         :root {
-            --primary-color: #1a1a1a;
-            --accent-color: #c5a059;
+            --primary: #1a1a1a;
+            --accent: #c5a059;
             --accent-light: #e8d5a0;
-            --bg-color: #f8f6f1;
-            --card-bg: #ffffff;
-            --text-color: #2c2c2c;
+            --bg: #f8f6f1;
+            --card: #ffffff;
+            --text: #2c2c2c;
             --text-light: #6b6b6b;
-            --border-color: #e8e4d9;
-            --success-color: #2d8659;
-            --danger-color: #c0392b;
-            --travel-color: #00796b;
-            --gradient-gold: linear-gradient(135deg, #c5a059 0%, #e8d5a0 50%, #c5a059 100%);
+            --border: #e8e4d9;
+            --success: #2d8659;
+            --travel: #00796b;
+            --gold-grad: linear-gradient(135deg, #c5a059 0%, #e8d5a0 50%, #c5a059 100%);
         }
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Helvetica Neue', sans-serif; line-height: 1.7; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Helvetica Neue', sans-serif; line-height: 1.8; color: var(--text); background: var(--bg); margin: 0; padding: 0; font-size: 16px; }
+
+        /* === Hero === */
+        .hero { background: linear-gradient(160deg, #111 0%, #2a2a2a 50%, #111 100%); color: #fff; padding: 70px 20px 50px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(197,160,89,0.1) 0%, transparent 50%); pointer-events: none; }
+        .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(197,160,89,0.15); border: 1px solid var(--accent); border-radius: 30px; color: var(--accent); font-size: 0.75em; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+        .hero h1 { font-size: 2.2em; font-weight: 800; margin: 10px 0; background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.3; }
+        .hero .tagline { font-size: 1em; color: #ccc; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 400px; margin: 0 auto; }
+        .hero-stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(197,160,89,0.3); border-radius: 12px; padding: 15px 10px; backdrop-filter: blur(5px); }
+        .hero-stat-val { font-size: 1.6em; font-weight: 800; color: var(--accent); display: block; line-height: 1.2; }
+        .hero-stat-lbl { font-size: 0.75em; color: #aaa; margin-top: 4px; }
+        .hero-cta { margin-top: 30px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-            color: #fff;
-            padding: 80px 20px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 50% 30%, rgba(197,160,89,0.15) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .hero-badge {
-            display: inline-block;
-            padding: 6px 18px;
-            background: rgba(197,160,89,0.15);
-            border: 1px solid var(--accent-color);
-            border-radius: 30px;
-            color: var(--accent-color);
-            font-size: 0.8em;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-        .hero h1 {
-            font-size: 2.6em;
-            font-weight: 800;
-            margin: 15px 0;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 1px;
-            line-height: 1.2;
-        }
-        .hero .tagline {
-            font-size: 1.15em;
-            color: #d4d4d4;
-            margin-bottom: 35px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            max-width: 700px;
-            margin: 30px auto 0;
-        }
-        .hero-stat {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(197,160,89,0.3);
-            border-radius: 12px;
-            padding: 18px 10px;
-            backdrop-filter: blur(10px);
-        }
-        .hero-stat-value {
-            font-size: 1.8em;
-            font-weight: 800;
-            color: var(--accent-color);
-            display: block;
-        }
-        .hero-stat-label {
-            font-size: 0.78em;
-            color: #bbb;
-            margin-top: 4px;
-        }
-        .hero-cta {
-            margin-top: 35px;
-        }
-        .btn-primary {
-            display: inline-block;
-            background: var(--gradient-gold);
-            color: #1a1a1a;
-            padding: 14px 36px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1em;
-            letter-spacing: 1px;
-            box-shadow: 0 6px 20px rgba(197,160,89,0.4);
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary:active { transform: translateY(2px); box-shadow: 0 3px 10px rgba(197,160,89,0.3); }
-        .btn-secondary {
-            display: inline-block;
-            background: transparent;
-            color: var(--accent-color);
-            padding: 13px 34px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95em;
-            border: 1.5px solid var(--accent-color);
-            margin-left: 10px;
-            transition: all 0.3s;
-        }
+        /* === Buttons === */
+        .btn { display: inline-block; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1em; transition: all 0.2s; border: none; cursor: pointer; text-align: center; width: 100%; max-width: 300px; }
+        .btn-primary { background: var(--gold-grad); color: #1a1a1a; box-shadow: 0 6px 20px rgba(197,160,89,0.3); }
+        .btn-primary:active { transform: scale(0.97); }
+        .btn-outline { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
 
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 0;
-        }
-        .content-wrap {
-            padding: 40px 30px;
-        }
+        /* === Layout === */
+        .container { max-width: 1000px; margin: 0 auto; background: var(--card); }
+        .content { padding: 30px 20px; }
+        section { margin-bottom: 50px; scroll-margin-top: 20px; }
+        .sec-label { display: inline-block; color: var(--accent); font-size: 0.8em; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
+        h2 { color: var(--primary); font-size: 1.6em; margin: 5px 0 20px; font-weight: 800; line-height: 1.3; }
+        h2::after { content: ''; display: block; width: 40px; height: 3px; background: var(--gold-grad); margin-top: 10px; border-radius: 2px; }
+        h3 { color: var(--accent); margin-top: 25px; font-size: 1.2em; font-weight: 700; }
+        .lead { font-size: 1.05em; color: var(--text-light); margin-bottom: 20px; }
 
-        /* TOC */
-        .toc {
-            background: #fafaf7;
-            padding: 25px 20px;
-            border-left: 4px solid var(--accent-color);
-            margin: 30px 0;
-            border-radius: 0 12px 12px 0;
-        }
-        .toc h3 { margin-top: 0; color: var(--primary-color); font-size: 1.1em; margin-bottom: 15px; }
-        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px 20px; }
-        .toc a { text-decoration: none; color: var(--text-color); display: block; padding: 10px 12px; border-radius: 6px; font-size: 0.88em; transition: all 0.2s; border: 1px solid transparent; }
-        .toc a:hover, .toc a:active { background: #fff; border-color: var(--accent-color); color: var(--accent-color); transform: translateX(3px); }
-        .toc a.highlight-link { color: var(--travel-color); font-weight: 600; }
+        /* === TOC === */
+        .toc { background: #fafaf7; padding: 20px; border-left: 4px solid var(--accent); margin: 20px 0 40px; border-radius: 0 12px 12px 0; }
+        .toc h3 { margin: 0 0 15px; color: var(--primary); font-size: 1.1em; }
+        .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .toc a { text-decoration: none; color: var(--text); display: block; padding: 10px; border-radius: 8px; font-size: 0.85em; background: #fff; border: 1px solid var(--border); transition: all 0.2s; }
+        .toc a:active { background: var(--accent-light); border-color: var(--accent); }
 
-        /* Sections */
-        section { margin-bottom: 60px; scroll-margin-top: 20px; }
-        .section-label {
-            display: inline-block;
-            color: var(--accent-color);
-            font-size: 0.85em;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.8em;
-            margin: 5px 0 20px;
-            font-weight: 800;
-            line-height: 1.3;
-        }
-        h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--gradient-gold);
-            margin-top: 12px;
-            border-radius: 2px;
-        }
-        h3 { color: var(--accent-color); margin-top: 30px; font-size: 1.25em; font-weight: 700; }
-        h4 { color: var(--primary-color); margin-bottom: 10px; font-weight: 700; }
-        .lead { font-size: 1.1em; color: var(--text-light); margin-bottom: 25px; line-height: 1.8; }
+        /* === Cards & Grids === */
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 15px; margin: 20px 0; }
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 15px; margin: 20px 0; }
+        .card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+        .card-icon { width: 44px; height: 44px; background: var(--gold-grad); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4em; margin-bottom: 12px; }
+        .card h4 { margin: 0 0 8px; color: var(--primary); font-size: 1.05em; }
+        .card p { margin: 0; color: var(--text-light); font-size: 0.9em; line-height: 1.6; }
 
-        /* Tables */
-        .table-responsive { position: relative; overflow: hidden; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
-        .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        .table-scroll::-webkit-scrollbar { height: 6px; }
-        .table-scroll::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 3px; }
-        .table-responsive::after { content: '👉 左右滑动'; position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.75); color: #fff; font-size: 11px; padding: 4px 10px; border-radius: 12px; pointer-events: none; opacity: 0.85; z-index: 2; transition: opacity 0.3s; }
+        /* === Boxes === */
+        .box-gold { background: linear-gradient(135deg, #fdf8ec 0%, #fff 100%); border: 1.5px solid var(--accent-light); border-left: 5px solid var(--accent); padding: 18px; border-radius: 0 12px 12px 0; margin: 20px 0; font-size: 0.95em; }
+        .box-gold strong { color: var(--accent); }
+        .box-story { background: #fff; border: 1px dashed var(--accent); border-radius: 12px; padding: 20px; margin: 20px 0; position: relative; }
+        .box-story::before { content: '💡 实战案例'; position: absolute; top: -12px; left: 15px; background: var(--accent); color: #fff; padding: 2px 12px; border-radius: 20px; font-size: 0.75em; font-weight: 600; }
+        .box-info { background: #eef6f2; border-left: 4px solid var(--success); padding: 15px; border-radius: 0 10px 10px 0; margin: 20px 0; color: #1e5a3d; font-size: 0.9em; }
+        .box-warn { background: #fef5e7; border-left: 4px solid #e67e22; padding: 15px; border-radius: 0 10px 10px 0; margin: 20px 0; color: #7d4e1e; font-size: 0.9em; }
+
+        /* === Tables (Mobile Optimized) === */
+        .table-wrap { position: relative; margin: 20px 0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+        .table-scroll::-webkit-scrollbar { height: 4px; }
+        .table-scroll::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+        .table-wrap::after { content: '👉 左右滑动'; position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.7); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 10px; pointer-events: none; opacity: 0.8; z-index: 2; transition: opacity 0.3s; }
         .table-scroll.scrolled::after { opacity: 0; }
-        table { width: 100%; border-collapse: collapse; font-size: 0.9em; background: #fff; min-width: 500px; }
-        th { background: var(--primary-color); color: #fff; padding: 13px 15px; text-align: left; font-weight: 600; white-space: nowrap; }
-        td { padding: 13px 15px; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85em; background: #fff; min-width: 450px; }
+        th { background: var(--primary); color: #fff; padding: 12px 10px; text-align: left; font-weight: 600; white-space: nowrap; position: sticky; top: 0; }
+        td { padding: 12px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
         tr:nth-child(even) { background-color: #fcfaf5; }
 
-        /* Cards */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin: 25px 0; }
-        .card {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 22px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            transition: all 0.3s;
-        }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(197,160,89,0.15); border-color: var(--accent-light); }
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--gradient-gold);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        .card h4 { margin: 0 0 10px; color: var(--primary-color); font-size: 1.1em; }
-        .card p { margin: 0; color: var(--text-light); font-size: 0.92em; }
+        /* === Rank Ladder (Desktop Table / Mobile Cards) === */
+        .desktop-rank { display: block; }
+        .mobile-rank { display: none; }
+        .rank-card { background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 15px; position: relative; overflow: hidden; }
+        .rank-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--gold-grad); }
+        .rank-num { width: 36px; height: 36px; background: var(--gold-grad); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9em; flex-shrink: 0; }
+        .rank-info { flex: 1; }
+        .rank-title { font-weight: 700; color: var(--primary); font-size: 1.05em; margin-bottom: 2px; }
+        .rank-meta { font-size: 0.8em; color: var(--text-light); }
+        .rank-rate { font-size: 1.2em; font-weight: 800; color: var(--accent); flex-shrink: 0; }
+        .rank-card.crown { border-color: var(--accent); background: linear-gradient(135deg, #fff 0%, #fdf8ec 100%); }
+        .rank-card.crown .rank-num { background: var(--primary); }
 
-        /* Boxes */
-        .highlight-box {
-            background: linear-gradient(135deg, #fdf8ec 0%, #fff 100%);
-            border: 1.5px solid var(--accent-light);
-            border-left: 5px solid var(--accent-color);
-            padding: 20px 22px;
-            border-radius: 0 12px 12px 0;
-            margin: 25px 0;
-            font-size: 1em;
-        }
-        .highlight-box strong { color: var(--accent-color); }
-        .story-box {
-            background: #fff;
-            border: 1px dashed var(--accent-color);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 25px 0;
-            position: relative;
-        }
-        .story-box::before {
-            content: '💡 实战案例';
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: var(--accent-color);
-            color: #fff;
-            padding: 3px 12px;
-            border-radius: 20px;
-            font-size: 0.78em;
-            font-weight: 600;
-        }
-        .info-banner {
-            background: #eef6f2;
-            border-left: 4px solid var(--success-color);
-            padding: 15px 20px;
-            border-radius: 0 10px 10px 0;
-            margin: 20px 0;
-            color: #1e5a3d;
-            font-size: 0.95em;
-        }
-        .warning-banner {
-            background: #fef5e7;
-            border-left: 4px solid #e67e22;
-            padding: 15px 20px;
-            border-radius: 0 10px 10px 0;
-            margin: 20px 0;
-            color: #7d4e1e;
-            font-size: 0.95em;
-        }
-        .faq-box {
-            background: #f9f9f9;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px 22px;
-            margin: 15px 0;
-        }
-        .faq-q {
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            font-size: 1em;
-        }
-        .faq-a {
-            color: var(--text-light);
-            font-size: 0.95em;
-            line-height: 1.7;
+        /* === Timeline === */
+        .timeline { position: relative; padding-left: 25px; margin: 20px 0; }
+        .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--gold-grad); }
+        .tl-item { position: relative; padding: 10px 0 20px 15px; }
+        .tl-item::before { content: ''; position: absolute; left: -21px; top: 14px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--accent); }
+        .tl-freq { display: inline-block; background: var(--primary); color: var(--accent); padding: 2px 8px; border-radius: 15px; font-size: 0.7em; font-weight: 600; margin-bottom: 4px; }
+        .tl-title { font-weight: 700; color: var(--primary); font-size: 0.95em; margin-bottom: 2px; }
+        .tl-desc { color: var(--text-light); font-size: 0.85em; }
+
+        /* === Flow Chart === */
+        .flow { background: #fafaf7; padding: 20px; border-radius: 12px; text-align: center; margin: 20px 0; border: 1px dashed var(--accent-light); font-size: 0.95em; }
+        .flow-split { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+        .flow-branch { background: #fff; padding: 15px; border-radius: 10px; border: 1px solid var(--border); }
+        .flow-branch strong { color: var(--accent); }
+
+        /* === FAQ Accordion === */
+        .faq-item { background: #fff; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+        .faq-item summary { padding: 15px; font-weight: 700; color: var(--primary); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.95em; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; font-size: 1.5em; color: var(--accent); transition: transform 0.3s; }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-answer { padding: 0 15px 15px; color: var(--text-light); font-size: 0.9em; line-height: 1.7; border-top: 1px dashed var(--border); margin-top: -5px; padding-top: 15px; }
+
+        /* === Travel Hero === */
+        .travel-hero { background: linear-gradient(135deg, #004d40 0%, #00796b 100%); color: #fff; padding: 30px 20px; border-radius: 16px; margin: 25px 0; text-align: center; }
+        .travel-hero h3 { color: #fff; margin: 0 0 10px; font-size: 1.3em; }
+        .travel-hero p { color: #b2dfdb; margin: 0; font-size: 0.9em; }
+
+        /* === CTA & Footer === */
+        .cta-section { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #fff; padding: 40px 20px; text-align: center; border-radius: 16px; margin: 40px 0; }
+        .cta-section h2 { color: #fff; font-size: 1.5em; }
+        .cta-section h2::after { margin: 10px auto 0; }
+        .cta-section p { color: #ccc; max-width: 500px; margin: 0 auto 25px; font-size: 0.95em; }
+        .footer { background: var(--primary); color: #888; padding: 30px 20px; text-align: center; font-size: 0.8em; }
+        .footer-brand { font-size: 1.2em; font-weight: 800; background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+
+        .highlight { color: var(--accent); font-weight: 700; }
+        .text-success { color: var(--success); font-weight: 700; }
+
+        /* === Desktop Overrides (> 768px) === */
+        @media (min-width: 769px) {
+            .hero { padding: 100px 20px 80px; }
+            .hero h1 { font-size: 3em; }
+            .hero-stats { grid-template-columns: repeat(4, 1fr); max-width: 700px; }
+            .hero-cta { flex-direction: row; justify-content: center; }
+            .btn { width: auto; }
+            .content { padding: 50px 40px; }
+            h2 { font-size: 2em; }
+            .toc-grid { grid-template-columns: repeat(3, 1fr); }
+            .grid-2 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .flow-split { flex-direction: row; justify-content: space-around; }
+            .desktop-rank { display: block; }
+            .mobile-rank { display: none; }
+            table { font-size: 0.9em; }
+            th, td { padding: 14px 15px; }
         }
 
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin: 25px 0;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--gradient-gold);
-        }
-        .timeline-item {
-            position: relative;
-            padding: 12px 0 20px 20px;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -25px;
-            top: 18px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--accent-color);
-            border: 3px solid #fff;
-            box-shadow: 0 0 0 2px var(--accent-color);
-        }
-        .timeline-freq {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--accent-color);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.75em;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        .timeline-title { font-weight: 700; color: var(--primary-color); font-size: 1em; margin-bottom: 4px; }
-        .timeline-desc { color: var(--text-light); font-size: 0.88em; }
-
-        /* Flow Chart */
-        .flow-chart {
-            background: #fafaf7;
-            padding: 25px 20px;
-            border-radius: 14px;
-            text-align: center;
-            margin: 20px 0;
-            border: 1px dashed var(--accent-light);
-        }
-        .flow-split { display: flex; justify-content: space-around; margin-top: 15px; gap: 10px; flex-wrap: wrap; }
-        .flow-branch { flex: 1; background: #fff; padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); min-width: 140px; }
-        .flow-branch strong { color: var(--accent-color); }
-
-        /* Big Number */
-        .big-number {
-            font-size: 2.5em;
-            font-weight: 800;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-            display: inline-block;
-        }
-        .big-number-label {
-            font-size: 0.85em;
-            color: var(--text-light);
-            margin-top: 5px;
-        }
-
-        /* Travel Section */
-        .travel-hero {
-            background: linear-gradient(135deg, #004d40 0%, #00796b 100%);
-            color: #fff;
-            padding: 35px 25px;
-            border-radius: 16px;
-            margin: 25px 0;
-            text-align: center;
-        }
-        .travel-hero h3 { color: #fff; margin: 0 0 10px; font-size: 1.4em; }
-        .travel-hero p { color: #b2dfdb; margin: 0; }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #fff;
-            padding: 50px 30px;
-            text-align: center;
-            border-radius: 16px;
-            margin: 40px 0;
-        }
-        .cta-section h2 { color: #fff; }
-        .cta-section h2::after { margin: 12px auto 0; }
-        .cta-section p { color: #ccc; max-width: 600px; margin: 0 auto 25px; }
-
-        /* Footer */
-        .footer {
-            background: var(--primary-color);
-            color: #aaa;
-            padding: 40px 30px;
-            text-align: center;
-            font-size: 0.85em;
-        }
-        .footer-brand {
-            font-size: 1.3em;
-            font-weight: 800;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 15px;
-        }
-        .footer-links { margin: 20px 0; }
-        .footer-links a { color: var(--accent-color); text-decoration: none; margin: 0 10px; }
-
-        .highlight { color: var(--accent-color); font-weight: 700; }
-        .text-success { color: var(--success-color); font-weight: 700; }
-
-        /* Mobile */
+        /* === Mobile Specific (< 768px) === */
         @media (max-width: 768px) {
-            .hero { padding: 60px 20px 50px; }
-            .hero h1 { font-size: 1.9em; }
-            .hero .tagline { font-size: 1em; }
-            .hero-stat-value { font-size: 1.4em; }
-            .content-wrap { padding: 30px 18px; }
-            h2 { font-size: 1.5em; }
-            h3 { font-size: 1.1em; }
-            .toc { padding: 18px 15px; }
-            .toc-grid { grid-template-columns: 1fr; }
-            .toc a { padding: 12px 15px; font-size: 0.95em; }
-            .card-grid { grid-template-columns: 1fr; }
-            table { font-size: 0.82em; }
-            th, td { padding: 10px 12px; }
-            .big-number { font-size: 2em; }
-            .btn-secondary { margin-left: 0; margin-top: 10px; display: block; }
-            .cta-section { padding: 40px 20px; }
+            .desktop-rank { display: none; }
+            .mobile-rank { display: block; }
+            .toc-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .toc a { padding: 8px; font-size: 0.8em; text-align: center; }
         }
     </style>
 </head>
@@ -440,41 +175,29 @@
     <p class="tagline">卖轻奢珠宝 · 建商业网络 · 做传世资产<br>——在印尼及东南亚蓝海市场，开启您的财富传承之旅</p>
     
     <div class="hero-stats">
-        <div class="hero-stat">
-            <span class="hero-stat-value">$250</span>
-            <div class="hero-stat-label">统一零售价</div>
-        </div>
-        <div class="hero-stat">
-            <span class="hero-stat-value">35%</span>
-            <div class="hero-stat-label">最高佣金率</div>
-        </div>
-        <div class="hero-stat">
-            <span class="hero-stat-value">9大</span>
-            <div class="hero-stat-label">收入来源</div>
-        </div>
-        <div class="hero-stat">
-            <span class="hero-stat-value">可传承</span>
-            <div class="hero-stat-label">留给后代</div>
-        </div>
+        <div class="hero-stat"><span class="hero-stat-val">$250</span><div class="hero-stat-lbl">统一零售价</div></div>
+        <div class="hero-stat"><span class="hero-stat-val">35%</span><div class="hero-stat-lbl">最高佣金率</div></div>
+        <div class="hero-stat"><span class="hero-stat-val">9大</span><div class="hero-stat-lbl">收入引擎</div></div>
+        <div class="hero-stat"><span class="hero-stat-val">可传承</span><div class="hero-stat-lbl">留给后代</div></div>
     </div>
 
     <div class="hero-cta">
-        <a href="#start" class="btn-primary">立即加入事业 →</a>
-        <a href="#overview" class="btn-secondary">了解制度详情</a>
+        <a href="#start" class="btn btn-primary">立即加入事业 →</a>
+        <a href="#overview" class="btn btn-outline">了解制度详情</a>
     </div>
 </header>
 
 <div class="container">
-<div class="content-wrap">
+<div class="content">
 
     <!-- ===================== TOC ===================== -->
     <nav class="toc" id="overview">
-        <h3>📖 本手册包含</h3>
+        <h3>📖 制度全景目录</h3>
         <div class="toc-grid">
-            <a href="#s1">01 这是什么事业？</a>
-            <a href="#s2">02 产品与利润空间</a>
-            <a href="#s3">03 10级晋升路径</a>
-            <a href="#s4">04 九大收入来源</a>
+            <a href="#s1">01 事业概述</a>
+            <a href="#s2">02 产品与利润</a>
+            <a href="#s3">03 10级成长阶梯</a>
+            <a href="#s4">04 九大收入引擎</a>
             <a href="#s5">05 个人销售佣金</a>
             <a href="#s6">06 团队管理奖金</a>
             <a href="#s7">07 VIP订阅被动收入</a>
@@ -482,224 +205,109 @@
             <a href="#s9">09 CARAT代币系统</a>
             <a href="#s10">10 PSU利润分享</a>
             <a href="#s11">11 养老金与传承权</a>
-            <a href="#s12" class="highlight-link">12 🏆 年度荣耀之旅</a>
+            <a href="#s12">12 🏆 年度荣耀之旅</a>
             <a href="#s13">13 各级别收入潜力</a>
-            <a href="#faq">14 常见问题 FAQ</a>
-            <a href="#start">15 如何开始？</a>
+            <a href="#s14">14 🛡️ 公平保障与合规</a>
+            <a href="#faq">15 常见问题 FAQ</a>
+            <a href="#start">16 如何开始？</a>
         </div>
     </nav>
 
-    <!-- ===================== SECTION 1 ===================== -->
+    <!-- ===================== PART 1 ===================== -->
     <section id="s1">
-        <span class="section-label">Part 01</span>
+        <span class="sec-label">Part 01</span>
         <h2>这是什么事业？</h2>
         <p class="lead">一句话说明白：<strong>卖轻奢珠宝，建商业网络，做传世资产。</strong></p>
-        
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-icon">💎</div>
-                <h4>卖产品（不是拉人头）</h4>
-                <p>我们卖的是零售价 $250 的轻奢珠宝与配饰包袋。每一件产品都有真实客户购买，不是靠"拉人头"赚钱。</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">👥</div>
-                <h4>建团队（不是单打独斗）</h4>
-                <p>您带领团队一起卖货，团队越大，您的被动收入越高。就像开连锁店，店越多，分红越多。</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🏛️</div>
-                <h4>做资产（不是一次性生意）</h4>
-                <p>您建立的客户网络、团队体系，可以传给配偶、子女。这是一份可以留给后代的"商业资产"。</p>
-            </div>
+        <div class="grid-3">
+            <div class="card"><div class="card-icon">💎</div><h4>卖产品</h4><p>我们卖的是零售价 $250 的轻奢珠宝与配饰包袋。每一件产品都有真实客户购买，不是靠"拉人头"赚钱。</p></div>
+            <div class="card"><div class="card-icon">👥</div><h4>建团队</h4><p>您带领团队一起卖货，团队越大，您的被动收入越高。就像开连锁店，店越多，分红越多。</p></div>
+            <div class="card"><div class="card-icon">🏛️</div><h4>做资产</h4><p>您建立的客户网络、团队体系，可以传给配偶、子女。这是一份可以留给后代的"商业资产"。</p></div>
         </div>
-
-        <div class="highlight-box">
-            <strong>💡 我们的承诺：</strong>让新人 <strong>进得来</strong>（低门槛）、让中层 <strong>爬得动</strong>（平滑晋升）、让顶层 <strong>留得住</strong>（长期资产）、让事业 <strong>可传承</strong>（家族财富）。
-        </div>
+        <div class="box-gold"><strong>💡 我们的承诺：</strong>让新人 <strong>进得来</strong>（低门槛）、让中层 <strong>爬得动</strong>（平滑晋升）、让顶层 <strong>留得住</strong>（长期资产）、让事业 <strong>可传承</strong>（家族财富）。</div>
     </section>
 
-    <!-- ===================== SECTION 2 ===================== -->
+    <!-- ===================== PART 2 ===================== -->
     <section id="s2">
-        <span class="section-label">Part 02</span>
+        <span class="sec-label">Part 02</span>
         <h2>产品与利润空间</h2>
         <p class="lead">单件 $250 零售价，高达 86% 毛利空间，让您赚到应得的回报。</p>
-
-        <div class="card-grid">
-            <div class="card" style="text-align:center;">
-                <div class="big-number">$250</div>
-                <div class="big-number-label">统一零售价</div>
-            </div>
-            <div class="card" style="text-align:center;">
-                <div class="big-number">$35</div>
-                <div class="big-number-label">单件生产成本</div>
-            </div>
-            <div class="card" style="text-align:center;">
-                <div class="big-number">$215</div>
-                <div class="big-number-label">毛利空间</div>
-            </div>
+        <div class="grid-3">
+            <div class="card" style="text-align:center;"><div style="font-size:2.2em; font-weight:800; color:var(--accent);">$250</div><div style="font-size:0.85em; color:var(--text-light);">统一零售价</div></div>
+            <div class="card" style="text-align:center;"><div style="font-size:2.2em; font-weight:800; color:var(--accent);">$35</div><div style="font-size:0.85em; color:var(--text-light);">单件生产成本</div></div>
+            <div class="card" style="text-align:center;"><div style="font-size:2.2em; font-weight:800; color:var(--accent);">$215</div><div style="font-size:0.85em; color:var(--text-light);">毛利空间</div></div>
         </div>
-
         <h3>利润如何分配？</h3>
-        <div class="flow-chart">
+        <div class="flow">
             <strong>客户支付 $250</strong>
             <div class="flow-split">
-                <div class="flow-branch">
-                    <strong>🤝 您拿 40%</strong><br>
-                    所有合伙人奖金总和<br>
-                    <small style="color:#999;">佣金+级差+卓越分红+分红池</small>
-                </div>
-                <div class="flow-branch">
-                    <strong>🏢 公司留 60%</strong><br>
-                    产品研发 · 品牌运营<br>
-                    <small style="color:#999;">确保基业长青</small>
-                </div>
+                <div class="flow-branch"><strong>🤝 您拿 40%</strong><br>所有合伙人奖金总和<br><small style="color:#999;">佣金+级差+卓越分红+分红池</small></div>
+                <div class="flow-branch"><strong>🏢 公司留 60%</strong><br>产品研发 · 品牌运营<br><small style="color:#999;">确保基业长青</small></div>
             </div>
-        </div>
-
-        <div class="info-banner">
-            ✅ <strong>公平透明：</strong>每卖一件产品，您立刻知道能赚多少。公司留有充足利润用于研发与品牌建设，绝非"资金盘"。
         </div>
     </section>
 
-    <!-- ===================== SECTION 3 - TABLE FORMAT ===================== -->
+    <!-- ===================== PART 3 (Dual Format) ===================== -->
     <section id="s3">
-        <span class="section-label">Part 03</span>
-        <h2>10级晋升路径 · 成长阶梯</h2>
+        <span class="sec-label">Part 03</span>
+        <h2>10级成长阶梯 · 平滑晋升</h2>
         <p class="lead">五级三阶 = 5 个大级别 × 2 个小台阶 = 10 级完整阶梯。每一步都"跳起来够得着"。</p>
 
-        <div class="table-responsive"><div class="table-scroll">
+        <!-- Desktop Table -->
+        <div class="desktop-rank table-wrap"><div class="table-scroll">
             <table>
-                <thead>
-                    <tr>
-                        <th>级别</th>
-                        <th>头衔</th>
-                        <th>佣金率</th>
-                        <th>团队月销要求</th>
-                        <th>核心权益</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>级别</th><th>头衔</th><th>佣金率</th><th>团队月销要求</th><th>核心权益</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td><strong>1</strong></td>
-                        <td>银级</td>
-                        <td>20%</td>
-                        <td>$2,500+</td>
-                        <td>个人销售佣金</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2</strong></td>
-                        <td>高级银级</td>
-                        <td>22%</td>
-                        <td>$5,000+</td>
-                        <td>+初级级差</td>
-                    </tr>
-                    <tr>
-                        <td><strong>3</strong></td>
-                        <td>金级</td>
-                        <td>25%</td>
-                        <td>$12,500+</td>
-                        <td>+团队积分</td>
-                    </tr>
-                    <tr>
-                        <td><strong>4</strong></td>
-                        <td>高级金级</td>
-                        <td>27%</td>
-                        <td>$25,000+</td>
-                        <td>+初级匹配</td>
-                    </tr>
-                    <tr>
-                        <td><strong>5</strong></td>
-                        <td>铂金</td>
-                        <td>30%</td>
-                        <td>$50,000+</td>
-                        <td>+分红池+养老金</td>
-                    </tr>
-                    <tr>
-                        <td><strong>6</strong></td>
-                        <td>高级铂金</td>
-                        <td>32%</td>
-                        <td>$100,000+</td>
-                        <td>+更高匹配比例</td>
-                    </tr>
-                    <tr>
-                        <td><strong>7</strong></td>
-                        <td>钻石</td>
-                        <td>33%</td>
-                        <td>$200,000+</td>
-                        <td>+PSU利润分享</td>
-                    </tr>
-                    <tr>
-                        <td><strong>8</strong></td>
-                        <td>高级钻石</td>
-                        <td>34%</td>
-                        <td>$350,000+</td>
-                        <td>+更高PSU额度</td>
-                    </tr>
-                    <tr>
-                        <td><strong>9</strong></td>
-                        <td>双钻石</td>
-                        <td>35%</td>
-                        <td>$500,000+</td>
-                        <td>+传承权（2人）</td>
-                    </tr>
-                    <tr style="background:#fdf8ec;">
-                        <td><strong>10</strong></td>
-                        <td style="color:var(--accent-color); font-weight:700;">👑 皇冠</td>
-                        <td class="highlight">35%</td>
-                        <td>$1,000,000+</td>
-                        <td class="highlight">+传承权（3人）+最高匹配</td>
-                    </tr>
+                    <tr><td>1</td><td>银级</td><td>20%</td><td>$2,500+</td><td>个人销售佣金</td></tr>
+                    <tr><td>2</td><td>高级银级</td><td>22%</td><td>$5,000+</td><td>+初级级差</td></tr>
+                    <tr><td>3</td><td>金级</td><td>25%</td><td>$12,500+</td><td>+团队积分</td></tr>
+                    <tr><td>4</td><td>高级金级</td><td>27%</td><td>$25,000+</td><td>+初级匹配</td></tr>
+                    <tr><td>5</td><td>铂金</td><td>30%</td><td>$50,000+</td><td>+分红池+养老金</td></tr>
+                    <tr><td>6</td><td>高级铂金</td><td>32%</td><td>$100,000+</td><td>+更高匹配比例</td></tr>
+                    <tr><td>7</td><td>钻石</td><td>33%</td><td>$200,000+</td><td>+PSU利润分享</td></tr>
+                    <tr><td>8</td><td>高级钻石</td><td>34%</td><td>$350,000+</td><td>+更高PSU额度</td></tr>
+                    <tr><td>9</td><td>双钻石</td><td>35%</td><td>$500,000+</td><td>+传承权（2人）</td></tr>
+                    <tr style="background:#fdf8ec;"><td>10</td><td style="color:var(--accent); font-weight:700;">👑 皇冠</td><td class="highlight">35%</td><td>$1,000,000+</td><td class="highlight">+传承权（3人）+最高匹配</td></tr>
                 </tbody>
             </table>
         </div></div>
 
-        <div class="highlight-box">
-            <strong>🚀 新手起步超简单：</strong>银级仅需团队月销 $2,500（约 10 件产品），<strong>不需要建团队</strong>，自己卖货就能赚 20% 佣金！
+        <!-- Mobile Cards -->
+        <div class="mobile-rank">
+            <div class="rank-card"><div class="rank-num">1</div><div class="rank-info"><div class="rank-title">银级</div><div class="rank-meta">团队 $2,500+ · 个人佣金</div></div><div class="rank-rate">20%</div></div>
+            <div class="rank-card"><div class="rank-num">2</div><div class="rank-info"><div class="rank-title">高级银级</div><div class="rank-meta">团队 $5,000+ · +初级级差</div></div><div class="rank-rate">22%</div></div>
+            <div class="rank-card"><div class="rank-num">3</div><div class="rank-info"><div class="rank-title">金级</div><div class="rank-meta">团队 $12,500+ · +团队积分</div></div><div class="rank-rate">25%</div></div>
+            <div class="rank-card"><div class="rank-num">4</div><div class="rank-info"><div class="rank-title">高级金级</div><div class="rank-meta">团队 $25,000+ · +初级匹配</div></div><div class="rank-rate">27%</div></div>
+            <div class="rank-card"><div class="rank-num">5</div><div class="rank-info"><div class="rank-title">铂金</div><div class="rank-meta">团队 $50,000+ · +分红池+养老金</div></div><div class="rank-rate">30%</div></div>
+            <div class="rank-card"><div class="rank-num">6</div><div class="rank-info"><div class="rank-title">高级铂金</div><div class="rank-meta">团队 $100,000+ · +更高匹配</div></div><div class="rank-rate">32%</div></div>
+            <div class="rank-card"><div class="rank-num">7</div><div class="rank-info"><div class="rank-title">钻石</div><div class="rank-meta">团队 $200,000+ · +PSU利润分享</div></div><div class="rank-rate">33%</div></div>
+            <div class="rank-card"><div class="rank-num">8</div><div class="rank-info"><div class="rank-title">高级钻石</div><div class="rank-meta">团队 $350,000+ · +更高PSU</div></div><div class="rank-rate">34%</div></div>
+            <div class="rank-card"><div class="rank-num">9</div><div class="rank-info"><div class="rank-title">双钻石</div><div class="rank-meta">团队 $500,000+ · +传承权(2人)</div></div><div class="rank-rate">35%</div></div>
+            <div class="rank-card crown"><div class="rank-num">👑</div><div class="rank-info"><div class="rank-title" style="color:var(--accent);">皇冠</div><div class="rank-meta">团队 $1,000,000+ · 传承(3人)+最高匹配</div></div><div class="rank-rate">35%</div></div>
         </div>
+
+        <div class="box-gold"><strong>🚀 新手起步超简单：</strong>银级仅需团队月销 $2,500（约 10 件产品），<strong>不需要建团队</strong>，自己卖货就能赚 20% 佣金！</div>
     </section>
 
-    <!-- ===================== SECTION 4 ===================== -->
+    <!-- ===================== PART 4 ===================== -->
     <section id="s4">
-        <span class="section-label">Part 04</span>
-        <h2>九大收入来源 · 覆盖全生命周期</h2>
+        <span class="sec-label">Part 04</span>
+        <h2>九大收入引擎 · 覆盖全生命周期</h2>
         <p class="lead">从"今天卖货今天拿钱"到"退休后仍有收入"，每一阶段都有对应的现金节奏。</p>
-
         <div class="timeline">
-            <div class="timeline-item">
-                <span class="timeline-freq">⚡ 实时到账</span>
-                <div class="timeline-title">① 个人销售佣金 · 20%-35%</div>
-                <div class="timeline-desc">卖一件赚一件，1 分钟内到账，新人也能立刻看到回报</div>
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-freq">📅 每周到账</span>
-                <div class="timeline-title">② VIP 订阅佣金 · 15%-28%</div>
-                <div class="timeline-desc">客户每月续费 $39，您每周拿佣金，越久越赚</div>
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-freq">📆 每月到账</span>
-                <div class="timeline-title">③ 管道差价 · ④ 卓越分红 · ⑤ 全球分红池</div>
-                <div class="timeline-desc">团队越大，被动收入越高。钻石级别月入 $12,000+ 很常见</div>
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-freq">📊 季度 / 年度</span>
-                <div class="timeline-title">⑥ CARAT 代币回购 · ⑦ PSU 利润分红</div>
-                <div class="timeline-desc">公司用净利润回购代币、分红利润，让您的努力变成可积累资产</div>
-            </div>
-            <div class="timeline-item">
-                <span class="timeline-freq">🏖️ 退休后</span>
-                <div class="timeline-title">⑧ 养老金账户 · ⑨ 传承权</div>
-                <div class="timeline-desc">退休一次性领取近 $10 万养老金，团队网络可传给后代</div>
-            </div>
+            <div class="tl-item"><span class="tl-freq">⚡ 实时到账</span><div class="tl-title">① 个人销售佣金 · 20%-35%</div><div class="tl-desc">卖一件赚一件，1 分钟内到账，新人也能立刻看到回报</div></div>
+            <div class="tl-item"><span class="tl-freq">📅 每周到账</span><div class="tl-title">② VIP 订阅佣金 · 15%-28%</div><div class="tl-desc">客户每月续费 $39，您每周拿佣金，越久越赚</div></div>
+            <div class="tl-item"><span class="tl-freq">📆 每月到账</span><div class="tl-title">③ 管道差价 · ④ 卓越分红 · ⑤ 全球分红池</div><div class="tl-desc">团队越大，被动收入越高。钻石级别月入 $12,000+ 很常见</div></div>
+            <div class="tl-item"><span class="tl-freq">📊 季度 / 年度</span><div class="tl-title">⑥ CARAT 代币回购 · ⑦ PSU 利润分红</div><div class="tl-desc">公司用净利润回购代币、分红利润，让您的努力变成可积累资产</div></div>
+            <div class="tl-item"><span class="tl-freq">🏖️ 退休后</span><div class="tl-title">⑧ 养老金账户 · ⑨ 传承权</div><div class="tl-desc">退休一次性领取近 $10 万养老金，团队网络可传给后代</div></div>
         </div>
     </section>
 
-    <!-- ===================== SECTION 5 ===================== -->
+    <!-- ===================== PART 5 ===================== -->
     <section id="s5">
-        <span class="section-label">Part 05</span>
+        <span class="sec-label">Part 05</span>
         <h2>收入来源 ①：个人销售佣金</h2>
         <p class="lead">卖一件，赚一件，1 分钟提现。新人第一天就能见到钱。</p>
-
-        <div class="table-responsive"><div class="table-scroll">
+        <div class="table-wrap"><div class="table-scroll">
             <table>
                 <thead><tr><th>您的级别</th><th>佣金率</th><th>卖 1 件赚</th><th>卖 10 件赚</th></tr></thead>
                 <tbody>
@@ -707,129 +315,65 @@
                     <tr><td>金级</td><td>25%</td><td><strong>$62.50</strong></td><td>$625</td></tr>
                     <tr><td>铂金</td><td>30%</td><td><strong>$75</strong></td><td>$750</td></tr>
                     <tr><td>钻石</td><td>33%</td><td><strong>$82.50</strong></td><td>$825</td></tr>
-                    <tr><td style="color:var(--accent-color); font-weight:700;">皇冠（巅峰）</td><td>35%</td><td><strong class="highlight">$87.50</strong></td><td>$875</td></tr>
+                    <tr><td style="color:var(--accent); font-weight:700;">皇冠（巅峰）</td><td>35%</td><td><strong class="highlight">$87.50</strong></td><td>$875</td></tr>
                 </tbody>
             </table>
         </div></div>
-
-        <div class="story-box">
+        <div class="box-story">
             <p><strong>假设您是刚加入的新人（银级）：</strong></p>
             <p>今天您卖出了 3 件产品给 3 位朋友，每件 $250。</p>
-            <p style="text-align:center; font-size:1.2em; margin:15px 0;">
-                您的佣金 = 3 × $50 = <strong class="highlight">$150</strong>
-            </p>
+            <p style="text-align:center; font-size:1.2em; margin:15px 0;">您的佣金 = 3 × $50 = <strong class="highlight">$150</strong></p>
             <p>这笔钱 1 分钟内到账您的电子钱包，随时可以提现到银行卡。</p>
-            <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>关键点：</strong>不需要等月底，不需要建团队，卖货就赚钱。</p>
-        </div>
-
-        <div class="card-grid">
-            <div class="card">
-                <h4>⚡ 实时到账</h4>
-                <p>客户付款完成 → 系统秒算 → 佣金直达您的电子钱包（支持 GoPay、OVO、DANA）</p>
-            </div>
-            <div class="card">
-                <h4>💸 随时提现</h4>
-                <p>没有门槛、没有等待，赚到的钱立刻可以提到银行卡</p>
-            </div>
         </div>
     </section>
 
-    <!-- ===================== SECTION 6 ===================== -->
+    <!-- ===================== PART 6 ===================== -->
     <section id="s6">
-        <span class="section-label">Part 06</span>
+        <span class="sec-label">Part 06</span>
         <h2>收入来源 ②③：团队管理奖金</h2>
         <p class="lead">您的下级卖货，您拿差价；您的下级赚钱，公司额外奖您。团队越大，被动收入越高。</p>
-
+        
         <h3>🔗 管道差价（压缩级差）· 月结</h3>
         <p><strong>通俗理解：</strong>您培养的下级卖货，您也能拿"管道差价"。</p>
-        
-        <div class="flow-chart">
-            <strong>资金流向示意</strong>
-            <div class="flow-split">
-                <div class="flow-branch">
-                    <strong>下级（银级 20%）</strong><br>
-                    卖 1 件赚 $50
-                </div>
-                <div class="flow-branch" style="background:#fdf8ec; border-color:var(--accent-color);">
-                    <strong>您（铂金 30%）</strong><br>
-                    拿差价 $25<br>
-                    <small style="color:#999;">$250 × (30%-20%)</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="story-box">
-            <p><strong>假设您是铂金级别：</strong></p>
-            <p>您培养了 1 个银级下级，这个月他卖了 400 件产品。</p>
-            <p style="text-align:center; font-size:1.2em; margin:15px 0;">
-                您的管道差价 = 400 × $25 = <strong class="highlight">$10,000 / 月</strong>
-            </p>
-            <p style="font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>系统会自动"穿透"平级，最多算 2 条最深线路，让您两条线同时赚钱。</p>
+        <div class="box-story">
+            <p><strong>假设您是铂金级别（30%）：</strong></p>
+            <p>您培养了 1 个银级下级（20%），这个月他卖了 400 件产品。</p>
+            <p style="text-align:center; font-size:1.2em; margin:15px 0;">您的管道差价 = 400 × $25 = <strong class="highlight">$10,000 / 月</strong></p>
+            <p style="font-size:0.9em; color:var(--text-light);">💡 系统会自动"穿透"平级，最多算 2 条最深线路，让您两条线同时赚钱。</p>
         </div>
 
         <h3>🎁 卓越分红（无限代匹配）· 月结</h3>
         <p><strong>通俗理解：</strong>公司额外拿出全球业绩的 <strong>5%</strong> 作为"卓越分红池"。您的下级赚多少，公司额外奖您一定比例，<strong>不扣下级一分钱！</strong></p>
-        
-        <div class="table-responsive"><div class="table-scroll">
+        <div class="table-wrap"><div class="table-scroll">
             <table>
                 <thead><tr><th>您的级别</th><th>穿透代数</th><th>第 1 代</th><th>第 2 代</th><th>第 3 代</th><th>第 4 代+</th></tr></thead>
                 <tbody>
                     <tr><td>铂金</td><td>3 代</td><td>4%</td><td>3%</td><td>2%</td><td>—</td></tr>
-                    <tr><td>高级铂金</td><td>5 代</td><td>5%</td><td>4%</td><td>3%</td><td>1%</td></tr>
                     <tr><td>钻石</td><td>7 代</td><td>6%</td><td>5%</td><td>4%</td><td>2%</td></tr>
-                    <tr><td>高级钻石</td><td>10 代</td><td>7%</td><td>6%</td><td>4%</td><td>2%</td></tr>
-                    <tr><td>双钻石</td><td>无限代</td><td>8%</td><td>6%</td><td>5%</td><td>3%</td></tr>
-                    <tr><td style="color:var(--accent-color); font-weight:700;">皇冠</td><td>无限代</td><td class="highlight">10%</td><td class="highlight">8%</td><td class="highlight">6%</td><td class="highlight">4%</td></tr>
+                    <tr><td style="color:var(--accent); font-weight:700;">皇冠</td><td>无限代</td><td class="highlight">10%</td><td class="highlight">8%</td><td class="highlight">6%</td><td class="highlight">4%</td></tr>
                 </tbody>
             </table>
         </div></div>
-
-        <div class="story-box">
+        <div class="box-story">
             <p><strong>假设您是钻石级别：</strong></p>
-            <p>• 第 1 代下级（您直推的）这个月赚了 $60,000 → 公司额外奖您 6% = <strong>$3,600</strong><br>
-            • 第 2 代下级（下级的下级）赚了 $72,000 → 公司额外奖您 5% = <strong>$3,600</strong><br>
+            <p>• 第 1 代下级赚了 $60,000 → 公司额外奖您 6% = <strong>$3,600</strong><br>
+            • 第 2 代下级赚了 $72,000 → 公司额外奖您 5% = <strong>$3,600</strong><br>
             • 第 3 代下级赚了 $81,000 → 公司额外奖您 4% = <strong>$3,240</strong><br>
             • 第 4 代+下级赚了 $80,000 → 公司额外奖您 2% = <strong>$1,600</strong></p>
             <p style="text-align:center; font-size:1.2em; margin-top:15px;">合计月收入：<strong class="highlight">$12,040</strong></p>
-            <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>关键点：</strong>这笔钱是公司额外出的，下级拿到的佣金一分不少。</p>
-        </div>
-
-        <div class="info-banner">
-            ✅ <strong>设计目的：</strong>卓越分红由公司额外支付，不扣下级收入。级别越高，穿透代数越深，被动收入呈指数级增长。
         </div>
     </section>
 
-    <!-- ===================== SECTION 7 - VIP DETAILED ===================== -->
+    <!-- ===================== PART 7 ===================== -->
     <section id="s7">
-        <span class="section-label">Part 07</span>
+        <span class="sec-label">Part 07</span>
         <h2>收入来源 ④：VIP 订阅被动收入</h2>
         <p class="lead">客户续费您拿钱，真正做到"睡后收入"。客户续费越久，您赚得越多。</p>
-
         <h3>💎 "焕新俱乐部" · 每月 $39</h3>
-        <p>客户加入 VIP 订阅，每月自动扣款 <strong>$39</strong>，享受以下专属权益：</p>
-
-        <div class="table-responsive"><div class="table-scroll">
-            <table>
-                <thead><tr><th>权益</th><th>内容</th><th>客户感知价值</th></tr></thead>
-                <tbody>
-                    <tr><td>月度积分</td><td>每月自动到账 100 LUSTER 积分</td><td>~$20（可兑换配件/消耗品）</td></tr>
-                    <tr><td>以旧换新</td><td>连续订阅满 4 个月，凭旧包 +$50 换新款</td><td>立省 $200</td></tr>
-                    <tr><td>生日双倍</td><td>生日当月获赠 200 LUSTER 积分</td><td>$40</td></tr>
-                    <tr><td>优先购买</td><td>新品发售前 3 天优先下单</td><td>稀缺性</td></tr>
-                    <tr><td>免费养护</td><td>每年 1 次免费专业清洁养护</td><td>~$30</td></tr>
-                </tbody>
-            </table>
-        </div></div>
-
-        <div class="highlight-box">
-            <strong>💡 客户算账：</strong>年支出 $39 × 12 = $468。获得积分兑换约 $240 + 换新立省 $200 + 养护 $30 = $470+。<br>
-            <strong>等于白嫖了一个包包的永久换新权。</strong>
-        </div>
-
+        <p>客户加入 VIP 订阅，每月自动扣款 <strong>$39</strong>，享受以旧换新、积分、生日礼遇等。年支出 $468，获得价值 $470+ 的权益，<strong>等于白嫖了一个包包的永久换新权。</strong></p>
+        
         <h3>📈 LTV 阶梯佣金 · 越久越赚</h3>
-        <p>客户续费时间越长，您的佣金比例<strong>阶梯上涨</strong>：</p>
-
-        <div class="table-responsive"><div class="table-scroll">
+        <div class="table-wrap"><div class="table-scroll">
             <table>
                 <thead><tr><th>客户连续订阅时长</th><th>您的佣金比例</th><th>月收入（$39 × 比例）</th></tr></thead>
                 <tbody>
@@ -840,484 +384,169 @@
                 </tbody>
             </table>
         </div></div>
-
-        <div class="info-banner">
-            ✅ <strong>设计逻辑：</strong>如果只做"一次性转化"，佣金只有 15%；把客户维护好了，佣金可以涨到 28%——<strong>把您的注意力从"不断拉新"转向"维护老客户"</strong>。
-        </div>
-
-        <h3>💰 您的三层收益结构</h3>
-        <div class="card-grid">
-            <div class="card">
-                <h4>第一层：开户奖</h4>
-                <p>每转化 1 个 VIP，一次性奖励 <strong>$10</strong><br>
-                <small style="color:var(--text-light);">触发条件：客户完成首月扣款（实时结算）</small></p>
-            </div>
-            <div class="card">
-                <h4>第二层：LTV 佣金</h4>
-                <p>每月 $39 中抽取 <strong>15%-28%</strong><br>
-                <small style="color:var(--text-light);">触发条件：客户持续续费（周结）</small></p>
-            </div>
-            <div class="card">
-                <h4>第三层：团队级差</h4>
-                <p>下级经销商 VIP 续费，抽取 $39 的 <strong>5%（=$1.95）</strong><br>
-                <small style="color:var(--text-light);">触发条件：至少 3 个直推经销商活跃（月结）</small></p>
-            </div>
-        </div>
-
-        <div class="story-box">
+        <div class="box-story">
             <p><strong>实战案例：3 年内积累 200 名 VIP 客户</strong></p>
-            <table style="box-shadow:none; margin:10px 0; min-width:auto;">
-                <tr><th>客户分层</th><th>人数</th><th>佣金比例</th><th>月收入</th></tr>
-                <tr><td>0-6 个月</td><td>50 人</td><td>15%</td><td>$292.5</td></tr>
-                <tr><td>7-12 个月</td><td>60 人</td><td>18%</td><td>$421.2</td></tr>
-                <tr><td>13-24 个月</td><td>60 人</td><td>22%</td><td>$514.8</td></tr>
-                <tr><td>25 个月+</td><td>30 人</td><td>28%</td><td>$327.6</td></tr>
-                <tr style="background:#fdf8ec;"><td><strong>合计月收入</strong></td><td><strong>200 人</strong></td><td>—</td><td class="highlight"><strong>$1,556.1</strong></td></tr>
-                <tr style="background:#fdf8ec;"><td><strong>年化收入</strong></td><td>—</td><td>—</td><td class="highlight"><strong>$18,673</strong></td></tr>
-            </table>
-            <p style="margin-top:12px; font-size:0.9em; color:var(--text-light);">✨ <strong>关键点：</strong>这笔钱不需要再卖一个包，只要客户持续续费，月月到账。</p>
-        </div>
-
-        <div class="info-banner">
-            ✅ <strong>拨出预算：</strong>VIP 订阅佣金<strong>不占用 40% 产品拨出额度</strong>，从订阅收入中支出，确保合规。
+            <p style="text-align:center; font-size:1.2em; margin:15px 0;">月收入：<strong class="highlight">$1,556</strong> · 年化：<strong class="highlight">$18,673</strong></p>
+            <p style="font-size:0.9em; color:var(--text-light); text-align:center;">✨ 这笔钱不需要再卖一个包，只要客户持续续费，月月到账。</p>
         </div>
     </section>
 
-    <!-- ===================== SECTION 8 - GLOBAL POOL DETAILED ===================== -->
+    <!-- ===================== PART 8 ===================== -->
     <section id="s8">
-        <span class="section-label">Part 08</span>
+        <span class="sec-label">Part 08</span>
         <h2>收入来源 ⑤：全球领袖分红池</h2>
         <p class="lead">公司每月拿出总业绩的 <strong>3%</strong>，分给铂金、钻石、双钻石三个独立池。各池独立、互不稀释，每个级别都有自己的机会。</p>
-
-        <h3>🏆 三层级联池 · 互不稀释</h3>
-        <div class="table-responsive"><div class="table-scroll">
-            <table>
-                <thead><tr><th>池子</th><th>提取比例</th><th>参与者</th><th>分配方式</th></tr></thead>
-                <tbody>
-                    <tr><td>🥉 <strong>铂金池</strong></td><td>月 TSO 的 <strong>0.5%</strong></td><td>达标铂金 / 高级铂金</td><td>按积分加权</td></tr>
-                    <tr><td>🥈 <strong>钻石池</strong></td><td>月 TSO 的 <strong>1.0%</strong></td><td>达标钻石 / 高级钻石</td><td>按积分加权</td></tr>
-                    <tr><td>🥇 <strong>双钻石池</strong></td><td>月 TSO 的 <strong>1.5%</strong></td><td>达标双钻石 / 皇冠</td><td>按积分加权</td></tr>
-                    <tr style="background:#fdf8ec;"><td colspan="2"><strong>合计</strong></td><td colspan="2"><strong>3.0%（按积分加权分配）</strong></td></tr>
-                </tbody>
-            </table>
-        </div></div>
-
-        <div class="highlight-box">
-            <strong>💡 为什么分三个池？</strong><br>
-            • <strong>单池模式：</strong>钻石和双钻石同池竞争，双钻石积分高，拿走大部分，钻石觉得"永远比不过"<br>
-            • <strong>三层级联池模式：</strong>各池独立，互不稀释。钻石在钻石池内公平分配，人人有盼头
+        <div class="grid-3">
+            <div class="card"><h4>🥉 铂金池</h4><p>月销售额的 <strong>0.5%</strong><br>达标铂金即可参与</p></div>
+            <div class="card"><h4>🥈 钻石池</h4><p>月销售额的 <strong>1.0%</strong><br>达标钻石即可参与</p></div>
+            <div class="card"><h4>🥇 双钻石池</h4><p>月销售额的 <strong>1.5%</strong><br>顶级领袖专属</p></div>
         </div>
-
-        <h3>📊 积分规则 · 培养高级别下级得分更高</h3>
-        <div class="table-responsive"><div class="table-scroll">
-            <table>
-                <thead><tr><th>培养成果</th><th>积分</th></tr></thead>
-                <tbody>
-                    <tr><td>培养 1 个金级部门</td><td>3 分</td></tr>
-                    <tr><td>培养 1 个铂金部门</td><td>10 分</td></tr>
-                    <tr><td>培养 1 个钻石部门</td><td>50 分</td></tr>
-                    <tr><td>培养 1 个双钻石部门</td><td>100 分</td></tr>
-                </tbody>
-            </table>
-        </div></div>
-
-        <h3>💰 分红公式</h3>
-        <div class="flow-chart">
-            <strong>您的分红 = （对应池金额 × 您的个人积分）÷ 该池所有达标者总积分</strong>
-        </div>
-
-        <div class="story-box">
+        <div class="box-story">
             <p><strong>实战演算：月 TSO = $800 万</strong></p>
-            <table style="box-shadow:none; margin:10px 0; min-width:auto;">
-                <tr><th>池子</th><th>池金额</th><th>您的积分占比</th><th>您的分红</th></tr>
-                <tr><td>铂金池</td><td>$800 万 × 0.5% = $40,000</td><td>20%</td><td>$8,000</td></tr>
-                <tr><td>钻石池</td><td>$800 万 × 1.0% = $80,000</td><td>15%</td><td>$12,000</td></tr>
-                <tr><td>双钻石池</td><td>$800 万 × 1.5% = $120,000</td><td>20%</td><td>$24,000</td></tr>
-                <tr style="background:#fdf8ec;"><td><strong>合计月分红</strong></td><td>—</td><td>—</td><td class="highlight"><strong>$44,000</strong></td></tr>
-            </table>
-            <p style="margin-top:12px; font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>您培养的下属级别越高，您的积分越多，分红越多。</p>
-        </div>
-
-        <div class="info-banner">
-            ✅ <strong>设计目的：</strong>全球领袖分红池鼓励您培养高级别下属，而不是只关注个人销售。团队越强，分红越多。
+            <p>• 铂金池（$4万）您占20% → <strong>$8,000</strong><br>
+            • 钻石池（$8万）您占15% → <strong>$12,000</strong><br>
+            • 双钻石池（$12万）您占20% → <strong>$24,000</strong></p>
+            <p style="text-align:center; font-size:1.2em; margin-top:15px;">合计月分红：<strong class="highlight">$44,000</strong></p>
         </div>
     </section>
 
-    <!-- ===================== SECTION 9 - CARAT ===================== -->
+    <!-- ===================== PART 9 ===================== -->
     <section id="s9">
-        <span class="section-label">Part 09</span>
+        <span class="sec-label">Part 09</span>
         <h2>收入来源 ⑥：CARAT 代币系统</h2>
         <p class="lead">让您的日常努力变成可积累的长期资产，而不是"花掉就没了"。</p>
-
-        <div class="warning-banner">
-            ⚠️ <strong>合规声明：</strong>CARAT 为公司内部忠诚度积分，非加密货币，不上链，不公开交易。仅用于激励合伙人行为与参与公司利润分配。
+        <div class="box-warn">⚠️ <strong>合规声明：</strong>CARAT 为公司内部忠诚度积分，非加密货币，不上链，不公开交易。仅用于激励合伙人行为与参与公司利润分配。</div>
+        <div class="grid-2">
+            <div class="card"><div class="card-icon">💎</div><h4>CARAT 克拉权益</h4><p><strong>获取：</strong>团队业绩、培养新人<br><strong>功能：</strong>参与分红池、解锁高级别<br><strong>变现：</strong>公司季度回购（可提现）</p></div>
+            <div class="card"><div class="card-icon">✨</div><h4>LUSTER 光泽积分</h4><p><strong>获取：</strong>购买产品、签到、推荐VIP<br><strong>功能：</strong>兑换产品/配件/消耗品<br><strong>变现：</strong>不可提现，仅用于消费</p></div>
         </div>
-
-        <h3>💠 什么是 CARAT？</h3>
-        <p><strong>CARAT（克拉权益）</strong>是公司发行的内部积分，代表您对公司成长的贡献。与普通的"积分兑换礼品"不同，CARAT 具有<strong>真实价值</strong>——公司每季度用净利润回购，让您实现变现。</p>
-
-        <div class="card-grid">
-            <div class="card" style="border-top: 4px solid #c5a059;">
-                <div class="card-icon">💎</div>
-                <h4>CARAT 克拉权益</h4>
-                <p><strong>获取方式：</strong>团队业绩、培养新人、月度活跃<br>
-                <strong>核心功能：</strong>参与全球分红池、解锁高级别、兑换限量款<br>
-                <strong>变现方式：</strong>公司季度回购（可提现）</p>
-            </div>
-            <div class="card" style="border-top: 4px solid #e8d5a0;">
-                <div class="card-icon">✨</div>
-                <h4>LUSTER 光泽积分</h4>
-                <p><strong>获取方式：</strong>购买产品、签到、推荐 VIP<br>
-                <strong>核心功能：</strong>兑换产品/配件/消耗品、抽稀有款<br>
-                <strong>变现方式：</strong>不可提现，仅用于消费</p>
-            </div>
-        </div>
-
-        <h3>🎯 如何获取 CARAT？（行为挖矿）</h3>
-        <p>每月从公司净利润中提取 <strong>3%-4%</strong> 注入矿池，根据您的日常行为发放 CARAT：</p>
-
-        <div class="table-responsive"><div class="table-scroll">
-            <table>
-                <thead><tr><th>行为</th><th>奖励</th><th>目的</th></tr></thead>
-                <tbody>
-                    <tr><td>每日签到 / 分享品牌海报</td><td>+0.5 CARAT</td><td>保持品牌热度</td></tr>
-                    <tr><td>发布优质买家秀（带图评价）</td><td>+5 CARAT</td><td>内容营销</td></tr>
-                    <tr><td>邀请新人进入品牌社群</td><td>+2 CARAT / 人</td><td>扩大流量池</td></tr>
-                    <tr><td>参加线上培训并完成考试</td><td>+10 CARAT</td><td>提升专业度</td></tr>
-                    <tr><td>新人完成首单（$250+）</td><td>+50 CARAT</td><td>鼓励带教</td></tr>
-                </tbody>
-            </table>
-        </div></div>
-
-        <h3>💰 如何变现？（回购机制）</h3>
-        <p><strong>通俗理解：</strong>就像"积分兑换现金"。公司每季度用净利润回购您的 CARAT，让您实现变现。</p>
-
-        <div class="highlight-box">
-            <strong>🔄 季度回购：</strong>每季度用公司净利润的 <strong>3%-4%</strong> 回购 CARAT<br>
-            <strong>📈 溢价回购：</strong>回购价 = 过去 90 天 CARAT 均价的 <strong>105%</strong>（制造涨价预期）<br>
-            <strong>🛡️ 保值承诺：</strong>持有满 12 个月后，若回购价低于成本，公司以 <strong>成本价+5%</strong> 保底回购<br>
-            <strong>🔥 燃烧加速：</strong>每季度限量款燃烧的 CARAT，公司额外追加 5% 同步销毁（加速通缩）
-        </div>
-
-        <div class="story-box">
-            <p><strong>假设您持有 1,000 CARAT：</strong></p>
-            <p>• 当前回购价：$2 / CARAT<br>
-            • 您的 CARAT 价值：1,000 × $2 = <strong>$2,000</strong><br>
-            • 公司溢价 5% 回购：$2,000 × 105% = <strong class="highlight">$2,100</strong></p>
-            <p style="margin-top:12px; font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>您不需要"卖"CARAT 给别人，公司直接回购，安全、透明、可预期。</p>
-        </div>
-
-        <h3>💎 质押节点分红（钻石及以上）</h3>
-        <p>钻石及以上领袖可质押 <strong>2,000 CARAT</strong>（锁定 6 个月），解锁以下权益：</p>
-
-        <div class="card-grid">
-            <div class="card">
-                <h4>🌍 全网分红权</h4>
-                <p>享受全网总流水 <strong>0.5%</strong> 的加权分红（仅质押者共享）</p>
-            </div>
-            <div class="card">
-                <h4>⚡ 优先兑现权</h4>
-                <p>CARAT 回购时，质押者享有<strong>优先兑现权</strong></p>
-            </div>
-        </div>
-
-        <h3>🏆 Boss Challenge · 季度任务</h3>
-        <p>每季度设定 Boss 级任务，完成者获 CARAT + 现金 + 实物奖励：</p>
-
-        <div class="table-responsive"><div class="table-scroll">
-            <table>
-                <thead><tr><th>示例任务</th><th>奖励</th></tr></thead>
-                <tbody>
-                    <tr><td>个人当月卖出 20 件新品</td><td>100 CARAT + $300 现金</td></tr>
-                    <tr><td>团队合计卖出 200 件新品</td><td>500 CARAT + 免费新品 1 件</td></tr>
-                    <tr><td>培养 2 名新金级经销商</td><td>300 CARAT + Boss 徽章</td></tr>
-                </tbody>
-            </table>
-        </div></div>
-
-        <div class="info-banner">
-            ✅ <strong>设计目的：</strong>让高阶领袖把 CARAT 当作可积累的长期资产，而非短期套利工具。通过行为挖矿、季度回购、质押分红，形成正向循环。
+        <div class="box-gold">
+            <strong>💰 回购增值机制：</strong><br>
+            • <strong>季度回购：</strong>每季度用净利润 3%-4% 回购<br>
+            • <strong>溢价回购：</strong>回购价 = 过去 90 天均价的 105%<br>
+            • <strong>保值承诺：</strong>持有满 12 个月，保底成本价+5%
         </div>
     </section>
 
-    <!-- ===================== SECTION 10 - PSU ===================== -->
+    <!-- ===================== PART 10 ===================== -->
     <section id="s10">
-        <span class="section-label">Part 10</span>
+        <span class="sec-label">Part 10</span>
         <h2>收入来源 ⑦：PSU 利润分享</h2>
         <p class="lead">不稀释公司股权，但让您享受公司成长的红利。达标免费获得，退出时公司高价回购。</p>
-
-        <h3>📊 什么是 PSU？</h3>
-        <p><strong>PSU（Profit Sharing Unit，利润分享单元）</strong>是公司发行的"利润分享凭证"——每一单元代表公司年度净利润的固定比例（0.001%）。</p>
-
-        <div class="highlight-box">
-            <strong>💡 与股权的区别：</strong><br>
-            • <strong>不是股权：</strong>您不拥有公司所有权，不参与公司决策<br>
-            • <strong>但是分红权：</strong>您享有公司年度净利润的分红权<br>
-            • <strong>免费获得：</strong>通过达成年度业绩目标免费获得，不需要购买<br>
-            • <strong>可退出变现：</strong>退出时公司按 20 倍 PE 回购
+        <div class="box-gold">
+            <strong>💡 什么是 PSU？</strong><br>
+            PSU（利润分享单元）代表公司年度净利润的 0.001%。您不拥有股权，但享有分红权。退出时公司按 <strong>20 倍 PE</strong> 回购。
         </div>
-
-        <h3>🎯 如何获得 PSU？</h3>
-        <p>根据您的年度业绩（年 GV），免费获得对应数量的 PSU：</p>
-
-        <div class="table-responsive"><div class="table-scroll">
-            <table>
-                <thead><tr><th>年度业绩（年 GV）</th><th>PSU 奖励</th><th>累计上限</th></tr></thead>
-                <tbody>
-                    <tr><td>≥ $100,000</td><td>10 PSU</td><td>—</td></tr>
-                    <tr><td>≥ $250,000</td><td>30 PSU</td><td>—</td></tr>
-                    <tr><td>≥ $500,000</td><td>80 PSU</td><td>—</td></tr>
-                    <tr><td>≥ $1,000,000</td><td>200 PSU</td><td>个人累计 ≤ 500 PSU</td></tr>
-                </tbody>
-            </table>
-        </div></div>
-
-        <h3>💰 如何分红？</h3>
-        <p>每年公司净利润的 <strong>2%-3%</strong> 注入 PSU 分红池，按您持有的 PSU 数量分配：</p>
-
-        <div class="flow-chart">
-            <strong>分红公式</strong>
-            <div style="margin-top:15px; font-size:1.1em;">
-                您的分红 = （总池金额 × 您的 PSU 数）÷ 全网 PSU 总数
-            </div>
-        </div>
-
-        <div class="story-box">
+        <div class="box-story">
             <p><strong>实战演算：</strong></p>
-            <p>• 公司年净利润：$5,000,000<br>
-            • PSU 分红池（2%）：$100,000<br>
-            • 全网 PSU 总数：50,000<br>
-            • 您持有 PSU 数：500（占 1%）<br>
-            • <strong>您年度 PSU 分红：$1,000</strong></p>
-            <p style="margin-top:12px; font-size:0.95em;">💡 <strong>关键点：</strong>这 $1,000 是"额外"的，不影响您的佣金、级差、卓越分红等其他收入。</p>
-        </div>
-
-        <h3>🔄 退出回购机制（20 倍 PE）</h3>
-        <p><strong>通俗理解：</strong>就像"公司股票回购"。当您退出 MLM 网络时，公司按 <strong>20 倍 PE</strong> 回购您的 PSU。</p>
-
-        <div class="highlight-box">
-            <strong>📈 回购价格计算：</strong><br>
-            • 回购价 = 最近 12 个月平均分红 × <strong>20 倍</strong><br>
-            • 相当于 20 倍 PE 估值（市盈率）<br><br>
-            <strong>💡 实战案例：</strong><br>
-            • 您的年度 PSU 分红：$1,000<br>
-            • 退出回购价：$1,000 × 20 = <strong class="highlight">$20,000</strong>
-        </div>
-
-        <div class="card-grid">
-            <div class="card">
-                <h4>✅ 优点一：无证券法风险</h4>
-                <p>不涉及公司股权，不需要复杂的证券合规流程</p>
-            </div>
-            <div class="card">
-                <h4>✅ 优点二：主人感</h4>
-                <p>分红与公司利润直接挂钩，团队长有"主人感"</p>
-            </div>
-            <div class="card">
-                <h4>✅ 优点三：可积累资产</h4>
-                <p>退出有回购机制，PSU 成为"可积累资产"</p>
-            </div>
-        </div>
-
-        <div class="info-banner">
-            ✅ <strong>设计目的：</strong>让高阶领袖从"打工者"变成"合伙人"，享受公司成长的红利，同时避免股权稀释的复杂性。
+            <p>• 您持有 500 PSU（占全网 1%）<br>
+            • 公司年净利润 $500万，PSU池（2%）= $10万<br>
+            • <strong>您年度 PSU 分红：$1,000</strong><br>
+            • <strong>退出回购价：$1,000 × 20 = $20,000</strong></p>
         </div>
     </section>
 
-    <!-- ===================== SECTION 11 ===================== -->
+    <!-- ===================== PART 11 ===================== -->
     <section id="s11">
-        <span class="section-label">Part 11</span>
+        <span class="sec-label">Part 11</span>
         <h2>收入来源 ⑧⑨：养老金与传承权</h2>
         <p class="lead">告别"零工"思维，打造真正属于您的"传世资产"。</p>
-
-        <h3>🏦 养老金账户 · 公司帮您存退休金</h3>
-        <p><strong>通俗理解：</strong>就像"公司帮您存退休金"。公司每月按您团队业绩的 0.8% 存入虚拟账户，退休时一次性领取。</p>
-
-        <div class="table-responsive"><div class="table-scroll">
-            <table>
-                <thead><tr><th>条件</th><th>计提比例</th><th>锁定规则</th></tr></thead>
-                <tbody>
-                    <tr><td>铂金及以上，连续活跃</td><td>月 GV 的 0.5%</td><td>锁定 3 年，逐年释放 1/3</td></tr>
-                    <tr><td>钻石及以上</td><td class="highlight">月 GV 的 0.8%</td><td>锁定 2 年，逐年释放 1/2</td></tr>
-                </tbody>
-            </table>
-        </div></div>
-
-        <div class="story-box">
-            <p><strong>假设您是钻石级别，团队月业绩 $200,000：</strong></p>
-            <p>• 月养老金计提（0.8%）：$1,600<br>
-            • 年积累：$19,200<br>
-            • <strong>5 年累计：$96,000</strong><br>
-            • 退休时一次性领取（公司分 12 个月支付）</p>
-            <p style="margin-top:12px; font-size:0.9em; color:var(--text-light);">💼 <strong>关键点：</strong>这就是 MLM 从"零工"变成"事业"的关键——离开越早，损失越大。</p>
+        <h3>🏦 养老金账户</h3>
+        <p>公司每月按您团队业绩的 <strong>0.8%</strong>（钻石级）存入虚拟账户，退休时一次性领取。</p>
+        <div class="box-story">
+            <p><strong>假设您是钻石，团队月业绩 $20万：</strong></p>
+            <p>• 月计提 $1,600 → 5 年累计 <strong>$96,000</strong><br>
+            • 离开越早，损失越大。这就是从零工变成事业的关键。</p>
         </div>
-
-        <h3>👨‍👦 传承权 · 留给后代的资产</h3>
-        <p><strong>通俗理解：</strong>您辛苦建立的团队网络，可以传给配偶、子女或指定合伙人。</p>
-
-        <div class="table-responsive"><div class="table-scroll">
-            <table>
-                <thead><tr><th>您的级别</th><th>达标要求</th><th>可指定继承人</th></tr></thead>
-                <tbody>
-                    <tr><td>钻石</td><td>连续 5 年达标</td><td><strong>1 名</strong></td></tr>
-                    <tr><td>双钻石</td><td>连续 3 年达标</td><td><strong>2 名</strong></td></tr>
-                    <tr><td style="color:var(--accent-color); font-weight:700;">皇冠</td><td>连续 3 年达标</td><td><strong class="highlight">3 名</strong></td></tr>
-                </tbody>
-            </table>
-        </div></div>
-
-        <div class="story-box">
-            <p><strong>老王的故事：</strong></p>
-            <p>老王做了 8 年，团队月销 $500 万，月收入 $80,000。他把团队传给儿子小王。</p>
-            <p>• 小王接管整个团队 → 月收入 <strong>$80,000</strong><br>
-            • 老王终身保留 20% 顾问费 → 月收入 <strong class="highlight">$16,000</strong></p>
-            <p style="margin-top:12px; font-size:0.95em;">👨‍👦 <strong>关键点：</strong>老王即使不工作了，每月仍有 $16,000 收入。这不是工作，这是留给后代的资产。</p>
+        <h3>👨‍👦 传承权</h3>
+        <p>皇冠领袖可指定 <strong>3 名</strong>继承人接管团队网络，自己终身保留 <strong>20% 永久顾问费</strong>。</p>
+        <div class="box-story">
+            <p><strong>老王的故事：</strong>老王把团队传给儿子，儿子月入 $8万。老王即使不工作，每月仍拿 <strong class="highlight">$16,000</strong> 顾问费。这不是工作，这是留给后代的资产。</p>
         </div>
     </section>
 
-    <!-- ===================== SECTION 12 - TRAVEL ===================== -->
+    <!-- ===================== PART 12 ===================== -->
     <section id="s12">
-        <span class="section-label" style="color:var(--travel-color);">Part 12 · Exclusive</span>
+        <span class="sec-label" style="color:var(--travel);">Part 12 · Exclusive</span>
         <h2>🏆 年度荣耀之旅</h2>
-        <p class="lead">除了丰厚的财务回报，我们还为高阶领袖打造终生难忘的巅峰时刻——全球奢华旅行、家族关怀、荣誉殿堂。</p>
-
+        <p class="lead">除了丰厚的财务回报，我们还为高阶领袖打造终生难忘的巅峰时刻。</p>
         <div class="travel-hero">
-            <h3>💎 全球巅峰之旅 · Global Leadership Retreat</h3>
-            <p>公司每年从净利润中额外拨出 1.5% 作为年度旅游激励基金<br>达标领袖可携家属享受全包式奢华旅行</p>
+            <h3>💎 全球巅峰之旅</h3>
+            <p>公司每年额外拨出 1.5% 净利润作为旅游基金<br>达标领袖可携家属享受全包式奢华旅行</p>
         </div>
-
-        <div class="table-responsive"><div class="table-scroll">
-            <table>
-                <thead><tr><th>达标级别</th><th>目的地</th><th>行程规格</th><th>随行家属</th><th>额外奖励</th></tr></thead>
-                <tbody>
-                    <tr><td>银级 - 金级</td><td>巴厘岛 / 普吉岛</td><td>3天2夜 豪华度假村</td><td>本人</td><td>品牌定制旅行箱</td></tr>
-                    <tr><td>铂金 - 高级铂金</td><td>东京 / 新加坡 / 首尔</td><td>4天3夜 五星+米其林</td><td>+ 1 名家属</td><td>最新款 iPhone / 名表</td></tr>
-                    <tr><td>钻石 - 高级钻石</td><td>瑞士 / 迪拜 / 马尔代夫</td><td>6天5夜 商务舱+帆船酒店</td><td>+ 配偶</td><td>豪车首付 $10,000</td></tr>
-                    <tr><td style="color:var(--accent-color); font-weight:700;">双钻石 - 皇冠</td><td class="highlight">欧洲巡游 / 私人岛屿</td><td class="highlight">8天7夜 顶级定制</td><td class="highlight">+ 2 名家属</td><td class="highlight">豪车全款 / 金条</td></tr>
-                </tbody>
-            </table>
-        </div></div>
-
-        <h3>👑 荣誉殿堂与家族关怀</h3>
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-icon">🏆</div>
-                <h4>全球年会红毯</h4>
-                <p>钻石及以上领袖受邀出席全球年度盛典，走红毯、获颁定制纯金奖杯，名字永久镌刻于总部荣誉殿堂。</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">👨‍👩‍👧‍👦</div>
-                <h4>家族关怀计划</h4>
-                <p>双钻石以上领袖配偶享年度顶级 SPA；皇冠领袖子女可获"常春藤教育奖学金"最高 $20,000/年。</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">💎</div>
-                <h4>年度销冠实物大奖</h4>
-                <p>每年业绩前 3 名领袖，额外获赠高定珠宝套装或 50g 投资金条，彰显极致荣耀。</p>
-            </div>
+        <div class="grid-2">
+            <div class="card"><h4>🌴 铂金级</h4><p>东京/新加坡 4天3夜<br>+1名家属 · 送iPhone/名表</p></div>
+            <div class="card"><h4>🏰 钻石级</h4><p>瑞士/马尔代夫 6天5夜<br>+配偶 · 送豪车首付$1万</p></div>
+            <div class="card"><h4>👑 皇冠级</h4><p>欧洲巡游/私人岛屿 8天7夜<br>+2名家属 · 送豪车全款/金条</p></div>
+            <div class="card"><h4>🎓 家族关怀</h4><p>皇冠领袖子女可获"常春藤教育奖学金"最高 $20,000/年。</p></div>
         </div>
     </section>
 
-    <!-- ===================== SECTION 13 ===================== -->
+    <!-- ===================== PART 13 ===================== -->
     <section id="s13">
-        <span class="section-label">Part 13</span>
+        <span class="sec-label">Part 13</span>
         <h2>各级别月收入潜力</h2>
         <p class="lead">努力与回报成正比，上不封顶。以下是参考区间，实际取决于您的投入。</p>
-
-        <div class="table-responsive"><div class="table-scroll">
+        <div class="table-wrap"><div class="table-scroll">
             <table>
                 <thead><tr><th>级别</th><th>月收入区间</th><th>核心来源</th></tr></thead>
                 <tbody>
                     <tr><td>🥉 银级</td><td>$1,000 – $2,500</td><td>个人卖货 + VIP 订阅</td></tr>
                     <tr><td>🥈 金级</td><td>$2,500 – $6,000</td><td>个人佣金 + 级差 + 团队积分</td></tr>
-                    <tr><td>🏅 铂金</td><td>$7,000 – $16,000</td><td>30% 佣金 + 级差 + 卓越分红 + 分红池 + 养老金</td></tr>
-                    <tr><td>💎 钻石</td><td>$18,000 – $55,000</td><td>全模块开启</td></tr>
+                    <tr><td>🏅 铂金</td><td>$7,000 – $16,000</td><td>30% 佣金 + 级差 + 卓越分红 + 分红池</td></tr>
+                    <tr><td>💎 钻石</td><td>$18,000 – $55,000</td><td>全模块开启 + PSU</td></tr>
                     <tr><td>💎💎 双钻石</td><td>$35,000 – $100,000+</td><td>全部最高比例 + 传承权</td></tr>
-                    <tr><td style="color:var(--accent-color); font-weight:700;">👑 皇冠</td><td class="highlight">$50,000 – $150,000+</td><td>全部最高比例 + 卓越分红 10% + 传承 3 人</td></tr>
+                    <tr><td style="color:var(--accent); font-weight:700;">👑 皇冠</td><td class="highlight">$50,000 – $150,000+</td><td>全部最高比例 + 卓越分红 10%</td></tr>
                 </tbody>
             </table>
         </div></div>
+    </section>
 
-        <div class="warning-banner">
-            💡 <strong>温馨提示：</strong>以上为参考区间，实际收入取决于您的努力程度、团队建设与市场开拓。有人快、有人慢，但路径清晰、回报可期。
+    <!-- ===================== PART 14 ===================== -->
+    <section id="s14">
+        <span class="sec-label">Part 14</span>
+        <h2>🛡️ 公平保障与合规基石</h2>
+        <p class="lead">真实销售是整套制度的生命线。以下规则保护每一位认真做事的合伙人，确保基业长青。</p>
+        <div class="grid-2">
+            <div class="card"><div class="card-icon">🛍️</div><h4>70% 终端零售</h4><p>团队出货至少 70% 流向真实客户。防止囤货刷单，确保每笔佣金都有真实订单。</p></div>
+            <div class="card"><div class="card-icon">🦵</div><h4>三条腿走路</h4><p>拿满卓越分红须有 ≥3 个活跃直推部门。防止单一链条，让网络更健康。</p></div>
+            <div class="card"><div class="card-icon">🔄</div><h4>退货即扣回</h4><p>客户 14 天内退货，所有层级佣金次月全额扣回。杜绝刷单套利。</p></div>
+            <div class="card"><div class="card-icon">📉</div><h4>40% 动态封顶</h4><p>总拨出严格控制在 40% 以内。符合印尼法规，确保公司永续经营，绝不透支未来。</p></div>
+        </div>
+        <h3>🛡️ 领袖软着陆保护</h3>
+        <div class="box-gold">
+            • <strong>头衔降级缓冲：</strong>单月未达标，头衔只降 1 级<br>
+            • <strong>权益保留：</strong>降级后，原头衔 70% 权益保留 30 天<br>
+            • <strong>宽限期：</strong>连续 3 个月未达标才正式降级<br>
+            <em>不让一次波动毁掉多年积累，给您拉回业绩的时间与尊严。</em>
         </div>
     </section>
 
     <!-- ===================== FAQ ===================== -->
     <section id="faq">
-        <span class="section-label">Part 14</span>
+        <span class="sec-label">Part 15</span>
         <h2>常见问题 FAQ</h2>
-        <p class="lead">我们整理了最常被问到的问题，帮您快速了解这份事业。</p>
+        <p class="lead">点击问题展开答案，帮您快速了解这份事业。</p>
 
-        <div class="faq-box">
-            <div class="faq-q">Q1：我需要投入多少钱才能开始？</div>
-            <div class="faq-a">A：银级起步仅需团队月销 $2,500（约 10 件产品）。您可以自己先买几件体验产品，然后分享给朋友。不需要大量囤货，卖一件赚一件。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q2：我不会销售，能做吗？</div>
-            <div class="faq-a">A：完全可以。我们有完整的培训体系，从产品知识到销售技巧，手把手教您。而且您可以选择"建团队"路线，让团队成员帮您卖货，您拿管理奖金。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q3：这个和传统 MLM 有什么区别？</div>
-            <div class="faq-a">A：三大区别：① 我们有真实产品（轻奢珠宝），不是"空气币"；② 我们有传承权，事业可以留给后代；③ 我们有养老金账户，从零工变成事业。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q4：卓越分红是什么？和管道差价有什么区别？</div>
-            <div class="faq-a">A：管道差价是"您下级卖货，您拿差价"；卓越分红是"您下级赚钱，公司额外奖您"。卓越分红由公司额外支付，不扣下级收入，级别越高，穿透代数越深，被动收入呈指数级增长。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q5：VIP 订阅被动收入真的能那么高吗？</div>
-            <div class="faq-a">A：如果您 3 年内积累 200 名 VIP 客户，年化收入可达 $18,673。这笔钱不需要再卖一个包，只要客户持续续费，月月到账。关键是维护老客户，而不是不断拉新。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q6：全球领袖分红池怎么分？</div>
-            <div class="faq-a">A：公司每月拿出总业绩的 3%，分给铂金、钻石、双钻石三个独立池。您培养的下属级别越高，您的积分越多，分红越多。各池独立、互不稀释，每个级别都有自己的机会。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q7：CARAT 代币是什么？能提现吗？</div>
-            <div class="faq-a">A：CARAT 是公司内部积分，代表您对公司成长的贡献。公司每季度用净利润回购，您可以提现。持有满 12 个月还有保底承诺（成本价+5%）。这不是"炒币"，而是公司用真金白银回购您的贡献。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q8：PSU 利润分享是什么？和股权一样吗？</div>
-            <div class="faq-a">A：不一样。PSU 不是股权，您不拥有公司所有权。但您享有公司年度净利润的分红权。达标免费获得，退出时公司按 20 倍 PE 回购。简单说：您享受公司成长的红利，但不参与公司决策。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q9：收入真的能那么高吗？</div>
-            <div class="faq-a">A：收入取决于您的努力。银级月入 $1,000-$2,500 很常见；如果您认真建团队，铂金级别月入 $7,000-$16,000 是可以实现的；皇冠级别月入 $50,000-$150,000+ 需要 3-5 年的持续投入。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q10：如果我不想做了，会损失什么？</div>
-            <div class="faq-a">A：您之前赚到的佣金、CARAT、PSU 分红都是您的，不会损失。但养老金账户需要锁定 2-3 年，如果提前退出，只能拿到部分。这就是"长期事业"和"短期零工"的区别。</div>
-        </div>
-
-        <div class="faq-box">
-            <div class="faq-q">Q11：这个合法吗？</div>
-            <div class="faq-a">A：完全合法。我们严格遵守印尼贸易部条例，总拨出封顶 40%，所有佣金基于真实销售。我们正在申请 SIUPL 直销牌照，制度设计完全合规。</div>
-        </div>
+        <details class="faq-item"><summary>Q1：我需要投入多少钱才能开始？</summary><div class="faq-answer">A：银级起步仅需团队月销 $2,500（约 10 件产品）。您可以自己先买几件体验产品，然后分享给朋友。不需要大量囤货，卖一件赚一件。</div></details>
+        <details class="faq-item"><summary>Q2：卓越分红和管道差价有什么区别？</summary><div class="faq-answer">A：管道差价是"您下级卖货，您拿差价"；卓越分红是"您下级赚钱，公司额外奖您"。卓越分红由公司额外支付，不扣下级收入，级别越高，穿透代数越深。</div></details>
+        <details class="faq-item"><summary>Q3：CARAT 代币能提现吗？</summary><div class="faq-answer">A：可以。CARAT 是公司内部积分，公司每季度用净利润回购，您可以直接提现。持有满 12 个月还有保底承诺（成本价+5%）。</div></details>
+        <details class="faq-item"><summary>Q4：PSU 利润分享和股权一样吗？</summary><div class="faq-answer">A：不一样。PSU 不是股权，您不拥有公司所有权。但您享有公司年度净利润的分红权。达标免费获得，退出时公司按 20 倍 PE 回购。</div></details>
+        <details class="faq-item"><summary>Q5：如果我不想做了，会损失什么？</summary><div class="faq-answer">A：您之前赚到的佣金、CARAT、PSU 分红都是您的，不会损失。但养老金账户需要锁定 2-3 年，如果提前退出，只能拿到部分。这就是"长期事业"和"短期零工"的区别。</div></details>
+        <details class="faq-item"><summary>Q6：这个合法吗？</summary><div class="faq-answer">A：完全合法。我们严格遵守印尼贸易部条例，总拨出封顶 40%，所有佣金基于真实销售。我们正在申请 SIUPL 直销牌照，制度设计完全合规。</div></details>
     </section>
 
     <!-- ===================== CTA ===================== -->
     <div class="cta-section" id="start">
         <h2>开启您的轻奢珠宝事业</h2>
         <p>从银级起步，无需建团队即可赚钱。从卖第一件产品开始，走向可传承的家族资产。</p>
-        <a href="#" class="btn-primary">立即咨询事业顾问 →</a>
-        <br><br>
-        <a href="#" class="btn-secondary" style="color:var(--accent-color); border-color:var(--accent-color);">下载完整制度手册</a>
+        <a href="#" class="btn btn-primary">立即咨询事业顾问 →</a>
     </div>
 
-    <!-- ===================== FINAL SUMMARY ===================== -->
+    <!-- ===================== SUMMARY ===================== -->
     <section>
         <h2>一句话总结</h2>
-        <div class="highlight-box" style="font-size:1.05em; line-height:2;">
+        <div class="box-gold" style="font-size:1em; line-height:2;">
             卖一个包赚 <strong>$87.50</strong> 佣金，<br>
             建两条深线拿 <strong>双倍管道差价</strong>，<br>
             带团队拿 <strong>5% 卓越分红</strong>，<br>
@@ -1328,7 +557,7 @@
             存养老金退休一次性领取，<br>
             传网络给后代享 <strong>20% 永久顾问费</strong>。
         </div>
-        <p style="text-align:center; font-size:1.2em; font-weight:700; color:var(--primary-color); margin-top:25px;">
+        <p style="text-align:center; font-size:1.2em; font-weight:700; color:var(--primary); margin-top:25px;">
             公司安全 · 领袖赚钱 · 事业可传承
         </p>
     </section>
@@ -1340,37 +569,19 @@
 <footer class="footer">
     <div class="footer-brand">LUXE · JEWELRY · LEGACY</div>
     <p>国际轻奢珠宝事业合伙人计划</p>
-    <div class="footer-links">
-        <a href="#">关于我们</a> · 
-        <a href="#">产品系列</a> · 
-        <a href="#">事业机会</a> · 
-        <a href="#">联系顾问</a>
-    </div>
-    <p style="margin-top:20px; font-size:0.8em; color:#777;">
+    <p style="margin-top:15px; font-size:0.75em; color:#666;">
         📍 适用市场：印尼及东南亚<br>
-        💼 品牌定位：轻奢珠宝与可更换配饰包袋<br>
         📞 咨询热线：+62-XXX-XXXX-XXXX<br><br>
-        <span style="color:#666;">⚠️ 免责声明：本手册中的收入数据为参考区间，实际收入取决于个人努力与市场情况。本文件不构成任何收入承诺或法律意见。</span>
-    </p>
-    <p style="margin-top:20px; font-size:0.75em; color:#555;">
+        ⚠️ 免责声明：本手册中的收入数据为参考区间，实际收入取决于个人努力与市场情况。本文件不构成任何收入承诺或法律意见。<br>
         © 2026 All Rights Reserved · 机密信息，仅供授权人员查阅
     </p>
 </footer>
 
 <script>
+    // 表格滑动提示隐藏
     document.querySelectorAll('.table-scroll').forEach(el => {
         el.addEventListener('scroll', function() {
             if (this.scrollLeft > 10) { this.classList.add('scrolled'); } else { this.classList.remove('scrolled'); }
-        });
-    });
-    // 平滑滚动
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
         });
     });
 </script>
