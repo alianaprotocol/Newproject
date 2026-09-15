@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="theme-color" content="#1a1a1a">
-    <title>LUXE · 10大收入引擎详解 </title>
+    <title>LUXE · 10大收入引擎 + 年度荣耀之旅（V4.1 完整版）</title>
     <style>
         :root {
             --primary: #1a1a1a;
@@ -16,7 +16,10 @@
             --text-light: #6b6b6b;
             --border: #e8e4d9;
             --success: #2d8659;
+            --travel: #00796b;
+            --travel-light: #b2dfdb;
             --gold-grad: linear-gradient(135deg, #c5a059 0%, #e8d5a0 50%, #c5a059 100%);
+            --travel-grad: linear-gradient(135deg, #004d40 0%, #00796b 50%, #004d40 100%);
         }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
@@ -63,6 +66,21 @@
         }
         h2 { color: var(--primary); font-size: 1.6em; margin: 5px 0 15px; font-weight: 800; }
         h2::after { content: ''; display: block; width: 40px; height: 3px; background: var(--gold-grad); margin-top: 10px; border-radius: 2px; }
+        h2.travel-title { 
+            background: var(--travel-grad); 
+            color: #fff; 
+            padding: 18px 20px; 
+            border-radius: 14px; 
+            margin: 30px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        h2.travel-title::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 80% 30%, rgba(178,223,219,0.2) 0%, transparent 60%);
+        }
+        h2.travel-title::after { background: var(--travel-light); }
+        h2.travel-title span { position: relative; z-index: 1; }
         .lead { color: var(--text-light); font-size: 1.05em; margin-bottom: 25px; }
 
         /* ========== Cards & Grids ========== */
@@ -76,6 +94,13 @@
             width: 48px; height: 48px; background: var(--gold-grad); border-radius: 12px;
             display: flex; align-items: center; justify-content: center; font-size: 1.5em; margin-bottom: 15px;
         }
+        .card.travel-card {
+            background: linear-gradient(135deg, #e0f2f1 0%, #fff 100%);
+            border-color: var(--travel-light);
+        }
+        .card.travel-card .card-icon {
+            background: var(--travel-grad);
+        }
         .card h4 { margin: 0 0 10px; color: var(--primary); font-size: 1.1em; }
         .card p { margin: 0; color: var(--text-light); font-size: 0.92em; line-height: 1.7; }
 
@@ -85,9 +110,16 @@
             padding: 22px; margin: 25px 0; position: relative;
         }
         .box-story::before {
-            content: '💡 算账给你看'; position: absolute; top: -12px; left: 20px;
+            content: '💡 真实场景'; position: absolute; top: -12px; left: 20px;
             background: var(--accent); color: #fff; padding: 3px 14px;
             border-radius: 20px; font-size: 0.78em; font-weight: 600;
+        }
+        .box-story.travel-story {
+            border-color: var(--travel);
+        }
+        .box-story.travel-story::before {
+            background: var(--travel);
+            content: '🌟 巅峰时刻';
         }
         .box-highlight {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -106,6 +138,13 @@
             padding: 20px; border-radius: 0 12px 12px 0; margin: 25px 0; font-size: 0.98em;
         }
         .box-gold strong { color: var(--accent); }
+        .box-travel {
+            background: linear-gradient(135deg, #e0f2f1 0%, #fff 100%);
+            border: 1.5px solid var(--travel-light); border-left: 5px solid var(--travel);
+            padding: 20px; border-radius: 0 12px 12px 0; margin: 25px 0; font-size: 0.98em;
+            color: #004d40;
+        }
+        .box-travel strong { color: var(--travel); }
 
         /* ========== Flow Chart ========== */
         .flow-chart {
@@ -130,6 +169,11 @@
         td { padding: 12px 10px; border-bottom: 1px solid var(--border); }
         tr:nth-child(even) { background: #fcfaf5; }
         tr.highlight-row { background: #fdf8ec !important; }
+        tr.travel-row { 
+            background: linear-gradient(135deg, #e0f2f1 0%, #fff 100%) !important;
+            font-weight: 600;
+        }
+        tr.travel-row td { color: var(--travel); }
 
         /* ========== Piggy Bank Cards ========== */
         .piggy-card {
@@ -152,6 +196,92 @@
         .piggy-example-title {
             font-size: 0.85em; font-weight: 700; color: var(--accent);
             letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;
+        }
+
+        /* ========== Travel Destination Cards ========== */
+        .dest-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        .dest-card:active { transform: scale(0.98); }
+        .dest-header {
+            padding: 18px 20px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .dest-header::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 80% 30%, rgba(255,255,255,0.15) 0%, transparent 60%);
+        }
+        .dest-header.silver { background: linear-gradient(135deg, #78909c 0%, #546e7a 100%); }
+        .dest-header.platinum { background: linear-gradient(135deg, #5c6bc0 0%, #3949ab 100%); }
+        .dest-header.diamond { background: linear-gradient(135deg, #00897b 0%, #00695c 100%); }
+        .dest-header.crown { background: linear-gradient(135deg, #c5a059 0%, #8d6e3f 100%); }
+        .dest-rank {
+            display: inline-block;
+            padding: 3px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        .dest-title {
+            font-size: 1.3em;
+            font-weight: 800;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .dest-body {
+            padding: 20px;
+        }
+        .dest-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .dest-info-item {
+            background: #fafaf7;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 0.88em;
+        }
+        .dest-info-item .label {
+            color: var(--text-light);
+            font-size: 0.85em;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .dest-info-item .value {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .dest-scene {
+            background: linear-gradient(135deg, #e0f2f1 0%, #fff 100%);
+            border-left: 3px solid var(--travel);
+            padding: 15px 18px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 15px;
+            font-size: 0.92em;
+            color: #004d40;
+        }
+        .dest-scene-title {
+            font-size: 0.8em;
+            font-weight: 700;
+            color: var(--travel);
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
         }
 
         /* ========== Detail Box (FAQ) ========== */
@@ -217,17 +347,9 @@
             margin-top: 40px;
             border-top: 3px solid var(--accent);
         }
-        .timeline-section .container {
-            background: transparent;
-        }
-        .timeline-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .timeline-header .sec-label {
-            font-size: 0.85em;
-            color: var(--accent);
-        }
+        .timeline-section .container { background: transparent; }
+        .timeline-header { text-align: center; margin-bottom: 40px; }
+        .timeline-header .sec-label { font-size: 0.85em; color: var(--accent); }
         .timeline-header h2 {
             font-size: 2em;
             background: var(--gold-grad);
@@ -236,11 +358,7 @@
             display: inline-block;
         }
         .timeline-header h2::after { margin: 15px auto 0; }
-        .timeline-header .lead {
-            max-width: 600px;
-            margin: 15px auto 0;
-            font-size: 1.05em;
-        }
+        .timeline-header .lead { max-width: 600px; margin: 15px auto 0; font-size: 1.05em; }
 
         .wealth-timeline {
             position: relative;
@@ -248,36 +366,19 @@
             margin: 30px 0;
         }
         .wealth-timeline::before {
-            content: '';
-            position: absolute;
-            left: 18px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--gold-grad);
-            border-radius: 2px;
+            content: ''; position: absolute; left: 18px; top: 0; bottom: 0;
+            width: 3px; background: var(--gold-grad); border-radius: 2px;
         }
         .wt-item {
-            position: relative;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 22px 22px 22px 25px;
-            margin-bottom: 25px;
+            position: relative; background: #fff;
+            border: 1px solid var(--border); border-radius: 14px;
+            padding: 22px 22px 22px 25px; margin-bottom: 25px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            transition: transform 0.2s;
         }
-        .wt-item:active { transform: scale(0.98); }
         .wt-item::before {
-            content: '';
-            position: absolute;
-            left: -32px;
-            top: 25px;
-            width: 20px;
-            height: 20px;
-            background: var(--gold-grad);
-            border: 3px solid #fff;
-            border-radius: 50%;
+            content: ''; position: absolute; left: -32px; top: 25px;
+            width: 20px; height: 20px; background: var(--gold-grad);
+            border: 3px solid #fff; border-radius: 50%;
             box-shadow: 0 0 0 2px var(--accent);
         }
         .wt-item.milestone {
@@ -285,146 +386,75 @@
             background: linear-gradient(135deg, #fff 0%, #fdf8ec 100%);
             box-shadow: 0 4px 15px rgba(197,160,89,0.15);
         }
-        .wt-item.milestone::before {
-            width: 26px;
-            height: 26px;
-            left: -35px;
-            top: 22px;
-        }
+        .wt-item.milestone::before { width: 26px; height: 26px; left: -35px; top: 22px; }
         .wt-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 12px;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 10px; margin-bottom: 12px;
         }
         .wt-time {
-            display: inline-block;
-            padding: 4px 14px;
-            background: var(--primary);
-            color: var(--accent);
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 700;
-            letter-spacing: 1px;
+            display: inline-block; padding: 4px 14px;
+            background: var(--primary); color: var(--accent);
+            border-radius: 20px; font-size: 0.8em; font-weight: 700;
         }
         .wt-emoji { font-size: 1.8em; }
-        .wt-title {
-            font-size: 1.15em;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        .wt-desc {
-            color: var(--text-light);
-            font-size: 0.92em;
-            line-height: 1.7;
-            margin-bottom: 12px;
-        }
-        .wt-incomes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
+        .wt-title { font-size: 1.15em; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .wt-desc { color: var(--text-light); font-size: 0.92em; line-height: 1.7; margin-bottom: 12px; }
+        .wt-incomes { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
         .wt-income-tag {
-            display: inline-block;
-            padding: 4px 10px;
-            background: #fafaf7;
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            font-size: 0.78em;
-            color: var(--text);
+            display: inline-block; padding: 4px 10px;
+            background: #fafaf7; border: 1px solid var(--border);
+            border-radius: 15px; font-size: 0.78em; color: var(--text);
         }
         .wt-number {
-            font-size: 2em;
-            font-weight: 800;
+            font-size: 2em; font-weight: 800;
             background: var(--gold-grad);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.2;
         }
-        .wt-number-label {
-            font-size: 0.8em;
-            color: var(--text-light);
-            margin-top: 2px;
-        }
+        .wt-number-label { font-size: 0.8em; color: var(--text-light); margin-top: 2px; }
 
         /* ========== 数字震撼区 ========== */
         .number-shock {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 30px 0;
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 12px; margin: 30px 0;
         }
         .shock-item {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 18px 15px;
-            text-align: center;
+            background: #fff; border: 1px solid var(--border);
+            border-radius: 12px; padding: 18px 15px; text-align: center;
         }
         .shock-num {
-            font-size: 1.8em;
-            font-weight: 800;
+            font-size: 1.8em; font-weight: 800;
             background: var(--gold-grad);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.2;
         }
-        .shock-label {
-            font-size: 0.78em;
-            color: var(--text-light);
-            margin-top: 5px;
-        }
+        .shock-label { font-size: 0.78em; color: var(--text-light); margin-top: 5px; }
 
         /* ========== 对比框 ========== */
-        .compare-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
+        .compare-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 20px; }
         .compare-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 25px;
-            position: relative;
+            background: #fff; border: 1px solid var(--border);
+            border-radius: 14px; padding: 25px; position: relative;
         }
-        .compare-card.job {
-            border-color: #ddd;
-            background: #fafafa;
-        }
+        .compare-card.job { border-color: #ddd; background: #fafafa; }
         .compare-card.career {
             border: 2px solid var(--accent);
             background: linear-gradient(135deg, #fff 0%, #fdf8ec 100%);
             box-shadow: 0 4px 15px rgba(197,160,89,0.15);
         }
         .compare-card.career::before {
-            content: '✨ 推荐';
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--gold-grad);
-            color: #1a1a1a;
-            padding: 3px 14px;
-            border-radius: 20px;
-            font-size: 0.75em;
-            font-weight: 700;
+            content: '✨ 推荐'; position: absolute; top: -12px; right: 20px;
+            background: var(--gold-grad); color: #1a1a1a;
+            padding: 3px 14px; border-radius: 20px;
+            font-size: 0.75em; font-weight: 700;
         }
-        .compare-card h4 {
-            margin: 0 0 15px;
-            font-size: 1.2em;
-            color: var(--primary);
-        }
+        .compare-card h4 { margin: 0 0 15px; font-size: 1.2em; color: var(--primary); }
         .compare-card.job h4 { color: #999; }
         .compare-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px dashed var(--border);
+            display: flex; justify-content: space-between;
+            padding: 10px 0; border-bottom: 1px dashed var(--border);
             font-size: 0.92em;
         }
         .compare-row:last-child { border-bottom: none; }
@@ -436,74 +466,52 @@
         /* ========== 终极总结 ========== */
         .final-summary {
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
-            color: #fff;
-            padding: 40px 30px;
-            border-radius: 20px;
-            margin: 40px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            color: #fff; padding: 40px 30px; border-radius: 20px; margin: 40px 0;
+            text-align: center; position: relative; overflow: hidden;
             border: 2px solid var(--accent);
         }
         .final-summary::before {
-            content: '';
-            position: absolute;
-            inset: 0;
+            content: ''; position: absolute; inset: 0;
             background: radial-gradient(circle at 50% 30%, rgba(197,160,89,0.25) 0%, transparent 60%);
         }
         .final-summary h3 {
-            color: var(--accent);
-            font-size: 1.5em;
-            margin: 0 0 20px;
-            position: relative;
-            z-index: 1;
+            color: var(--accent); font-size: 1.5em; margin: 0 0 20px;
+            position: relative; z-index: 1;
         }
         .final-summary .summary-text {
-            position: relative;
-            z-index: 1;
-            font-size: 1.05em;
-            line-height: 2.2;
-            color: #e0e0e0;
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
+            position: relative; z-index: 1;
+            font-size: 1.05em; line-height: 2.2; color: #e0e0e0;
+            text-align: left; max-width: 600px; margin: 0 auto;
         }
-        .final-summary .summary-text strong {
-            color: var(--accent);
-            font-size: 1.1em;
-        }
+        .final-summary .summary-text strong { color: var(--accent); font-size: 1.1em; }
         .final-motto {
-            margin-top: 30px;
-            padding-top: 25px;
+            margin-top: 30px; padding-top: 25px;
             border-top: 1px solid rgba(197,160,89,0.3);
-            font-size: 1.3em;
-            font-weight: 800;
+            font-size: 1.3em; font-weight: 800;
             background: var(--gold-grad);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-            z-index: 1;
+            position: relative; z-index: 1;
             letter-spacing: 2px;
         }
 
         /* ========== CTA ========== */
         .cta-section {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #fff;
-            padding: 40px 25px;
-            text-align: center;
-            border-radius: 16px;
-            margin: 40px 0;
+            color: #fff; padding: 40px 25px; text-align: center;
+            border-radius: 16px; margin: 40px 0;
         }
         .btn {
-            display: inline-block; padding: 14px 36px; border-radius: 50px; text-decoration: none;
-            font-weight: 700; font-size: 1em; transition: all 0.2s; border: none; cursor: pointer;
+            display: inline-block; padding: 14px 36px; border-radius: 50px;
+            text-decoration: none; font-weight: 700; font-size: 1em;
+            transition: all 0.2s; border: none; cursor: pointer;
             text-align: center; width: 100%; max-width: 300px; margin-top: 15px;
         }
         .btn-primary { background: var(--gold-grad); color: #1a1a1a; box-shadow: 0 6px 20px rgba(197,160,89,0.4); }
         .btn-primary:active { transform: scale(0.97); }
 
         .highlight { color: var(--accent); font-weight: 700; }
+        .text-travel { color: var(--travel); font-weight: 700; }
 
         /* ========== Desktop ========== */
         @media (min-width: 769px) {
@@ -515,6 +523,7 @@
             .compare-grid { grid-template-columns: repeat(2, 1fr); }
             .timeline-section { padding: 70px 40px; }
             .timeline-header h2 { font-size: 2.5em; }
+            .dest-info { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
@@ -523,8 +532,8 @@
 <!-- ===================== HERO ===================== -->
 <header class="hero">
     <div class="hero-badge">💰 INCOME ENGINES · V4.1</div>
-    <h1>10 大收入引擎<br>总有一款适合你</h1>
-    <p class="tagline">从"今天卖货今天拿钱"，到"年度成就大奖"<br>我们为您设计了覆盖全生命周期的赚钱路径</p>
+    <h1>10 大收入引擎<br>+ 年度荣耀之旅</h1>
+    <p class="tagline">从"今天卖货今天拿钱"，到"年度巅峰之旅"<br>我们为您设计了覆盖全生命周期的赚钱与享受路径</p>
 </header>
 
 <div class="container">
@@ -905,6 +914,196 @@
         </div>
     </section>
 
+    <!-- ===================== Part 10 · 年度荣耀之旅 ===================== -->
+    <section>
+        <h2 class="travel-title"><span>🏆 Part 10 · 年度激励与荣耀之旅</span></h2>
+        
+        <div class="box-travel">
+            <strong>💎 设计理念：物质与精神的双重巅峰</strong><br>
+            在顶级的 MLM 事业中，除了丰厚的财务回报，领袖们同样需要 <strong>"社交货币"、"家族荣耀"与"极致体验"</strong>。年度激励板块旨在为高阶领袖打造终生难忘的巅峰时刻，同时为团队提供极具视觉冲击力的"造梦"素材。
+        </div>
+
+        <h3>10.1 全球巅峰之旅 · Global Leadership Retreat</h3>
+        <p class="lead">公司每年从净利润中额外拨出 <span class="text-travel">1.5%</span> 作为年度旅游激励基金。达标领袖可携家属享受全包式奢华旅行——<strong>公司买单，你带家人一起享受世界</strong>。</p>
+
+        <!-- 银级-金级 -->
+        <div class="dest-card">
+            <div class="dest-header silver">
+                <div class="dest-rank">🥉 银级 - 金级</div>
+                <h3 class="dest-title">🌴 巴厘岛 / 普吉岛 · 3天2夜</h3>
+            </div>
+            <div class="dest-body">
+                <div class="dest-info">
+                    <div class="dest-info-item">
+                        <span class="label">🏨 住宿</span>
+                        <span class="value">豪华海景度假村</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">🍽️ 餐饮</span>
+                        <span class="value">全包式餐饮</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">👥 随行</span>
+                        <span class="value">仅限本人</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">🎁 实物礼</span>
+                        <span class="value">品牌定制高级旅行箱</span>
+                    </div>
+                </div>
+                <div class="dest-scene">
+                    <div class="dest-scene-title">🌟 巅峰时刻</div>
+                    <p>想象一下：你第一次坐飞机出国，住在面朝印度洋的豪华度假村。清晨在无边泳池边喝咖啡，傍晚在沙滩晚宴上和全球伙伴举杯。回程时，你拖着品牌定制的金色旅行箱，朋友圈晒出的照片让所有朋友都问："这是哪里？"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 铂金 -->
+        <div class="dest-card">
+            <div class="dest-header platinum">
+                <div class="dest-rank">🏅 铂金 - 高级铂金</div>
+                <h3 class="dest-title">🗼 东京 / 新加坡 / 首尔 · 4天3夜</h3>
+            </div>
+            <div class="dest-body">
+                <div class="dest-info">
+                    <div class="dest-info-item">
+                        <span class="label">🏨 住宿</span>
+                        <span class="value">五星酒店</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">🍽️ 餐饮</span>
+                        <span class="value">米其林餐厅</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">👥 随行</span>
+                        <span class="value">本人 + 1 名家属</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">🎁 实物礼</span>
+                        <span class="value">最新款 iPhone / 轻奢名表</span>
+                    </div>
+                </div>
+                <div class="dest-scene">
+                    <div class="dest-scene-title">🌟 巅峰时刻</div>
+                    <p><strong>真实场景：</strong>铂金领袖李姐带着妈妈第一次去东京。在米其林三星餐厅"数寄屋桥次郎"吃寿司时，妈妈眼泪都下来了——"这辈子第一次吃这么贵的饭"。回程时，李姐手上戴着公司送的名表，妈妈脖子上戴着李姐用奖金买的项链。那一刻，李姐觉得所有的辛苦都值了。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 钻石 -->
+        <div class="dest-card">
+            <div class="dest-header diamond">
+                <div class="dest-rank">💎 钻石 - 高级钻石</div>
+                <h3 class="dest-title">🏔️ 瑞士 / 迪拜 / 马尔代夫 · 6天5夜</h3>
+            </div>
+            <div class="dest-body">
+                <div class="dest-info">
+                    <div class="dest-info-item">
+                        <span class="label">✈️ 舱位</span>
+                        <span class="value">头等舱 / 商务舱</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">🏨 住宿</span>
+                        <span class="value">帆船酒店 / 水上别墅</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">👥 随行</span>
+                        <span class="value">本人 + 配偶</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">🎁 实物礼</span>
+                        <span class="value">豪车首付基金 $10,000</span>
+                    </div>
+                </div>
+                <div class="dest-scene">
+                    <div class="dest-scene-title">🌟 巅峰时刻</div>
+                    <p><strong>真实场景：</strong>钻石领袖张姐和老公第一次坐商务舱去马尔代夫。飞机上，老公说："以前我们坐经济舱挤得难受，现在终于可以躺着飞了。"在帆船酒店顶层套房，他们俯瞰整个迪拜夜景。回程时，张姐用公司给的 $10,000 豪车首付，提了一辆宝马。老公在朋友圈发了一张他们靠在车前的照片，配文："我老婆真厉害。"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 皇冠 -->
+        <div class="dest-card">
+            <div class="dest-header crown">
+                <div class="dest-rank">👑 双钻石 - 皇冠</div>
+                <h3 class="dest-title">🏰 欧洲巡游 / 私人岛屿 · 8天7夜</h3>
+            </div>
+            <div class="dest-body">
+                <div class="dest-info">
+                    <div class="dest-info-item">
+                        <span class="label">✈️ 舱位</span>
+                        <span class="value">头等舱</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">🏨 住宿</span>
+                        <span class="value">顶级奢华定制</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">👥 随行</span>
+                        <span class="value">本人 + 配偶 + 2 名家属</span>
+                    </div>
+                    <div class="dest-info-item">
+                        <span class="label">🎁 实物礼</span>
+                        <span class="value">豪车全款 / 实物金条 / 家族信托咨询</span>
+                    </div>
+                </div>
+                <div class="dest-scene">
+                    <div class="dest-scene-title">🌟 巅峰时刻</div>
+                    <p><strong>真实场景：</strong>皇冠领袖老王带着太太、儿子儿媳一起坐头等舱去欧洲。他们在瑞士坐冰川快车，在巴黎住丽兹酒店，在意大利坐私人游艇。回程时，老王提了一辆保时捷全款车，儿子手里拿着 50g 金条。在家族信托咨询会上，老王第一次了解到"如何把财富传给下一代"。那一刻，他意识到：这不是一次旅行，这是家族财富传承的起点。</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>10.2 荣誉殿堂与家族关怀</h3>
+        <p class="lead">除了奢华旅行，我们还为高阶领袖准备了<strong>终生难忘的荣耀时刻</strong>和<strong>对家人的深切关怀</strong>。</p>
+
+        <div class="grid-3">
+            <div class="card travel-card">
+                <div class="card-icon">🏆</div>
+                <h4>全球年会荣誉殿堂</h4>
+                <p>钻石及以上领袖受邀出席全球年度盛典，走红毯、获颁定制纯金/纯银"王冠"或"权杖"奖杯，名字永久镌刻于总部荣誉殿堂。</p>
+                <div class="dest-scene" style="margin-top:12px;">
+                    <div class="dest-scene-title">🌟 真实场景</div>
+                    <p>老王第一次走上红毯时，女儿在旁边举着手机拍照。当主持人念出他的名字，全场起立鼓掌。老王捧着纯金奖杯，眼泪都下来了——"这辈子第一次这么有面子。"</p>
+                </div>
+            </div>
+            <div class="card travel-card">
+                <div class="card-icon">👨‍👩‍👧‍👦</div>
+                <h4>家族关怀计划</h4>
+                <p>双钻石及以上领袖的配偶，每年享受一次顶级 SPA 与高端晚宴；皇冠领袖的子女，可获得公司设立的"常春藤教育奖学金"（最高 $20,000/年）。</p>
+                <div class="dest-scene" style="margin-top:12px;">
+                    <div class="dest-scene-title">🌟 真实场景</div>
+                    <p>李姐的女儿拿到了哈佛大学奖学金的录取通知书。李姐在朋友圈发了一张女儿拿着录取通知书的照片，配文："感谢 LUXE，让我的孩子能上世界顶尖大学。"那一刻，她知道这份事业改变了整个家族的命运。</p>
+                </div>
+            </div>
+            <div class="card travel-card">
+                <div class="card-icon">💎</div>
+                <h4>年度销冠实物大奖</h4>
+                <p>每年个人与团队总业绩排名前 3 的领袖，除旅游外，额外获赠高定珠宝套装或 50g 投资金条，彰显极致荣耀。</p>
+                <div class="dest-scene" style="margin-top:12px;">
+                    <div class="dest-scene-title">🌟 真实场景</div>
+                    <p>陈总收到 50g 金条的那一刻，他掂了掂——"沉甸甸的，就像这份事业一样实在。"他把金条放在办公室的展示柜里，每次有新伙伴来参观，他都会指着金条说："这就是坚持的回报。"</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>10.3 激励合规与拨出说明</h3>
+        <div class="box-info">
+            <p><strong>📌 激励合规与拨出说明：</strong></p>
+            <p>年度旅游与实物激励的费用，<strong>不计入 40% 的核心产品拨出额度</strong>。该部分预算从公司年度"市场营销与品牌公关费用"及"净利润超额分红"中专项列支，确保印尼 SIUPL 牌照审查时的薪酬计划合规性。</p>
+            <p style="font-size:0.85em; color:var(--text-light); margin-top:10px;">💡 <strong>为什么这么设计？</strong>旅游和实物奖励属于"品牌营销"和"团队激励"范畴，不属于"销售佣金"，因此不占用印尼法规要求的 40% 月度拨出上限。这是国际顶级 MLM 公司的通行做法。</p>
+        </div>
+
+        <div class="box-travel">
+            <strong>💎 一句话总结年度激励：</strong><br>
+            当你还是银级，公司请你去巴厘岛看海；<br>
+            当你升到铂金，公司带你去东京吃米其林；<br>
+            当你成为钻石，公司让你坐商务舱去马尔代夫；<br>
+            当你登顶皇冠，公司让你带着全家去欧洲巡游，还送你一辆保时捷。<br>
+            <strong>这不是梦，这是 LUXE 给你的真实人生。</strong>
+        </div>
+    </section>
+
 </div>
 </div>
 
@@ -961,13 +1160,14 @@
                         <span class="wt-emoji">🌳</span>
                     </div>
                     <div class="wt-title">晋升铂金：被动收入超过主业</div>
-                    <div class="wt-desc">你晋升铂金级别，团队月销 $50,000+。200 个 VIP 客户让你每月"收租" $1,556。副业收入首次超过主业工资。</div>
+                    <div class="wt-desc">你晋升铂金级别，团队月销 $50,000+。200 个 VIP 客户让你每月"收租" $1,556。副业收入首次超过主业工资。<strong>公司请你去东京吃米其林，你带着妈妈第一次出国。</strong></div>
                     <div class="wt-incomes">
                         <span class="wt-income-tag">💰 佣金 30%</span>
                         <span class="wt-income-tag">🔗 管道差价</span>
                         <span class="wt-income-tag">🎁 伯乐奖</span>
                         <span class="wt-income-tag">🏖️ VIP $1,556/月</span>
                         <span class="wt-income-tag">🏆 分红池</span>
+                        <span class="wt-income-tag">🗼 东京之旅</span>
                     </div>
                     <div class="wt-number">$10,000+</div>
                     <div class="wt-number-label">月收入 · 副业超主业</div>
@@ -980,11 +1180,12 @@
                         <span class="wt-emoji">💎</span>
                     </div>
                     <div class="wt-title">晋升钻石：四大存钱罐开始发力</div>
-                    <div class="wt-desc">CARAT 代币持续增值，PSU 利润分享开始分红，养老金账户累计 $57,600。你开始享受"公司利润"的红利。</div>
+                    <div class="wt-desc">CARAT 代币持续增值，PSU 利润分享开始分红，养老金账户累计 $57,600。你开始享受"公司利润"的红利。<strong>公司请你坐商务舱去马尔代夫，你和配偶在水上别墅看日落。</strong></div>
                     <div class="wt-incomes">
                         <span class="wt-income-tag">💎 CARAT 增值</span>
                         <span class="wt-income-tag">📊 PSU 分红</span>
                         <span class="wt-income-tag">🏦 养老金 $57,600</span>
+                        <span class="wt-income-tag">🏝️ 马尔代夫之旅</span>
                     </div>
                     <div class="wt-number">$30,000+</div>
                     <div class="wt-number-label">月收入 · 资产持续积累</div>
@@ -997,12 +1198,13 @@
                         <span class="wt-emoji">👑</span>
                     </div>
                     <div class="wt-title">冲击皇冠：年度 GLAB 大奖</div>
-                    <div class="wt-desc">你培养出了多个"超级小组"，养老金累计近 $96,000。年度 GLAB 成就奖金让你一次性拿到 <strong>$31,718</strong>。</div>
+                    <div class="wt-desc">你培养出了多个"超级小组"，养老金累计近 $96,000。年度 GLAB 成就奖金让你一次性拿到 <strong>$31,718</strong>。<strong>你站在全球年会红毯上，女儿在旁边举着手机拍照，全场为你鼓掌。</strong></div>
                     <div class="wt-incomes">
                         <span class="wt-income-tag">🏆 GLAB $31,718/年</span>
                         <span class="wt-income-tag">🏦 养老金 $96,000</span>
                         <span class="wt-income-tag">💎 CARAT 增值</span>
                         <span class="wt-income-tag">📊 PSU 分红</span>
+                        <span class="wt-income-tag">🏆 荣誉殿堂</span>
                     </div>
                     <div class="wt-number">$80,000+</div>
                     <div class="wt-number-label">月收入 · 顶级领袖</div>
@@ -1015,11 +1217,12 @@
                         <span class="wt-emoji">🏛️</span>
                     </div>
                     <div class="wt-title">传承启动：事业交给下一代</div>
-                    <div class="wt-desc">你启动"传承权"，把团队交给子女。即使退休，你依然终身享受团队 <strong>20% 的永久顾问费</strong>。</div>
+                    <div class="wt-desc">你启动"传承权"，把团队交给子女。即使退休，你依然终身享受团队 <strong>20% 的永久顾问费</strong>。<strong>你的女儿拿到了常春藤奖学金，你用公司给的 $10,000 豪车首付提了一辆宝马。</strong></div>
                     <div class="wt-incomes">
                         <span class="wt-income-tag">👨‍👩‍👧‍👦 传承权启动</span>
                         <span class="wt-income-tag">💰 永久顾问费 20%</span>
                         <span class="wt-income-tag">🏦 养老金 $192,000</span>
+                        <span class="wt-income-tag">🎓 子女奖学金</span>
                     </div>
                     <div class="wt-number">$16,000/月</div>
                     <div class="wt-number-label">退休躺赚 · 终身收入</div>
@@ -1032,11 +1235,12 @@
                         <span class="wt-emoji">🌟</span>
                     </div>
                     <div class="wt-title">家族传承：事业成为家族资产</div>
-                    <div class="wt-desc">你的子女继续经营团队，你的孙辈享受家族财富。20 年永久顾问费累计 <strong>$3,840,000</strong>。这不是打工，这是真正的家族事业。</div>
+                    <div class="wt-desc">你的子女继续经营团队，你的孙辈享受家族财富。20 年永久顾问费累计 <strong>$3,840,000</strong>。这不是打工，这是真正的家族事业。<strong>你的名字永久镌刻在总部荣誉殿堂，成为后人仰望的传奇。</strong></div>
                     <div class="wt-incomes">
                         <span class="wt-income-tag">👨‍👩‍👧‍👦 家族传承</span>
                         <span class="wt-income-tag">💰 20年累计 $3,840,000</span>
                         <span class="wt-income-tag">🏛️ 家族资产</span>
+                        <span class="wt-income-tag">🏆 荣誉殿堂永久镌刻</span>
                     </div>
                     <div class="wt-number">$3,840,000</div>
                     <div class="wt-number-label">终身累计 · 家族资产</div>
@@ -1093,6 +1297,10 @@
                         <span class="label">被动收入</span>
                         <span class="value">❌ 无</span>
                     </div>
+                    <div class="compare-row">
+                        <span class="label">全球旅行</span>
+                        <span class="value">❌ 自费</span>
+                    </div>
                 </div>
 
                 <div class="compare-card career">
@@ -1117,6 +1325,10 @@
                         <span class="label">被动收入</span>
                         <span class="value">✅ VIP + 分红 + GLAB</span>
                     </div>
+                    <div class="compare-row">
+                        <span class="label">全球旅行</span>
+                        <span class="value">✅ 公司买单 · 带家人</span>
+                    </div>
                 </div>
             </div>
 
@@ -1132,10 +1344,11 @@
                     囤 PSU 享公司利润分红，<br>
                     存养老金退休一次性领取，<br>
                     传网络给后代享 <strong>20% 永久顾问费</strong>，<br>
-                    冲 GLAP 拿 <strong>年度净利润 7%</strong> 的成就大奖！
+                    冲 GLAP 拿 <strong>年度净利润 7%</strong> 的成就大奖，<br>
+                    登顶皇冠公司请你 <strong>带全家去欧洲巡游</strong>！
                 </div>
                 <div class="final-motto">
-                    公司安全 · 领袖赚钱 · 事业可传承
+                    公司安全 · 领袖赚钱 · 事业可传承 · 人生可巅峰
                 </div>
             </div>
 
@@ -1160,6 +1373,7 @@
     <p>国际轻奢珠宝事业合伙人计划 · V4.1</p>
     <p style="margin-top:15px; font-size:0.75em; color:#666;">
         ⚠️ 免责声明：本手册中的收入数据为基于努力程度的参考区间，实际收入因个人市场开拓情况而异。本文件不构成任何收入保证或法律承诺。<br>
+        年度旅游与实物奖励的具体目的地、规格以公司当年公告为准。<br>
         © 2026 LUXE Jewelry. All Rights Reserved.
     </p>
 </footer>
