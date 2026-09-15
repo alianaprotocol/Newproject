@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="theme-color" content="#1a1a1a">
-    <title>LUXE · 10大收入引擎详解 </title><!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="theme-color" content="#1a1a1a">
-    <title>LUXE · 人生财富时间轴（总结加强版）</title>
+    <title>LUXE · 10大收入引擎详解 </title>
     <style>
         :root {
             --primary: #1a1a1a;
@@ -35,7 +29,7 @@
             line-height: 1.8;
         }
 
-        /* Hero */
+        /* ========== Hero ========== */
         .hero {
             background: linear-gradient(160deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
             color: #fff;
@@ -59,7 +53,7 @@
         }
         .hero .tagline { font-size: 1.05em; color: #ccc; max-width: 600px; margin: 0 auto 30px; }
 
-        /* Layout */
+        /* ========== Layout ========== */
         .container { max-width: 900px; margin: 0 auto; background: var(--card); }
         .content { padding: 30px 20px; }
         section { margin-bottom: 50px; scroll-margin-top: 20px; }
@@ -71,7 +65,183 @@
         h2::after { content: ''; display: block; width: 40px; height: 3px; background: var(--gold-grad); margin-top: 10px; border-radius: 2px; }
         .lead { color: var(--text-light); font-size: 1.05em; margin-bottom: 25px; }
 
-        /* ========== 财富时间轴 ========== */
+        /* ========== Cards & Grids ========== */
+        .grid-2, .grid-3 { display: grid; grid-template-columns: 1fr; gap: 15px; margin: 20px 0; }
+        .card {
+            background: #fff; border: 1px solid var(--border); border-radius: 14px;
+            padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s;
+        }
+        .card:active { transform: scale(0.98); }
+        .card-icon {
+            width: 48px; height: 48px; background: var(--gold-grad); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; font-size: 1.5em; margin-bottom: 15px;
+        }
+        .card h4 { margin: 0 0 10px; color: var(--primary); font-size: 1.1em; }
+        .card p { margin: 0; color: var(--text-light); font-size: 0.92em; line-height: 1.7; }
+
+        /* ========== Example Boxes ========== */
+        .box-story {
+            background: #fff; border: 1px dashed var(--accent); border-radius: 12px;
+            padding: 22px; margin: 25px 0; position: relative;
+        }
+        .box-story::before {
+            content: '💡 算账给你看'; position: absolute; top: -12px; left: 20px;
+            background: var(--accent); color: #fff; padding: 3px 14px;
+            border-radius: 20px; font-size: 0.78em; font-weight: 600;
+        }
+        .box-highlight {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff; padding: 25px; border-radius: 16px; margin: 25px 0; text-align: center;
+        }
+        .box-highlight h3 { color: var(--accent); margin: 0 0 10px; font-size: 1.3em; }
+        .box-highlight p { color: #ccc; margin: 0; font-size: 0.95em; }
+        .box-info {
+            background: #eef6f2; border-left: 4px solid var(--success);
+            padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 20px 0;
+            color: #1e5a3d; font-size: 0.92em;
+        }
+        .box-gold {
+            background: linear-gradient(135deg, #fdf8ec 0%, #fff 100%);
+            border: 1.5px solid var(--accent-light); border-left: 5px solid var(--accent);
+            padding: 20px; border-radius: 0 12px 12px 0; margin: 25px 0; font-size: 0.98em;
+        }
+        .box-gold strong { color: var(--accent); }
+
+        /* ========== Flow Chart ========== */
+        .flow-chart {
+            background: #fafaf7; padding: 25px 20px; border-radius: 12px;
+            text-align: center; margin: 20px 0; border: 1px dashed var(--accent-light);
+        }
+        .flow-arrow { font-size: 1.5em; color: var(--accent); margin: 10px 0; }
+        .flow-result {
+            background: #fff; padding: 20px; border-radius: 10px;
+            border: 2px solid var(--accent); display: inline-block; margin-top: 10px;
+        }
+        .flow-result strong { color: var(--accent); font-size: 1.3em; }
+
+        /* ========== Tables ========== */
+        .table-wrap {
+            position: relative; margin: 20px 0; border-radius: 12px;
+            overflow: hidden; border: 1px solid var(--border);
+        }
+        .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9em; background: #fff; min-width: 500px; }
+        th { background: var(--primary); color: #fff; padding: 12px 10px; text-align: left; font-weight: 600; white-space: nowrap; }
+        td { padding: 12px 10px; border-bottom: 1px solid var(--border); }
+        tr:nth-child(even) { background: #fcfaf5; }
+        tr.highlight-row { background: #fdf8ec !important; }
+
+        /* ========== Piggy Bank Cards ========== */
+        .piggy-card {
+            background: #fff; border-radius: 14px; padding: 22px;
+            margin-bottom: 20px; position: relative; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .piggy-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+        }
+        .piggy-card.carat::before { background: var(--accent); }
+        .piggy-card.psu::before { background: var(--success); }
+        .piggy-card.pension::before { background: #1565c0; }
+        .piggy-card.legacy::before { background: #7b1fa2; }
+        .piggy-card h3 { margin-top: 0; }
+        .piggy-example {
+            background: #fafaf7; border-radius: 10px; padding: 15px 18px;
+            margin-top: 15px; border-left: 3px solid var(--accent);
+        }
+        .piggy-example-title {
+            font-size: 0.85em; font-weight: 700; color: var(--accent);
+            letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;
+        }
+
+        /* ========== Detail Box (FAQ) ========== */
+        .detail-box {
+            background: #fff; border: 1px solid var(--border); border-radius: 10px;
+            margin-bottom: 10px; overflow: hidden;
+        }
+        .detail-box summary {
+            padding: 15px 18px; font-weight: 700; color: var(--primary); cursor: pointer;
+            list-style: none; display: flex; justify-content: space-between; align-items: center;
+        }
+        .detail-box summary::-webkit-details-marker { display: none; }
+        .detail-box summary::after { content: '+'; font-size: 1.5em; color: var(--accent); transition: transform 0.3s; }
+        .detail-box[open] summary::after { transform: rotate(45deg); }
+        .detail-answer {
+            padding: 0 18px 18px; color: var(--text-light); font-size: 0.92em; line-height: 1.8;
+            border-top: 1px dashed var(--border); padding-top: 15px; margin-top: -5px;
+        }
+
+        /* ========== GLAP Special Style ========== */
+        .glap-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #2d2d2d 50%, #0a0a0a 100%);
+            color: #fff; padding: 30px 25px; border-radius: 16px; margin: 25px 0;
+            text-align: center; position: relative; overflow: hidden;
+            border: 2px solid var(--accent);
+        }
+        .glap-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(197,160,89,0.25) 0%, transparent 60%);
+        }
+        .glap-hero h3 {
+            color: var(--accent); margin: 0 0 10px; font-size: 1.5em;
+            position: relative; z-index: 1;
+        }
+        .glap-hero p { color: #ccc; margin: 0; position: relative; z-index: 1; }
+        .glap-badge {
+            display: inline-block; padding: 4px 14px;
+            background: var(--gold-grad); color: #1a1a1a;
+            border-radius: 20px; font-size: 0.75em; font-weight: 700;
+            letter-spacing: 2px; margin-bottom: 15px;
+            position: relative; z-index: 1;
+        }
+
+        /* ========== Leg Visualization ========== */
+        .leg-visual {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            justify-content: center; margin: 20px 0;
+        }
+        .leg-item {
+            background: #fff; border: 2px solid var(--border);
+            border-radius: 12px; padding: 15px 12px; text-align: center;
+            min-width: 110px; flex: 1;
+        }
+        .leg-item.active { border-color: var(--accent); background: #fdf8ec; }
+        .leg-item .leg-icon { font-size: 1.8em; margin-bottom: 5px; }
+        .leg-item .leg-name { font-weight: 700; color: var(--primary); font-size: 0.9em; }
+        .leg-item .leg-score { color: var(--accent); font-weight: 800; font-size: 1.1em; margin-top: 5px; }
+
+        /* ========== 财富时间轴（压轴） ========== */
+        .timeline-section {
+            background: linear-gradient(180deg, #f8f6f1 0%, #fdf8ec 100%);
+            padding: 50px 20px;
+            margin-top: 40px;
+            border-top: 3px solid var(--accent);
+        }
+        .timeline-section .container {
+            background: transparent;
+        }
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .timeline-header .sec-label {
+            font-size: 0.85em;
+            color: var(--accent);
+        }
+        .timeline-header h2 {
+            font-size: 2em;
+            background: var(--gold-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        .timeline-header h2::after { margin: 15px auto 0; }
+        .timeline-header .lead {
+            max-width: 600px;
+            margin: 15px auto 0;
+            font-size: 1.05em;
+        }
+
         .wealth-timeline {
             position: relative;
             padding: 20px 0 20px 40px;
@@ -113,6 +283,7 @@
         .wt-item.milestone {
             border: 2px solid var(--accent);
             background: linear-gradient(135deg, #fff 0%, #fdf8ec 100%);
+            box-shadow: 0 4px 15px rgba(197,160,89,0.15);
         }
         .wt-item.milestone::before {
             width: 26px;
@@ -138,9 +309,7 @@
             font-weight: 700;
             letter-spacing: 1px;
         }
-        .wt-emoji {
-            font-size: 1.8em;
-        }
+        .wt-emoji { font-size: 1.8em; }
         .wt-title {
             font-size: 1.15em;
             font-weight: 700;
@@ -182,10 +351,35 @@
             margin-top: 2px;
         }
 
-        /* ========== 对比框 ========== */
-        .compare-section {
-            margin: 40px 0;
+        /* ========== 数字震撼区 ========== */
+        .number-shock {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 30px 0;
         }
+        .shock-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 15px;
+            text-align: center;
+        }
+        .shock-num {
+            font-size: 1.8em;
+            font-weight: 800;
+            background: var(--gold-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        .shock-label {
+            font-size: 0.78em;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        /* ========== 对比框 ========== */
         .compare-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -292,35 +486,7 @@
             letter-spacing: 2px;
         }
 
-        /* ========== 数字震撼 ========== */
-        .number-shock {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 30px 0;
-        }
-        .shock-item {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 18px 15px;
-            text-align: center;
-        }
-        .shock-num {
-            font-size: 1.8em;
-            font-weight: 800;
-            background: var(--gold-grad);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-        }
-        .shock-label {
-            font-size: 0.78em;
-            color: var(--text-light);
-            margin-top: 5px;
-        }
-
-        /* CTA */
+        /* ========== CTA ========== */
         .cta-section {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #fff;
@@ -339,478 +505,22 @@
 
         .highlight { color: var(--accent); font-weight: 700; }
 
-        @media (min-width: 769px) {
-            .hero h1 { font-size: 2.8em; }
-            .content { padding: 50px 40px; }
-            .compare-grid { grid-template-columns: repeat(2, 1fr); }
-            .number-shock { grid-template-columns: repeat(4, 1fr); }
-        }
-    </style>
-</head>
-<body>
-
-<header class="hero">
-    <div class="hero-badge">💎 LIFE WEALTH TIMELINE</div>
-    <h1>人生财富时间轴<br>坚持做下去，你会怎样？</h1>
-    <p class="tagline">这不是"一夜暴富"的故事<br>而是一份可以持续积累、代代相传的事业</p>
-</header>
-
-<div class="container">
-<div class="content">
-
-    <!-- ===================== 财富时间轴 ===================== -->
-    <section>
-        <span class="sec-label">💎 财富时间轴</span>
-        <h2>如果你坚持做下去，人生会怎样？</h2>
-        <p class="lead">让我们用真实数字，看看 1 个月、1 年、5 年、10 年、20 年后，你的财富会变成什么样。</p>
-
-        <div class="wealth-timeline">
-            <!-- 第1个月 -->
-            <div class="wt-item">
-                <div class="wt-header">
-                    <span class="wt-time">第 1 个月</span>
-                    <span class="wt-emoji">🌱</span>
-                </div>
-                <div class="wt-title">起步期：卖货赚佣金</div>
-                <div class="wt-desc">你卖出 10 件产品，佣金 1 分钟到账电子钱包。信心建立，副业启动。</div>
-                <div class="wt-incomes">
-                    <span class="wt-income-tag">💰 个人佣金</span>
-                </div>
-                <div class="wt-number">$500</div>
-                <div class="wt-number-label">首月收入</div>
-            </div>
-
-            <!-- 第6个月 -->
-            <div class="wt-item">
-                <div class="wt-header">
-                    <span class="wt-time">第 6 个月</span>
-                    <span class="wt-emoji">🌿</span>
-                </div>
-                <div class="wt-title">成长期：管道 + 伯乐 + VIP</div>
-                <div class="wt-desc">你带了 5 个朋友加入，积累了 80 个 VIP 客户。管道差价 + 伯乐奖 + VIP 续费，被动收入开始涌现。</div>
-                <div class="wt-incomes">
-                    <span class="wt-income-tag">💰 个人佣金</span>
-                    <span class="wt-income-tag">🔗 管道差价</span>
-                    <span class="wt-income-tag">🎁 伯乐奖</span>
-                    <span class="wt-income-tag">🏖️ VIP 续费</span>
-                </div>
-                <div class="wt-number">$2,800</div>
-                <div class="wt-number-label">月收入</div>
-            </div>
-
-            <!-- 第1年 -->
-            <div class="wt-item milestone">
-                <div class="wt-header">
-                    <span class="wt-time">第 1 年</span>
-                    <span class="wt-emoji">🌳</span>
-                </div>
-                <div class="wt-title">晋升铂金：被动收入超过主业</div>
-                <div class="wt-desc">你晋升铂金级别，团队月销 $50,000+。200 个 VIP 客户让你每月"收租" $1,556。副业收入首次超过主业工资。</div>
-                <div class="wt-incomes">
-                    <span class="wt-income-tag">💰 佣金 30%</span>
-                    <span class="wt-income-tag">🔗 管道差价</span>
-                    <span class="wt-income-tag">🎁 伯乐奖</span>
-                    <span class="wt-income-tag">🏖️ VIP $1,556/月</span>
-                    <span class="wt-income-tag">🏆 分红池</span>
-                </div>
-                <div class="wt-number">$10,000+</div>
-                <div class="wt-number-label">月收入 · 副业超主业</div>
-            </div>
-
-            <!-- 第3年 -->
-            <div class="wt-item">
-                <div class="wt-header">
-                    <span class="wt-time">第 3 年</span>
-                    <span class="wt-emoji">💎</span>
-                </div>
-                <div class="wt-title">晋升钻石：四大存钱罐开始发力</div>
-                <div class="wt-desc">CARAT 代币持续增值，PSU 利润分享开始分红，养老金账户累计 $57,600。你开始享受"公司利润"的红利。</div>
-                <div class="wt-incomes">
-                    <span class="wt-income-tag">💎 CARAT 增值</span>
-                    <span class="wt-income-tag">📊 PSU 分红</span>
-                    <span class="wt-income-tag">🏦 养老金 $57,600</span>
-                </div>
-                <div class="wt-number">$30,000+</div>
-                <div class="wt-number-label">月收入 · 资产持续积累</div>
-            </div>
-
-            <!-- 第5年 -->
-            <div class="wt-item milestone">
-                <div class="wt-header">
-                    <span class="wt-time">第 5 年</span>
-                    <span class="wt-emoji">👑</span>
-                </div>
-                <div class="wt-title">冲击皇冠：年度 GLAB 大奖</div>
-                <div class="wt-desc">你培养出了多个"超级小组"，养老金累计近 $96,000。年度 GLAB 成就奖金让你一次性拿到 <strong>$31,718</strong>。</div>
-                <div class="wt-incomes">
-                    <span class="wt-income-tag">🏆 GLAB $31,718/年</span>
-                    <span class="wt-income-tag">🏦 养老金 $96,000</span>
-                    <span class="wt-income-tag">💎 CARAT 增值</span>
-                    <span class="wt-income-tag">📊 PSU 分红</span>
-                </div>
-                <div class="wt-number">$80,000+</div>
-                <div class="wt-number-label">月收入 · 顶级领袖</div>
-            </div>
-
-            <!-- 第10年 -->
-            <div class="wt-item">
-                <div class="wt-header">
-                    <span class="wt-time">第 10 年</span>
-                    <span class="wt-emoji">🏛️</span>
-                </div>
-                <div class="wt-title">传承启动：事业交给下一代</div>
-                <div class="wt-desc">你启动"传承权"，把团队交给子女。即使退休，你依然终身享受团队 <strong>20% 的永久顾问费</strong>。</div>
-                <div class="wt-incomes">
-                    <span class="wt-income-tag">👨‍👩‍👧‍👦 传承权启动</span>
-                    <span class="wt-income-tag">💰 永久顾问费 20%</span>
-                    <span class="wt-income-tag">🏦 养老金 $192,000</span>
-                </div>
-                <div class="wt-number">$16,000/月</div>
-                <div class="wt-number-label">退休躺赚 · 终身收入</div>
-            </div>
-
-            <!-- 第20年 -->
-            <div class="wt-item milestone">
-                <div class="wt-header">
-                    <span class="wt-time">第 20 年</span>
-                    <span class="wt-emoji">🌟</span>
-                </div>
-                <div class="wt-title">家族传承：事业成为家族资产</div>
-                <div class="wt-desc">你的子女继续经营团队，你的孙辈享受家族财富。20 年永久顾问费累计 <strong>$3,840,000</strong>。这不是打工，这是真正的家族事业。</div>
-                <div class="wt-incomes">
-                    <span class="wt-income-tag">👨‍👩‍👧‍👦 家族传承</span>
-                    <span class="wt-income-tag">💰 20年累计 $3,840,000</span>
-                    <span class="wt-income-tag">🏛️ 家族资产</span>
-                </div>
-                <div class="wt-number">$3,840,000</div>
-                <div class="wt-number-label">终身累计 · 家族资产</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== 数字震撼 ===================== -->
-    <section>
-        <span class="sec-label">📊 数字会说话</span>
-        <h2>一份事业，多重收入</h2>
-        <p class="lead">让我们用具体数字，看看这份事业能给你带来什么。</p>
-
-        <div class="number-shock">
-            <div class="shock-item">
-                <div class="shock-num">$87.50</div>
-                <div class="shock-label">卖 1 个包最高赚</div>
-            </div>
-            <div class="shock-item">
-                <div class="shock-num">$18,673</div>
-                <div class="shock-label">200 VIP 年化被动收入</div>
-            </div>
-            <div class="shock-item">
-                <div class="shock-num">$96,000</div>
-                <div class="shock-label">5 年养老金累计</div>
-            </div>
-            <div class="shock-item">
-                <div class="shock-num">$31,718</div>
-                <div class="shock-label">年度 GLAB 大奖</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== 对比框 ===================== -->
-    <section class="compare-section">
-        <span class="sec-label">⚖️ 人生选择</span>
-        <h2>普通打工 vs 这份事业</h2>
-        <p class="lead">同样的 20 年，两种完全不同的人生轨迹。</p>
-
-        <div class="compare-grid">
-            <div class="compare-card job">
-                <h4>🏢 普通打工</h4>
-                <div class="compare-row">
-                    <span class="label">收入模式</span>
-                    <span class="value">一份时间换一份钱</span>
-                </div>
-                <div class="compare-row">
-                    <span class="label">20 年累计</span>
-                    <span class="value">~$100 万</span>
-                </div>
-                <div class="compare-row">
-                    <span class="label">退休后</span>
-                    <span class="value">收入归零</span>
-                </div>
-                <div class="compare-row">
-                    <span class="label">可传承</span>
-                    <span class="value">❌ 无</span>
-                </div>
-                <div class="compare-row">
-                    <span class="label">被动收入</span>
-                    <span class="value">❌ 无</span>
-                </div>
-            </div>
-
-            <div class="compare-card career">
-                <h4>💎 这份事业</h4>
-                <div class="compare-row">
-                    <span class="label">收入模式</span>
-                    <span class="value">一份时间换多份钱</span>
-                </div>
-                <div class="compare-row">
-                    <span class="label">20 年累计</span>
-                    <span class="value">$500 万+</span>
-                </div>
-                <div class="compare-row">
-                    <span class="label">退休后</span>
-                    <span class="value">每月 $16,000+</span>
-                </div>
-                <div class="compare-row">
-                    <span class="label">可传承</span>
-                    <span class="value">✅ 传给后代</span>
-                </div>
-                <div class="compare-row">
-                    <span class="label">被动收入</span>
-                    <span class="value">✅ VIP + 分红 + GLAB</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== 终极总结 ===================== -->
-    <section>
-        <div class="final-summary">
-            <h3>💎 一句话总结这份事业</h3>
-            <div class="summary-text">
-                卖一个包赚 <strong>$87.50</strong> 佣金，<br>
-                建两条深线拿 <strong>双倍管道差价</strong>，<br>
-                带团队拿 <strong>公司额外伯乐奖</strong>，<br>
-                转 VIP 拿 <strong>28% 月月递增</strong> 的被动收入，<br>
-                攒 CARAT 享回购增值，<br>
-                囤 PSU 享公司利润分红，<br>
-                存养老金退休一次性领取，<br>
-                传网络给后代享 <strong>20% 永久顾问费</strong>，<br>
-                冲 GLAP 拿 <strong>年度净利润 7%</strong> 的成就大奖！
-            </div>
-            <div class="final-motto">
-                公司安全 · 领袖赚钱 · 事业可传承
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== CTA ===================== -->
-    <div class="cta-section">
-        <h2 style="color:#fff; margin-bottom:15px;">你的人生时间轴，从哪一刻开始？</h2>
-        <p style="color:#ccc; max-width:550px; margin:0 auto 25px;">
-            不需要辞职，不需要大量投入。<br>
-            从卖出第一件产品开始，体验 1 分钟到账的快感。<br>
-            <strong style="color:var(--accent);">1 个月、1 年、5 年、10 年……<br>时间会给你答案。</strong>
-        </p>
-        <a href="#" class="btn btn-primary">立即咨询事业顾问，开启你的人生时间轴 →</a>
-    </div>
-
-</div>
-</div>
-
-<footer style="background: var(--primary); color: #888; padding: 30px 20px; text-align: center; font-size: 0.8em;">
-    <div style="font-size: 1.2em; font-weight: 800; background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;">LUXE · JEWELRY · LEGACY</div>
-    <p>国际轻奢珠宝事业合伙人计划 · V4.1</p>
-    <p style="margin-top:15px; font-size:0.75em; color:#666;">
-        ⚠️ 免责声明：本手册中的收入数据为基于努力程度的参考区间，实际收入因个人市场开拓情况而异。本文件不构成任何收入保证或法律承诺。<br>
-        © 2026 LUXE Jewelry. All Rights Reserved.
-    </p>
-</footer>
-
-</body>
-</html>
-    <style>
-        :root {
-            --primary: #1a1a1a;
-            --accent: #c5a059;
-            --accent-light: #e8d5a0;
-            --bg: #f8f6f1;
-            --card: #ffffff;
-            --text: #2c2c2c;
-            --text-light: #6b6b6b;
-            --border: #e8e4d9;
-            --success: #2d8659;
-            --gold-grad: linear-gradient(135deg, #c5a059 0%, #e8d5a0 50%, #c5a059 100%);
-        }
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            margin: 0; padding: 0;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(160deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
-            color: #fff;
-            padding: 60px 20px 50px;
-            text-align: center;
-            position: relative;
-        }
-        .hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(circle at 50% 30%, rgba(197,160,89,0.2) 0%, transparent 60%);
-        }
-        .hero-badge {
-            display: inline-block; padding: 6px 16px;
-            background: rgba(197,160,89,0.15); border: 1px solid var(--accent);
-            border-radius: 30px; color: var(--accent);
-            font-size: 0.75em; letter-spacing: 2px; margin-bottom: 20px;
-        }
-        .hero h1 {
-            font-size: 2.2em; font-weight: 800; margin: 10px 0;
-            background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero .tagline { font-size: 1.05em; color: #ccc; max-width: 600px; margin: 0 auto 30px; }
-
-        /* Layout */
-        .container { max-width: 900px; margin: 0 auto; background: var(--card); }
-        .content { padding: 30px 20px; }
-        section { margin-bottom: 50px; scroll-margin-top: 20px; }
-        .sec-label {
-            display: inline-block; color: var(--accent); font-size: 0.8em;
-            letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 8px;
-        }
-        h2 { color: var(--primary); font-size: 1.6em; margin: 5px 0 15px; font-weight: 800; }
-        h2::after { content: ''; display: block; width: 40px; height: 3px; background: var(--gold-grad); margin-top: 10px; border-radius: 2px; }
-        .lead { color: var(--text-light); font-size: 1.05em; margin-bottom: 25px; }
-
-        /* Cards & Grids */
-        .grid-2, .grid-3 { display: grid; grid-template-columns: 1fr; gap: 15px; margin: 20px 0; }
-        .card {
-            background: #fff; border: 1px solid var(--border); border-radius: 14px;
-            padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s;
-        }
-        .card:active { transform: scale(0.98); }
-        .card-icon {
-            width: 48px; height: 48px; background: var(--gold-grad); border-radius: 12px;
-            display: flex; align-items: center; justify-content: center; font-size: 1.5em; margin-bottom: 15px;
-        }
-        .card h4 { margin: 0 0 10px; color: var(--primary); font-size: 1.1em; }
-        .card p { margin: 0; color: var(--text-light); font-size: 0.92em; line-height: 1.7; }
-
-        /* Example Boxes */
-        .box-story {
-            background: #fff; border: 1px dashed var(--accent); border-radius: 12px;
-            padding: 22px; margin: 25px 0; position: relative;
-        }
-        .box-story::before {
-            content: '💡 算账给你看'; position: absolute; top: -12px; left: 20px;
-            background: var(--accent); color: #fff; padding: 3px 14px;
-            border-radius: 20px; font-size: 0.78em; font-weight: 600;
-        }
-        .box-highlight {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #fff; padding: 25px; border-radius: 16px; margin: 25px 0; text-align: center;
-        }
-        .box-highlight h3 { color: var(--accent); margin: 0 0 10px; font-size: 1.3em; }
-        .box-highlight p { color: #ccc; margin: 0; font-size: 0.95em; }
-        .box-info {
-            background: #eef6f2; border-left: 4px solid var(--success);
-            padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 20px 0;
-            color: #1e5a3d; font-size: 0.92em;
-        }
-        .box-gold {
-            background: linear-gradient(135deg, #fdf8ec 0%, #fff 100%);
-            border: 1.5px solid var(--accent-light); border-left: 5px solid var(--accent);
-            padding: 20px; border-radius: 0 12px 12px 0; margin: 25px 0; font-size: 0.98em;
-        }
-        .box-gold strong { color: var(--accent); }
-
-        /* Flow Chart - 简化版 */
-        .flow-chart {
-            background: #fafaf7; padding: 25px 20px; border-radius: 12px;
-            text-align: center; margin: 20px 0; border: 1px dashed var(--accent-light);
-        }
-        .flow-arrow {
-            font-size: 1.5em; color: var(--accent); margin: 10px 0;
-        }
-        .flow-result {
-            background: #fff; padding: 20px; border-radius: 10px;
-            border: 2px solid var(--accent); display: inline-block;
-            margin-top: 10px;
-        }
-        .flow-result strong { color: var(--accent); font-size: 1.3em; }
-
-        /* Tables */
-        .table-wrap {
-            position: relative; margin: 20px 0; border-radius: 12px;
-            overflow: hidden; border: 1px solid var(--border);
-        }
-        .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        table { width: 100%; border-collapse: collapse; font-size: 0.9em; background: #fff; min-width: 500px; }
-        th { background: var(--primary); color: #fff; padding: 12px 10px; text-align: left; font-weight: 600; white-space: nowrap; }
-        td { padding: 12px 10px; border-bottom: 1px solid var(--border); }
-        tr:nth-child(even) { background: #fcfaf5; }
-        tr.highlight-row { background: #fdf8ec !important; }
-
-        /* FAQ Style for Details */
-        .detail-box {
-            background: #fff; border: 1px solid var(--border); border-radius: 10px;
-            margin-bottom: 10px; overflow: hidden;
-        }
-        .detail-box summary {
-            padding: 15px 18px; font-weight: 700; color: var(--primary); cursor: pointer;
-            list-style: none; display: flex; justify-content: space-between; align-items: center;
-        }
-        .detail-box summary::-webkit-details-marker { display: none; }
-        .detail-box summary::after { content: '+'; font-size: 1.5em; color: var(--accent); transition: transform 0.3s; }
-        .detail-box[open] summary::after { transform: rotate(45deg); }
-        .detail-answer {
-            padding: 0 18px 18px; color: var(--text-light); font-size: 0.92em; line-height: 1.8;
-            border-top: 1px dashed var(--border); padding-top: 15px; margin-top: -5px;
-        }
-
-        /* CTA */
-        .cta-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #fff; padding: 40px 25px; text-align: center; border-radius: 16px; margin: 40px 0;
-        }
-        .btn {
-            display: inline-block; padding: 14px 36px; border-radius: 50px; text-decoration: none;
-            font-weight: 700; font-size: 1em; transition: all 0.2s; border: none; cursor: pointer;
-            text-align: center; width: 100%; max-width: 300px; margin-top: 15px;
-        }
-        .btn-primary { background: var(--gold-grad); color: #1a1a1a; box-shadow: 0 6px 20px rgba(197,160,89,0.4); }
-        .btn-primary:active { transform: scale(0.97); }
-
-        .highlight { color: var(--accent); font-weight: 700; }
-        .big-num { font-size: 2em; font-weight: 800; color: var(--accent); display: block; line-height: 1.2; }
-
-        /* 存钱罐特殊样式 */
-        .piggy-card {
-            background: #fff; border-radius: 14px; padding: 22px;
-            margin-bottom: 20px; position: relative; overflow: hidden;
-        }
-        .piggy-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-        }
-        .piggy-card.carat::before { background: var(--accent); }
-        .piggy-card.psu::before { background: var(--success); }
-        .piggy-card.pension::before { background: #1565c0; }
-        .piggy-card.legacy::before { background: #7b1fa2; }
-        .piggy-card h3 { margin-top: 0; }
-        .piggy-example {
-            background: #fafaf7; border-radius: 10px; padding: 15px 18px;
-            margin-top: 15px; border-left: 3px solid var(--accent);
-        }
-        .piggy-example-title {
-            font-size: 0.85em; font-weight: 700; color: var(--accent);
-            letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase;
-        }
-
+        /* ========== Desktop ========== */
         @media (min-width: 769px) {
             .hero h1 { font-size: 2.8em; }
             .content { padding: 50px 40px; }
             .grid-2 { grid-template-columns: repeat(2, 1fr); }
             .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .number-shock { grid-template-columns: repeat(4, 1fr); }
+            .compare-grid { grid-template-columns: repeat(2, 1fr); }
+            .timeline-section { padding: 70px 40px; }
+            .timeline-header h2 { font-size: 2.5em; }
         }
     </style>
 </head>
 <body>
 
+<!-- ===================== HERO ===================== -->
 <header class="hero">
     <div class="hero-badge">💰 INCOME ENGINES · V4.1</div>
     <h1>10 大收入引擎<br>总有一款适合你</h1>
@@ -970,7 +680,7 @@
         <h2>四大"存钱罐"：把事业变成传世资产</h2>
         <p class="lead">除了每月的现金收入，公司还为你准备了 4 个长期资产账户。你做得越久，这些账户里的钱就越多。</p>
 
-        <!-- 存钱罐 1：CARAT -->
+        <!-- CARAT -->
         <div class="piggy-card carat">
             <div class="card-icon">💎</div>
             <h3>存钱罐 ①：CARAT 代币回购</h3>
@@ -986,7 +696,7 @@
             </div>
         </div>
 
-        <!-- 存钱罐 2：PSU -->
+        <!-- PSU -->
         <div class="piggy-card psu">
             <div class="card-icon">📊</div>
             <h3>存钱罐 ②：PSU 利润分享</h3>
@@ -1006,7 +716,7 @@
             </div>
         </div>
 
-        <!-- 存钱罐 3：养老金 -->
+        <!-- 养老金 -->
         <div class="piggy-card pension">
             <div class="card-icon">🏦</div>
             <h3>存钱罐 ③：领导人养老金</h3>
@@ -1023,7 +733,7 @@
             </div>
         </div>
 
-        <!-- 存钱罐 4：传承权 -->
+        <!-- 传承权 -->
         <div class="piggy-card legacy">
             <div class="card-icon">👨‍👩‍👧‍👦</div>
             <h3>存钱罐 ④：接班人传承权</h3>
@@ -1042,12 +752,101 @@
         </div>
     </section>
 
-    <!-- ===================== 收入 9 · GLAP/GLAB 重磅 ===================== -->
+    <!-- ===================== 收入 9 · GLAP/GLAB ===================== -->
     <section>
         <span class="sec-label">收入引擎 ⑨ · V4.1 年度重磅</span>
         <h2>🏆 GLAP 全球领袖成就大奖</h2>
         <p class="lead">这是 V4.1 新增的"王炸"模块——专门给顶级领袖准备的<strong>年度分红大奖</strong>。从公司年度净利润的 <strong>7%</strong> 中拿出，<strong>不占月度 40% 拨出</strong>，是真正的"公司利润分享"。</p>
 
+        <div class="glap-hero">
+            <div class="glap-badge">⭐ ANNUAL ACHIEVEMENT AWARD</div>
+            <h3>GLAP · GLAB 年度成就大奖</h3>
+            <p>靠培养领导人拿积分，年底按积分瓜分公司 7% 净利润</p>
+        </div>
+
+        <h3>🎯 什么是 GLAP？通俗理解</h3>
+        <p>GLAP（全球领袖成就积分）是一套<strong>年度积分系统</strong>。它不看你个人卖了多少货，而是看你培养了多少个<strong>"能独立作战的领导人"</strong>。</p>
+
+        <div class="box-story">
+            <p><strong>通俗理解：</strong></p>
+            <p>你直接推荐的每个人，如果他能带起一个独立业务分支（当月 GV ≥ $2,500），就算你的<strong>"一条腿"</strong>。</p>
+            <p>你培养的腿越多、级别越高，你的 GLAP 积分就越高，年底分红就越多。</p>
+            <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>类比：</strong>就像麦当劳的"区域经理奖"——不是看你卖了多少汉堡，而是看你培养了多少个能独立开店的店长。</p>
+        </div>
+
+        <h3>🦵 什么是"腿"？可视化展示</h3>
+        <p>你直接推荐的每个人，如果能独立带起业务（月销 ≥ $2,500），就算你的一条"活跃腿"。</p>
+
+        <div class="leg-visual">
+            <div class="leg-item active">
+                <div class="leg-icon">🦵</div>
+                <div class="leg-name">第 1 条腿</div>
+                <div class="leg-score">铂金级 · 3 分</div>
+            </div>
+            <div class="leg-item active">
+                <div class="leg-icon">🦵</div>
+                <div class="leg-name">第 2 条腿</div>
+                <div class="leg-score">钻石级 · 10 分</div>
+            </div>
+            <div class="leg-item active">
+                <div class="leg-icon">🦵</div>
+                <div class="leg-name">第 3 条腿</div>
+                <div class="leg-score">铂金级 · 3 分</div>
+            </div>
+            <div class="leg-item active">
+                <div class="leg-icon">🦵</div>
+                <div class="leg-name">第 4 条腿</div>
+                <div class="leg-score">双钻石 · 30 分</div>
+            </div>
+        </div>
+
+        <h3>📊 积分怎么算？</h3>
+        <p>每条腿根据其最高达标级别产生积分，<strong>单腿积分上限 30 分</strong>：</p>
+
+        <div class="table-wrap"><div class="table-scroll">
+            <table>
+                <thead>
+                    <tr><th>腿的级别</th><th>产生积分</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>金级部门</td><td><strong>0.5 分</strong></td><td>每条腿内所有金级最多计 3 分</td></tr>
+                    <tr><td>铂金部门</td><td><strong>3.0 分</strong></td><td>—</td></tr>
+                    <tr><td>钻石部门</td><td><strong>10.0 分</strong></td><td>—</td></tr>
+                    <tr style="background:#fdf8ec;"><td>双钻石部门</td><td class="highlight"><strong>30.0 分</strong></td><td>达到单腿积分上限 🏆</td></tr>
+                    <tr><td>国际腿（海外市场）</td><td><strong>+0.5 分</strong></td><td>该国际腿需连续 12 个月达标</td></tr>
+                </tbody>
+            </table>
+        </div></div>
+
+        <h3>🎯 谁能拿 GLAB？资格门槛</h3>
+        <p>要获得 GLAB 领取资格，必须<strong>同时满足</strong>以下 4 个条件：</p>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-icon">💎</div>
+                <h4>① 身份要求</h4>
+                <p>必须是<strong>钻石及以上</strong>级别</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🦵</div>
+                <h4>② 团队宽度</h4>
+                <p>至少 <strong>4 条活跃铂金腿</strong><br>
+                <small style="color:var(--text-light);">（或 2 条铂金腿 + 2 条金级腿）</small></p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h4>③ 积分门槛</h4>
+                <p>GLAP 总积分 <strong>≥ 30 分</strong></p>
+            </div>
+            <div class="card">
+                <div class="card-icon">✅</div>
+                <h4>④ 合规要求</h4>
+                <p>团队终端零售 <strong>≥ 70%</strong><br>
+                <small style="color:var(--text-light);">（确保真实销售）</small></p>
+            </div>
+        </div>
+
+        <h3>💰 GLAB 奖金怎么分？</h3>
         <div class="box-highlight">
             <h3>🎁 年度奖金池 = 公司年度净利润 × 7%</h3>
             <p>个人 GLAB = GLAB 池总额 ×（个人 GLAP 积分 ÷ 全体达标者总积分）<br>
@@ -1079,36 +878,283 @@
                 <p style="font-size:0.85em; color:var(--success); margin-top:15px;">✅ 这笔奖金从公司年度净利润 7% 的 GLAB 池中支出，不占 40% 月度核心拨出。</p>
             </div>
         </details>
-    </section>
 
-    <!-- ===================== 总结 ===================== -->
-    <section>
-        <div class="box-highlight" style="background: var(--gold-grad); color: #1a1a1a;">
-            <h3 style="color: #1a1a1a;">💡 一句话总结你的 10 大收入</h3>
-            <p style="color: #333; font-weight: 500; line-height: 2;">
-                卖一个包赚 <strong>$87.50</strong> 佣金，<br>
-                建两条深线拿 <strong>双倍管道差价</strong>，<br>
-                带团队拿 <strong>公司额外伯乐奖</strong>，<br>
-                转 VIP 拿 <strong>28% 月月递增</strong> 的被动收入，<br>
-                攒 CARAT 享回购增值，<br>
-                囤 PSU 享公司利润分红，<br>
-                存养老金退休一次性领取，<br>
-                传网络给后代享 <strong>20% 永久顾问费</strong>，<br>
-                冲 GLAP 拿 <strong>年度净利润 7%</strong> 的成就大奖！
-            </p>
+        <h3>🌟 超级小组奖（额外重磅奖励）</h3>
+        <p>当你的 GLAP 总积分达到 <strong>150 分以上</strong>，且拥有至少 <strong>2 个积分达到 30 分（上限）的活跃腿</strong>（称为"超级小组"），可额外获得：</p>
+
+        <div class="box-gold">
+            <p><strong>🏆 超级小组奖奖励标准：</strong></p>
+            <p>• 第 2 - 5 个超级小组：每个奖励 <span class="highlight">$20,000</span><br>
+            • 第 6 个及以上：每个奖励 <span class="highlight">$40,000</span>，<strong>上不封顶</strong>！</p>
+            <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>通俗理解：</strong>"超级小组"就是你培养出来的"双钻石级别"的独立业务分支。每多培养一个，年底额外多拿 2-4 万美金！</p>
+        </div>
+
+        <h3>⚖️ 合规亮点：不占 40% 月度拨出</h3>
+        <div class="box-info">
+            <p><strong>✅ 资金来源：</strong>公司年度净利润的 7%<br>
+            <strong>✅ 是否占 40% 拨出：</strong><span class="highlight">否</span>，独立于月度核心拨出<br>
+            <strong>✅ 分配方式：</strong>按 GLAP 积分加权分配，设个人上限 15%<br>
+            <strong>✅ 透明性：</strong>每年向全体达标领袖公布池金额与分配结果</p>
+            <p style="font-size:0.85em; color:var(--text-light); margin-top:10px;">💡 <strong>为什么这么设计？</strong>GLAB 是"利润分享"，不是"销售佣金"。它从公司赚到的利润中拿出，而不是从销售额中拨出，所以不占印尼法规要求的 40% 月度拨出上限。</p>
+        </div>
+
+        <h3>📅 GLAP 积分保留机制（V4.1 新增）</h3>
+        <div class="box-gold">
+            <p><strong>🛡️ 软着陆保护：</strong>GLAP 积分滚动 12 个月，<strong>不因单月降级清零</strong>。</p>
+            <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>设计目的：</strong>鼓励长期团队建设。即使某个月业绩波动，你过去 12 个月积累的积分依然有效，不会因为一次降级就失去年度大奖资格。</p>
         </div>
     </section>
 
-    <!-- ===================== CTA ===================== -->
-    <div class="cta-section">
-        <h2>准备好开启你的收入引擎了吗？</h2>
-        <p>不需要辞职，不需要大量投入。从卖出第一件产品开始，体验 1 分钟到账的快感。</p>
-        <a href="#" class="btn btn-primary">立即咨询事业顾问，获取专属方案 →</a>
+</div>
+</div>
+
+<!-- ===================== 压轴：人生财富时间轴 ===================== -->
+<section class="timeline-section">
+    <div class="container">
+        <div class="timeline-header">
+            <span class="sec-label">💎 压轴 · 你的人生时间轴</span>
+            <h2>如果你坚持做下去<br>人生会怎样？</h2>
+            <p class="lead">这不是"一夜暴富"的故事<br>而是一份可以持续积累、代代相传的事业</p>
+        </div>
+
+        <div class="content">
+
+            <!-- 财富时间轴 -->
+            <div class="wealth-timeline">
+                <!-- 第1个月 -->
+                <div class="wt-item">
+                    <div class="wt-header">
+                        <span class="wt-time">第 1 个月</span>
+                        <span class="wt-emoji">🌱</span>
+                    </div>
+                    <div class="wt-title">起步期：卖货赚佣金</div>
+                    <div class="wt-desc">你卖出 10 件产品，佣金 1 分钟到账电子钱包。信心建立，副业启动。</div>
+                    <div class="wt-incomes">
+                        <span class="wt-income-tag">💰 个人佣金</span>
+                    </div>
+                    <div class="wt-number">$500</div>
+                    <div class="wt-number-label">首月收入</div>
+                </div>
+
+                <!-- 第6个月 -->
+                <div class="wt-item">
+                    <div class="wt-header">
+                        <span class="wt-time">第 6 个月</span>
+                        <span class="wt-emoji">🌿</span>
+                    </div>
+                    <div class="wt-title">成长期：管道 + 伯乐 + VIP</div>
+                    <div class="wt-desc">你带了 5 个朋友加入，积累了 80 个 VIP 客户。管道差价 + 伯乐奖 + VIP 续费，被动收入开始涌现。</div>
+                    <div class="wt-incomes">
+                        <span class="wt-income-tag">💰 个人佣金</span>
+                        <span class="wt-income-tag">🔗 管道差价</span>
+                        <span class="wt-income-tag">🎁 伯乐奖</span>
+                        <span class="wt-income-tag">🏖️ VIP 续费</span>
+                    </div>
+                    <div class="wt-number">$2,800</div>
+                    <div class="wt-number-label">月收入</div>
+                </div>
+
+                <!-- 第1年 -->
+                <div class="wt-item milestone">
+                    <div class="wt-header">
+                        <span class="wt-time">第 1 年</span>
+                        <span class="wt-emoji">🌳</span>
+                    </div>
+                    <div class="wt-title">晋升铂金：被动收入超过主业</div>
+                    <div class="wt-desc">你晋升铂金级别，团队月销 $50,000+。200 个 VIP 客户让你每月"收租" $1,556。副业收入首次超过主业工资。</div>
+                    <div class="wt-incomes">
+                        <span class="wt-income-tag">💰 佣金 30%</span>
+                        <span class="wt-income-tag">🔗 管道差价</span>
+                        <span class="wt-income-tag">🎁 伯乐奖</span>
+                        <span class="wt-income-tag">🏖️ VIP $1,556/月</span>
+                        <span class="wt-income-tag">🏆 分红池</span>
+                    </div>
+                    <div class="wt-number">$10,000+</div>
+                    <div class="wt-number-label">月收入 · 副业超主业</div>
+                </div>
+
+                <!-- 第3年 -->
+                <div class="wt-item">
+                    <div class="wt-header">
+                        <span class="wt-time">第 3 年</span>
+                        <span class="wt-emoji">💎</span>
+                    </div>
+                    <div class="wt-title">晋升钻石：四大存钱罐开始发力</div>
+                    <div class="wt-desc">CARAT 代币持续增值，PSU 利润分享开始分红，养老金账户累计 $57,600。你开始享受"公司利润"的红利。</div>
+                    <div class="wt-incomes">
+                        <span class="wt-income-tag">💎 CARAT 增值</span>
+                        <span class="wt-income-tag">📊 PSU 分红</span>
+                        <span class="wt-income-tag">🏦 养老金 $57,600</span>
+                    </div>
+                    <div class="wt-number">$30,000+</div>
+                    <div class="wt-number-label">月收入 · 资产持续积累</div>
+                </div>
+
+                <!-- 第5年 -->
+                <div class="wt-item milestone">
+                    <div class="wt-header">
+                        <span class="wt-time">第 5 年</span>
+                        <span class="wt-emoji">👑</span>
+                    </div>
+                    <div class="wt-title">冲击皇冠：年度 GLAB 大奖</div>
+                    <div class="wt-desc">你培养出了多个"超级小组"，养老金累计近 $96,000。年度 GLAB 成就奖金让你一次性拿到 <strong>$31,718</strong>。</div>
+                    <div class="wt-incomes">
+                        <span class="wt-income-tag">🏆 GLAB $31,718/年</span>
+                        <span class="wt-income-tag">🏦 养老金 $96,000</span>
+                        <span class="wt-income-tag">💎 CARAT 增值</span>
+                        <span class="wt-income-tag">📊 PSU 分红</span>
+                    </div>
+                    <div class="wt-number">$80,000+</div>
+                    <div class="wt-number-label">月收入 · 顶级领袖</div>
+                </div>
+
+                <!-- 第10年 -->
+                <div class="wt-item">
+                    <div class="wt-header">
+                        <span class="wt-time">第 10 年</span>
+                        <span class="wt-emoji">🏛️</span>
+                    </div>
+                    <div class="wt-title">传承启动：事业交给下一代</div>
+                    <div class="wt-desc">你启动"传承权"，把团队交给子女。即使退休，你依然终身享受团队 <strong>20% 的永久顾问费</strong>。</div>
+                    <div class="wt-incomes">
+                        <span class="wt-income-tag">👨‍👩‍👧‍👦 传承权启动</span>
+                        <span class="wt-income-tag">💰 永久顾问费 20%</span>
+                        <span class="wt-income-tag">🏦 养老金 $192,000</span>
+                    </div>
+                    <div class="wt-number">$16,000/月</div>
+                    <div class="wt-number-label">退休躺赚 · 终身收入</div>
+                </div>
+
+                <!-- 第20年 -->
+                <div class="wt-item milestone">
+                    <div class="wt-header">
+                        <span class="wt-time">第 20 年</span>
+                        <span class="wt-emoji">🌟</span>
+                    </div>
+                    <div class="wt-title">家族传承：事业成为家族资产</div>
+                    <div class="wt-desc">你的子女继续经营团队，你的孙辈享受家族财富。20 年永久顾问费累计 <strong>$3,840,000</strong>。这不是打工，这是真正的家族事业。</div>
+                    <div class="wt-incomes">
+                        <span class="wt-income-tag">👨‍👩‍👧‍👦 家族传承</span>
+                        <span class="wt-income-tag">💰 20年累计 $3,840,000</span>
+                        <span class="wt-income-tag">🏛️ 家族资产</span>
+                    </div>
+                    <div class="wt-number">$3,840,000</div>
+                    <div class="wt-number-label">终身累计 · 家族资产</div>
+                </div>
+            </div>
+
+            <!-- 数字震撼区 -->
+            <h2 style="text-align:center;">📊 数字会说话</h2>
+            <p class="lead" style="text-align:center;">一份事业，多重收入</p>
+
+            <div class="number-shock">
+                <div class="shock-item">
+                    <div class="shock-num">$87.50</div>
+                    <div class="shock-label">卖 1 个包最高赚</div>
+                </div>
+                <div class="shock-item">
+                    <div class="shock-num">$18,673</div>
+                    <div class="shock-label">200 VIP 年化被动收入</div>
+                </div>
+                <div class="shock-item">
+                    <div class="shock-num">$96,000</div>
+                    <div class="shock-label">5 年养老金累计</div>
+                </div>
+                <div class="shock-item">
+                    <div class="shock-num">$31,718</div>
+                    <div class="shock-label">年度 GLAB 大奖</div>
+                </div>
+            </div>
+
+            <!-- 对比框 -->
+            <h2 style="text-align:center;">⚖️ 人生选择</h2>
+            <p class="lead" style="text-align:center;">同样的 20 年，两种完全不同的人生轨迹</p>
+
+            <div class="compare-grid">
+                <div class="compare-card job">
+                    <h4>🏢 普通打工</h4>
+                    <div class="compare-row">
+                        <span class="label">收入模式</span>
+                        <span class="value">一份时间换一份钱</span>
+                    </div>
+                    <div class="compare-row">
+                        <span class="label">20 年累计</span>
+                        <span class="value">~$100 万</span>
+                    </div>
+                    <div class="compare-row">
+                        <span class="label">退休后</span>
+                        <span class="value">收入归零</span>
+                    </div>
+                    <div class="compare-row">
+                        <span class="label">可传承</span>
+                        <span class="value">❌ 无</span>
+                    </div>
+                    <div class="compare-row">
+                        <span class="label">被动收入</span>
+                        <span class="value">❌ 无</span>
+                    </div>
+                </div>
+
+                <div class="compare-card career">
+                    <h4>💎 这份事业</h4>
+                    <div class="compare-row">
+                        <span class="label">收入模式</span>
+                        <span class="value">一份时间换多份钱</span>
+                    </div>
+                    <div class="compare-row">
+                        <span class="label">20 年累计</span>
+                        <span class="value">$500 万+</span>
+                    </div>
+                    <div class="compare-row">
+                        <span class="label">退休后</span>
+                        <span class="value">每月 $16,000+</span>
+                    </div>
+                    <div class="compare-row">
+                        <span class="label">可传承</span>
+                        <span class="value">✅ 传给后代</span>
+                    </div>
+                    <div class="compare-row">
+                        <span class="label">被动收入</span>
+                        <span class="value">✅ VIP + 分红 + GLAB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 终极总结 -->
+            <div class="final-summary">
+                <h3>💎 一句话总结这份事业</h3>
+                <div class="summary-text">
+                    卖一个包赚 <strong>$87.50</strong> 佣金，<br>
+                    建两条深线拿 <strong>双倍管道差价</strong>，<br>
+                    带团队拿 <strong>公司额外伯乐奖</strong>，<br>
+                    转 VIP 拿 <strong>28% 月月递增</strong> 的被动收入，<br>
+                    攒 CARAT 享回购增值，<br>
+                    囤 PSU 享公司利润分红，<br>
+                    存养老金退休一次性领取，<br>
+                    传网络给后代享 <strong>20% 永久顾问费</strong>，<br>
+                    冲 GLAP 拿 <strong>年度净利润 7%</strong> 的成就大奖！
+                </div>
+                <div class="final-motto">
+                    公司安全 · 领袖赚钱 · 事业可传承
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-section">
+                <h2 style="color:#fff; margin-bottom:15px;">你的人生时间轴，从哪一刻开始？</h2>
+                <p style="color:#ccc; max-width:550px; margin:0 auto 25px;">
+                    不需要辞职，不需要大量投入。<br>
+                    从卖出第一件产品开始，体验 1 分钟到账的快感。<br>
+                    <strong style="color:var(--accent);">1 个月、1 年、5 年、10 年……<br>时间会给你答案。</strong>
+                </p>
+                <a href="#" class="btn btn-primary">立即咨询事业顾问，开启你的人生时间轴 →</a>
+            </div>
+
+        </div>
     </div>
+</section>
 
-</div>
-</div>
-
+<!-- ===================== FOOTER ===================== -->
 <footer style="background: var(--primary); color: #888; padding: 30px 20px; text-align: center; font-size: 0.8em;">
     <div style="font-size: 1.2em; font-weight: 800; background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;">LUXE · JEWELRY · LEGACY</div>
     <p>国际轻奢珠宝事业合伙人计划 · V4.1</p>
