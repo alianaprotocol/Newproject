@@ -196,7 +196,7 @@
             background: var(--web3); border: 3px solid #fff;
             box-shadow: 0 0 0 2px var(--web3);
         }
-        .tl-time {
+        .tl-phase {
             display: inline-block; padding: 3px 12px;
             background: var(--web3); color: #fff;
             border-radius: 15px; font-size: 0.75em; font-weight: 700;
@@ -205,28 +205,39 @@
         .tl-title { font-weight: 700; color: var(--primary); font-size: 1em; margin-bottom: 4px; }
         .tl-desc { color: var(--text-light); font-size: 0.88em; }
 
-        /* ROI Calculator */
-        .roi-card {
-            background: linear-gradient(135deg, #0a0e27 0%, #1e1b4b 100%);
-            color: #fff; padding: 30px; border-radius: 16px; margin: 25px 0;
-            border: 2px solid var(--accent);
+        /* Pathway Cards */
+        .pathway-card {
+            background: #fff; border: 2px solid var(--border); border-radius: 14px;
+            padding: 25px; margin-bottom: 20px;
+            transition: all 0.2s;
         }
-        .roi-card h4 {
-            color: var(--accent); margin: 0 0 20px; font-size: 1.3em;
+        .pathway-card:hover {
+            border-color: var(--web3);
+            box-shadow: 0 4px 15px rgba(99,102,241,0.15);
         }
-        .roi-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;
+        .pathway-card.recommended {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, #fff 0%, #fdf8ec 100%);
         }
-        .roi-item {
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(197,160,89,0.3);
-            border-radius: 10px; padding: 15px; text-align: center;
+        .pathway-card.recommended::before {
+            content: '⭐ 推荐路径';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--gold-grad);
+            color: #1a1a1a;
+            padding: 3px 14px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 700;
         }
-        .roi-val {
-            font-size: 1.8em; font-weight: 800; color: var(--accent);
-            display: block; line-height: 1.2;
+        .pathway-card h4 {
+            color: var(--web3);
+            font-size: 1.2em;
+            margin: 0 0 15px;
         }
-        .roi-lbl {
-            font-size: 0.8em; color: #cbd5e1; margin-top: 5px;
+        .pathway-card.recommended h4 {
+            color: var(--accent);
         }
 
         /* CTA */
@@ -255,7 +266,6 @@
             .content { padding: 50px 40px; }
             .grid-2 { grid-template-columns: repeat(2, 1fr); }
             .grid-3 { grid-template-columns: repeat(3, 1fr); }
-            .roi-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
@@ -269,20 +279,20 @@
 
     <div class="hero-stats">
         <div class="hero-stat">
-            <span class="hero-stat-val">18-24月</span>
-            <div class="hero-stat-lbl">NASDAQ 上市周期</div>
+            <span class="hero-stat-val">Web3</span>
+            <div class="hero-stat-lbl">RWA 资产锚定</div>
         </div>
         <div class="hero-stat">
-            <span class="hero-stat-val">8-12x</span>
-            <div class="hero-stat-lbl">SPAC 估值倍数</div>
+            <span class="hero-stat-val">NASDAQ</span>
+            <div class="hero-stat-lbl">上市目标市场</div>
         </div>
         <div class="hero-stat">
-            <span class="hero-stat-val">25-35%</span>
-            <div class="hero-stat-lbl">投资方 IRR</div>
+            <span class="hero-stat-val">三层隔离</span>
+            <div class="hero-stat-lbl">合规架构</div>
         </div>
         <div class="hero-stat">
-            <span class="hero-stat-val">3-5年</span>
-            <div class="hero-stat-lbl">退出周期</div>
+            <span class="hero-stat-val">灵活退出</span>
+            <div class="hero-stat-lbl">多路径选择</div>
         </div>
     </div>
 </header>
@@ -300,26 +310,26 @@
             <div class="card">
                 <div class="card-icon">💰</div>
                 <h4>现金流优势</h4>
-                <p>首年 TSO 目标 $1,200 万，净利润率 31%，年净利润 $372 万。稳定的现金流为资本化提供坚实基础。</p>
+                <p>稳定的 MLM 业务现金流，净利润率 31%，为资本化提供坚实基础。业务模型已验证，具备规模化潜力。</p>
             </div>
             <div class="card">
                 <div class="card-icon">🌐</div>
                 <h4>Web3 概念溢价</h4>
-                <p>CARAT RWA 化 + 东南亚增长 + 消费零售，三重概念叠加，享受 SPAC 市场 8-12x PE 估值溢价。</p>
+                <p>CARAT RWA 化 + 东南亚增长 + 消费零售，三重概念叠加，在资本市场具备稀缺性和估值溢价空间。</p>
             </div>
             <div class="card">
                 <div class="card-icon">🔒</div>
                 <h4>合规安全</h4>
-                <p>三层司法管辖区隔离（印尼 → 新加坡 → 开曼），彻底规避 SEC 与印尼 OJK 监管风险。</p>
+                <p>三层司法管辖区隔离（印尼 → 新加坡 → 开曼），彻底规避 SEC 与印尼 OJK 监管风险，确保资本化路径合规。</p>
             </div>
         </div>
 
         <div class="box-gold">
             <strong>💡 投资方核心价值：</strong><br>
-            • <strong>高回报：</strong>IRR 25-35%，3-5 年退出<br>
-            • <strong>可退出：</strong>NASDAQ 上市，公开市场流动性<br>
+            • <strong>战略稀缺性：</strong>Web3 + 消费零售 + 东南亚增长，市场稀缺标的<br>
+            • <strong>可退出路径：</strong>NASDAQ 上市，公开市场流动性<br>
             • <strong>合规安全：</strong>离岸架构，规避监管风险<br>
-            • <strong>概念稀缺：</strong>Web3 + 消费零售 + 东南亚，市场稀缺标的
+            • <strong>灵活机制：</strong>多种退出路径，根据市场环境灵活选择
         </div>
     </section>
 
@@ -373,92 +383,52 @@
     <!-- ===================== Part 3: 上市路径 ===================== -->
     <section>
         <span class="sec-label">Part 03 · IPO Pathway</span>
-        <h2>NASDAQ 上市双轨路径</h2>
-        <p class="lead">提供 SPAC 并购与反向收购两条路径，根据市场环境灵活选择。</p>
+        <h2>NASDAQ 上市路径选项</h2>
+        <p class="lead">提供 SPAC 并购与反向收购两条路径，根据市场环境、公司业绩、行业对标等因素灵活选择最优路径。</p>
 
-        <div class="table-wrap"><div class="table-scroll">
-            <table>
-                <thead>
-                    <tr>
-                        <th>维度</th>
-                        <th>路径 A：SPAC 并购上市 (首选)</th>
-                        <th>路径 B：反向收购/买壳</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>核心逻辑</strong></td>
-                        <td>寻找专注"Web3 + 消费零售"概念的 SPAC 壳公司，通过 De-SPAC 合并上市。</td>
-                        <td>直接收购 NASDAQ 已停滞的干净壳公司，注入东南亚珠宝资产。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>估值溢价</strong></td>
-                        <td class="text-web3">极高 (8-12x PE，享受 Web3 / RWA / 东南亚增长三重概念溢价)</td>
-                        <td>中等 (5-8x PE，按传统珠宝零售估值)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>上市周期</strong></td>
-                        <td>18-24 个月</td>
-                        <td>12-18 个月</td>
-                    </tr>
-                    <tr>
-                        <td><strong>募资规模</strong></td>
-                        <td>$5,000 万 - $1 亿</td>
-                        <td>$2,000 万 - $5,000 万</td>
-                    </tr>
-                    <tr>
-                        <td><strong>领袖退出</strong></td>
-                        <td>CARAT 质押者通过智能合约自动转换为上市公司股票/现金。</td>
-                        <td>通过离岸信托代持股权，按协议分配 IPO 后解禁份额。</td>
-                    </tr>
-                    <tr>
-                        <td><strong>投资方退出</strong></td>
-                        <td>IPO 后 6 个月锁定期，之后公开市场退出。</td>
-                        <td>反向收购后 12 个月锁定期，之后公开市场退出。</td>
-                    </tr>
-                    <tr class="highlight-row">
-                        <td><strong>推荐指数</strong></td>
-                        <td><strong>⭐⭐⭐⭐⭐</strong> (估值高，概念稀缺)</td>
-                        <td><strong>⭐⭐⭐⭐</strong> (速度快，估值较低)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div></div>
+        <div class="pathway-card recommended">
+            <h4>路径 A：SPAC 并购上市</h4>
+            <p><strong>核心逻辑：</strong>寻找专注"Web3 + 消费零售"概念的 SPAC 壳公司，通过 De-SPAC 合并上市。</p>
+            <p style="margin-top:15px;"><strong>优势：</strong></p>
+            <ul style="padding-left:20px; font-size:0.92em; color:var(--text-light);">
+                <li>享受 Web3 / RWA / 东南亚增长三重概念溢价</li>
+                <li>SPAC Sponsor 带来专业资源和市场认可</li>
+                <li>CARAT 质押者通过智能合约自动转换为上市公司股票/现金</li>
+                <li>募资规模较大，为公司发展提供充足资金</li>
+            </ul>
+            <p style="margin-top:15px;"><strong>适用场景：</strong>市场环境良好，Web3 概念受追捧，公司有足够业绩支撑估值</p>
+        </div>
 
-        <h3>上市时间表（SPAC 路径）</h3>
-        <div class="timeline">
-            <div class="tl-item">
-                <span class="tl-time">M1-M3</span>
-                <div class="tl-title">准备期</div>
-                <div class="tl-desc">财务审计、法律尽调、SPAC Sponsor 对接、签署 Pre-NDA</div>
-            </div>
-            <div class="tl-item">
-                <span class="tl-time">M4-M9</span>
-                <div class="tl-title">尽调与谈判</div>
-                <div class="tl-desc">SPAC Sponsor 尽调、估值谈判、签署 SPA (Share Purchase Agreement)</div>
-            </div>
-            <div class="tl-item">
-                <span class="tl-time">M10-M15</span>
-                <div class="tl-title">De-SPAC 合并</div>
-                <div class="tl-desc">SEC 文件提交 (S-4, 8-K)、股东投票、合并完成</div>
-            </div>
-            <div class="tl-item">
-                <span class="tl-time">M16-M18</span>
-                <div class="tl-title">NASDAQ 上市</div>
-                <div class="tl-desc">股票代码变更、IPO 募资、投资方锁定期开始</div>
-            </div>
-            <div class="tl-item">
-                <span class="tl-time">M24+</span>
-                <div class="tl-title">投资方退出</div>
-                <div class="tl-desc">锁定期结束，公开市场退出，IRR 25-35%</div>
-            </div>
+        <div class="pathway-card">
+            <h4>路径 B：反向收购/买壳</h4>
+            <p><strong>核心逻辑：</strong>直接收购 NASDAQ 已停滞的干净壳公司，注入东南亚珠宝资产。</p>
+            <p style="margin-top:15px;"><strong>优势：</strong></p>
+            <ul style="padding-left:20px; font-size:0.92em; color:var(--text-light);">
+                <li>流程相对简单，时间可控</li>
+                <li>按传统珠宝零售估值，逻辑清晰</li>
+                <li>通过离岸信托代持股权，按协议分配 IPO 后解禁份额</li>
+                <li>适合市场环境不佳时的备选方案</li>
+            </ul>
+            <p style="margin-top:15px;"><strong>适用场景：</strong>SPAC 市场遇冷，或公司希望快速上市</p>
         </div>
 
         <div class="box-info">
-            <strong>✅ 投资方保障：</strong><br>
-            • <strong>对赌协议：</strong>若 24 个月内未完成上市，公司按投资额 + 8% 年化回购<br>
-            • <strong>优先清算权：</strong>IPO 时投资方优先收回本金 + 8% 年化<br>
-            • <strong>反稀释条款：</strong>后续融资估值低于本轮，投资方获得补偿股份
+            <strong>✅ 路径选择原则：</strong><br>
+            • 具体上市路径将根据<strong>市场环境、公司业绩、行业对标、投资方偏好</strong>等因素综合决定<br>
+            • 公司保留<strong>灵活选择权</strong>，可在两条路径间切换<br>
+            • 最终路径将在上市前与投资方充分沟通后确定
+        </div>
+
+        <h3>投资方保障机制</h3>
+        <div class="box-gold">
+            <p><strong>无论选择哪条路径，投资方均享有以下保障：</strong></p>
+            <ul style="padding-left:20px; font-size:0.95em;">
+                <li><strong>优先清算权：</strong>IPO 时投资方优先收回本金 + 约定年化收益</li>
+                <li><strong>反稀释条款：</strong>后续融资估值低于本轮，投资方获得补偿股份</li>
+                <li><strong>对赌协议：</strong>若约定时间内未完成上市，公司按投资额 + 约定年化回购</li>
+                <li><strong>董事会席位：</strong>投资方委派董事，参与重大决策</li>
+                <li><strong>信息权：</strong>定期财务报表、董事会会议、重大事项通报</li>
+            </ul>
         </div>
     </section>
 
@@ -472,33 +442,33 @@
             <div class="card">
                 <div class="card-icon">🏦</div>
                 <h4>RWA 资产池 A：实物黄金/钻石</h4>
-                <p><strong>锚定资产：</strong>公司持有的实物黄金/钻石储备（价值 $500 万+）</p>
-                <p><strong>审计机制：</strong>第三方审计机构（如 SGS）每季度出具资产证明</p>
-                <p><strong>CARAT 价值：</strong>与贵金属指数挂钩，1 CARAT = 0.001g 黄金</p>
+                <p><strong>锚定资产：</strong>公司持有的实物黄金/钻石储备</p>
+                <p><strong>审计机制：</strong>第三方审计机构（如 SGS）定期出具资产证明</p>
+                <p><strong>CARAT 价值：</strong>与贵金属指数挂钩，价值稳定</p>
             </div>
             <div class="card">
                 <div class="card-icon">🏢</div>
                 <h4>RWA 资产池 B：旗舰店营收收益权</h4>
-                <p><strong>锚定资产：</strong>雅加达、曼谷等核心旗舰店未来 5 年营收流水</p>
+                <p><strong>锚定资产：</strong>核心旗舰店未来营收流水</p>
                 <p><strong>法律结构：</strong>通过新加坡基金会发行"收益权数字收据"</p>
-                <p><strong>CARAT 分红：</strong>持有者享有该流水的固定比例分红（年化 5-8%）</p>
+                <p><strong>CARAT 分红：</strong>持有者享有该流水的固定比例分红</p>
             </div>
         </div>
 
         <h3>CARAT RWA 化三阶段</h3>
         <div class="timeline">
             <div class="tl-item">
-                <span class="tl-time">阶段一</span>
+                <span class="tl-phase">阶段一</span>
                 <div class="tl-title">MLM 运营期（当前）</div>
                 <div class="tl-desc">CARAT 作为内部积分，通过行为挖矿获得，公司季度回购（溢价 105%）</div>
             </div>
             <div class="tl-item">
-                <span class="tl-time">阶段二</span>
-                <div class="tl-title">RWA 锚定期（上市前 6 个月）</div>
+                <span class="tl-phase">阶段二</span>
+                <div class="tl-title">RWA 锚定期（上市前）</div>
                 <div class="tl-desc">CARAT 锚定实物资产与营收收益权，由第三方审计，价值与资产挂钩</div>
             </div>
             <div class="tl-item">
-                <span class="tl-time">阶段三</span>
+                <span class="tl-phase">阶段三</span>
                 <div class="tl-title">证券映射期（IPO 时）</div>
                 <div class="tl-desc">CARAT 持有者质押至开曼信托智能合约，换取 Digital Warrant，映射为上市公司股票</div>
             </div>
@@ -508,7 +478,7 @@
             <strong>💡 CARAT RWA 化的投资方价值：</strong><br>
             • <strong>资产支撑：</strong>CARAT 不再是"空气积分"，而是锚定实物资产，价值稳定<br>
             • <strong>流动性提升：</strong>RWA 化后，CARAT 可在新加坡合规交易所交易<br>
-            • <strong>估值溢价：</strong>Web3 + RWA 概念，享受 SPAC 市场 8-12x PE 估值<br>
+            • <strong>估值溢价：</strong>Web3 + RWA 概念，享受资本市场估值溢价<br>
             • <strong>退出路径：</strong>CARAT 持有者可通过 Warrant 映射为股票，公开市场退出
         </div>
     </section>
@@ -522,55 +492,15 @@
         <h3>币股同权三阶段映射机制</h3>
         <div class="box-gold">
             <p><strong>阶段一：MLM 运营期</strong></p>
-            <p>领袖通过团队业绩获得 CARAT，享受公司季度回购溢价（105%）与 RWA 资产池分红（年化 5-8%）。</p>
+            <p>领袖通过团队业绩获得 CARAT，享受公司季度回购溢价与 RWA 资产池分红。</p>
             
             <p style="margin-top:15px;"><strong>阶段二：Pre-IPO 锁仓期</strong></p>
-            <p>领袖将 CARAT 质押至开曼信托的智能合约，锁定 12 个月，换取 <strong>"数字认股权证 (Digital Warrant)"</strong>。</p>
-            <p style="font-size:0.9em; color:var(--text-light);">Warrant 约定：100 CARAT = 1 股上市公司股票（或按 IPO 定价结算为 USDC/法币）</p>
+            <p>领袖将 CARAT 质押至开曼信托的智能合约，锁定期根据上市进程确定，换取 <strong>"数字认股权证 (Digital Warrant)"</strong>。</p>
+            <p style="font-size:0.9em; color:var(--text-light);">Warrant 约定：CARAT 按约定汇率映射为上市公司股票（或按 IPO 定价结算为 USDC/法币）</p>
             
             <p style="margin-top:15px;"><strong>阶段三：NASDAQ 上市日</strong></p>
             <p>智能合约自动触发，Warrant 按约定汇率映射为上市公司股票，或按 IPO 定价直接结算。</p>
         </div>
-
-        <h3>实战演算：皇冠领袖的 CARAT 变现之路</h3>
-        <div class="table-wrap"><div class="table-scroll">
-            <table>
-                <thead>
-                    <tr>
-                        <th>阶段</th>
-                        <th>CARAT 数量</th>
-                        <th>价值</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>MLM 运营期</strong></td>
-                        <td>10,000 CARAT</td>
-                        <td>$20,000 (按 $2/CARAT 回购价)</td>
-                        <td>享受季度回购 + RWA 分红</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Pre-IPO 锁仓</strong></td>
-                        <td>10,000 CARAT</td>
-                        <td>质押至开曼信托</td>
-                        <td>换取 100 股 Digital Warrant</td>
-                    </tr>
-                    <tr>
-                        <td><strong>IPO 上市日</strong></td>
-                        <td>100 股 Warrant</td>
-                        <td>按 IPO 价 $20/股</td>
-                        <td>映射为 100 股上市公司股票</td>
-                    </tr>
-                    <tr class="highlight-row">
-                        <td><strong>投资方退出</strong></td>
-                        <td>100 股股票</td>
-                        <td><strong>$2,000</strong> (公开市场)</td>
-                        <td>锁定期结束后退出</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div></div>
 
         <div class="box-web3">
             <strong>⚖️ 法律隔离说明：</strong><br>
@@ -581,105 +511,55 @@
         </div>
     </section>
 
-    <!-- ===================== Part 6: 投资方回报 ===================== -->
+    <!-- ===================== Part 6: 投资方回报框架 ===================== -->
     <section>
-        <span class="sec-label">Part 06 · Investor Returns</span>
-        <h2>投资方回报测算</h2>
-        <p class="lead">基于首年 TSO $1,200 万、净利润率 31% 的保守假设，测算投资方 IRR 与退出回报。</p>
+        <span class="sec-label">Part 06 · Investor Return Framework</span>
+        <h2>投资方回报框架</h2>
+        <p class="lead">具体估值将在上市前根据市场环境、公司业绩、行业对标等因素确定。以下为回报框架与保障机制。</p>
 
-        <div class="roi-card">
-            <h4>💰 核心财务指标</h4>
-            <div class="roi-grid">
-                <div class="roi-item">
-                    <span class="roi-val">$372万</span>
-                    <div class="roi-lbl">首年净利润</div>
-                </div>
-                <div class="roi-item">
-                    <span class="roi-val">8-12x</span>
-                    <div class="roi-lbl">SPAC 估值倍数</div>
-                </div>
-                <div class="roi-item">
-                    <span class="roi-val">$3,000-4,400万</span>
-                    <div class="roi-lbl">IPO 估值</div>
-                </div>
-                <div class="roi-item">
-                    <span class="roi-val">25-35%</span>
-                    <div class="roi-lbl">投资方 IRR</div>
-                </div>
+        <h3>回报决定因素</h3>
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h4>市场环境</h4>
+                <p>SPAC 市场热度、Web3 概念追捧度、东南亚市场增长预期等外部因素</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💹</div>
+                <h4>公司业绩</h4>
+                <p>TSO 规模、净利润率、用户增长、团队规模等内部指标</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏢</div>
+                <h4>行业对标</h4>
+                <p>同类上市公司估值倍数、近期 IPO/SPAC 案例对标</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h4>投资方协商</h4>
+                <p>与 SPAC Sponsor、投行、投资方的谈判结果</p>
             </div>
         </div>
 
-        <h3>投资方回报测算（以 $500 万投资为例）</h3>
-        <div class="table-wrap"><div class="table-scroll">
-            <table>
-                <thead>
-                    <tr>
-                        <th>项目</th>
-                        <th>保守场景</th>
-                        <th>基准场景</th>
-                        <th>乐观场景</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>投资金额</strong></td>
-                        <td>$5,000,000</td>
-                        <td>$5,000,000</td>
-                        <td>$5,000,000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>持股比例</strong></td>
-                        <td>20%</td>
-                        <td>15%</td>
-                        <td>10%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Pre-IPO 估值</strong></td>
-                        <td>$2,500 万 (6.7x PE)</td>
-                        <td>$3,333 万 (9x PE)</td>
-                        <td>$5,000 万 (13.5x PE)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>IPO 估值</strong></td>
-                        <td>$3,000 万 (8x PE)</td>
-                        <td>$4,400 万 (12x PE)</td>
-                        <td>$6,000 万 (16x PE)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>投资方持股价值</strong></td>
-                        <td>$600 万</td>
-                        <td>$660 万</td>
-                        <td>$600 万</td>
-                    </tr>
-                    <tr>
-                        <td><strong>投资回报</strong></td>
-                        <td>$100 万 (20%)</td>
-                        <td>$160 万 (32%)</td>
-                        <td>$100 万 (20%)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>年化 IRR</strong></td>
-                        <td>9% (3 年退出)</td>
-                        <td>14% (3 年退出)</td>
-                        <td>9% (3 年退出)</td>
-                    </tr>
-                    <tr class="highlight-row">
-                        <td><strong>综合回报（含分红）</strong></td>
-                        <td><strong>$250 万 (50%)</strong></td>
-                        <td><strong>$410 万 (82%)</strong></td>
-                        <td><strong>$350 万 (70%)</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div></div>
-
+        <h3>投资方保障条款</h3>
         <div class="box-info">
-            <strong>✅ 投资方保障条款：</strong><br>
-            • <strong>优先清算权：</strong>IPO 时优先收回本金 + 8% 年化<br>
-            • <strong>反稀释条款：</strong>后续融资估值低于本轮，获得补偿股份<br>
-            • <strong>对赌协议：</strong>若 24 个月内未上市，公司按投资额 + 8% 年化回购<br>
-            • <strong>董事会席位：</strong>投资方委派 1 名董事，参与重大决策<br>
-            • <strong>信息权：</strong>每月财务报表、每季度董事会会议
+            <p><strong>无论最终估值如何，投资方均享有以下保障：</strong></p>
+            <ul style="padding-left:20px; font-size:0.95em;">
+                <li><strong>优先清算权：</strong>IPO 时优先收回本金 + 约定年化收益（具体比例在投资协议中约定）</li>
+                <li><strong>反稀释条款：</strong>后续融资估值低于本轮，获得补偿股份，保护投资价值</li>
+                <li><strong>对赌协议：</strong>若约定时间内未完成上市，公司按投资额 + 约定年化回购</li>
+                <li><strong>董事会席位：</strong>委派董事，参与重大决策，保障投资方权益</li>
+                <li><strong>信息权：</strong>每月财务报表、每季度董事会会议、重大事项及时通报</li>
+                <li><strong>退出灵活性：</strong>锁定期结束后可通过公开市场、私募转让等多种方式退出</li>
+            </ul>
+        </div>
+
+        <div class="box-gold">
+            <strong>💡 估值确定原则：</strong><br>
+            • 估值将在上市前<strong>6-12 个月</strong>，根据当时市场环境和公司业绩确定<br>
+            • 公司将聘请<strong>顶级投行</strong>进行估值分析，确保估值合理、公允<br>
+            • 估值结果将与投资方<strong>充分沟通</strong>，确保各方利益平衡<br>
+            • 具体估值数字将在<strong>投资协议</strong>或<strong>上市文件</strong>中明确披露
         </div>
     </section>
 
@@ -711,7 +591,7 @@
                 <ul style="padding-left:20px; font-size:0.88em; color:var(--text-light);">
                     <li>双轨上市路径（SPAC + 买壳），灵活选择</li>
                     <li>对赌协议：未上市则回购，保障投资方本金</li>
-                    <li>保守财务预测，预留 20% 安全边际</li>
+                    <li>保守财务预测，预留安全边际</li>
                     <li>多元化市场（印尼 + 泰国 + 马来西亚），降低单一市场风险</li>
                 </ul>
                 <p style="font-size:0.85em; color:var(--success); margin-top:10px;">✅ 残余风险：中</p>
@@ -723,8 +603,8 @@
                 <p><strong>应对策略：</strong></p>
                 <ul style="padding-left:20px; font-size:0.88em; color:var(--text-light);">
                     <li>智能合约由顶级审计机构（如 CertiK）审计</li>
-                    <li>RWA 资产由第三方审计机构（如 SGS）每季度审计</li>
-                    <li>设立技术风险准备金（$50 万），应对突发情况</li>
+                    <li>RWA 资产由第三方审计机构（如 SGS）定期审计</li>
+                    <li>设立技术风险准备金，应对突发情况</li>
                     <li>购买智能合约保险（如 Nexus Mutual）</li>
                 </ul>
                 <p style="font-size:0.85em; color:var(--success); margin-top:10px;">✅ 残余风险：低</p>
@@ -735,10 +615,10 @@
                 <p><strong>风险描述：</strong>IPO 后锁定期结束，股价下跌，投资方退出回报低于预期。</p>
                 <p><strong>应对策略：</strong></p>
                 <ul style="padding-left:20px; font-size:0.88em; color:var(--text-light);">
-                    <li>优先清算权：IPO 时优先收回本金 + 8% 年化</li>
-                    <li>分批退出：锁定期结束后分 3-6 个月逐步退出，避免冲击股价</li>
+                    <li>优先清算权：IPO 时优先收回本金 + 约定年化</li>
+                    <li>分批退出：锁定期结束后分阶段逐步退出，避免冲击股价</li>
                     <li>二级市场转让：锁定期内可通过私募市场转让股份</li>
-                    <li>对赌协议：若股价低于 IPO 价 50%，公司补偿差额</li>
+                    <li>对赌协议：若股价低于约定水平，公司补偿差额</li>
                 </ul>
                 <p style="font-size:0.85em; color:var(--success); margin-top:10px;">✅ 残余风险：中</p>
             </div>
@@ -746,7 +626,7 @@
 
         <div class="box-danger">
             <strong>⚠️ 重要风险提示：</strong><br>
-            本文件中的财务预测、估值倍数、IRR 均为基于当前市场环境的估算，实际结果可能因市场变化、监管政策、公司经营等因素而有所不同。投资方应充分评估自身风险承受能力，并在专业顾问指导下做出投资决策。
+            本文件中的资本化路径、架构设计均为战略愿景，具体实施将根据市场环境、监管政策、公司经营等因素调整。投资方应充分评估自身风险承受能力，并在专业顾问指导下做出投资决策。
         </div>
     </section>
 
@@ -755,7 +635,7 @@
         <h2 style="color:#fff; margin-bottom:15px;">开启资本化之旅</h2>
         <p style="color:#cbd5e1; max-width:600px; margin:0 auto 25px;">
             我们诚邀具有战略眼光的投资方，共同参与这场 Web3 + 消费零售 + 东南亚增长的资本盛宴。<br>
-            <strong style="color:var(--accent);">高回报 · 可退出 · 合规安全 · 概念稀缺</strong>
+            <strong style="color:var(--accent);">战略稀缺 · 合规安全 · 灵活退出 · 多重保障</strong>
         </p>
         <a href="#" class="btn btn-primary">预约投资方一对一会议 →</a>
     </div>
@@ -768,7 +648,7 @@
     <div style="font-size: 1.2em; font-weight: 800; background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;">LUXE · JEWELRY · LEGACY</div>
     <p>终极资本路线与 Web3 资产架构 · 投资方专版</p>
     <p style="margin-top:15px; font-size:0.75em; color:#666;">
-        ⚠️ 免责声明：本文件中的财务预测、估值倍数、IRR 均为估算值，不构成投资建议。实际结果可能因市场变化、监管政策、公司经营等因素而有所不同。<br>
+        ⚠️ 免责声明：本文件中的资本化路径、架构设计均为战略愿景，不构成投资建议或承诺。具体估值、时间表将在上市前根据市场环境、公司业绩等因素确定。<br>
         本文件涉及的 Web3、RWA、SPAC 及币股映射架构为资本战略愿景，正式落地前必须由新加坡 MAS 合规律师、美国 SEC 证券律师及印尼当地合规顾问联合出具法律意见书。<br>
         <strong>Strictly Confidential · 仅供授权投资方查阅</strong><br>
         © 2026 LUXE Jewelry. All Rights Reserved.
