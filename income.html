@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="theme-color" content="#1a1a1a">
-    <title>LUXE · 9大收入引擎详解（普通人易懂版）</title>
+    <title>LUXE · 10大收入引擎详解 </title>
     <style>
         :root {
             --primary: #1a1a1a;
@@ -95,6 +95,17 @@
         }
         .box-highlight h3 { color: var(--accent); margin: 0 0 10px; font-size: 1.3em; }
         .box-highlight p { color: #ccc; margin: 0; font-size: 0.95em; }
+        .box-info {
+            background: #eef6f2; border-left: 4px solid var(--success);
+            padding: 15px 20px; border-radius: 0 10px 10px 0; margin: 20px 0;
+            color: #1e5a3d; font-size: 0.92em;
+        }
+        .box-gold {
+            background: linear-gradient(135deg, #fdf8ec 0%, #fff 100%);
+            border: 1.5px solid var(--accent-light); border-left: 5px solid var(--accent);
+            padding: 20px; border-radius: 0 12px 12px 0; margin: 25px 0; font-size: 0.98em;
+        }
+        .box-gold strong { color: var(--accent); }
 
         /* Flow Chart */
         .flow-chart {
@@ -107,14 +118,62 @@
         }
         .flow-branch strong { color: var(--accent); font-size: 1.1em; }
 
+        /* Tables */
+        .table-wrap {
+            position: relative; margin: 20px 0; border-radius: 12px;
+            overflow: hidden; border: 1px solid var(--border);
+        }
+        .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9em; background: #fff; min-width: 500px; }
+        th { background: var(--primary); color: #fff; padding: 12px 10px; text-align: left; font-weight: 600; white-space: nowrap; }
+        td { padding: 12px 10px; border-bottom: 1px solid var(--border); }
+        tr:nth-child(even) { background: #fcfaf5; }
+
+        /* GLAP Special Style */
+        .glap-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #2d2d2d 50%, #0a0a0a 100%);
+            color: #fff; padding: 30px 25px; border-radius: 16px; margin: 25px 0;
+            text-align: center; position: relative; overflow: hidden;
+            border: 2px solid var(--accent);
+        }
+        .glap-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(197,160,89,0.25) 0%, transparent 60%);
+        }
+        .glap-hero h3 {
+            color: var(--accent); margin: 0 0 10px; font-size: 1.5em;
+            position: relative; z-index: 1;
+        }
+        .glap-hero p { color: #ccc; margin: 0; position: relative; z-index: 1; }
+        .glap-badge {
+            display: inline-block; padding: 4px 14px;
+            background: var(--gold-grad); color: #1a1a1a;
+            border-radius: 20px; font-size: 0.75em; font-weight: 700;
+            letter-spacing: 2px; margin-bottom: 15px;
+            position: relative; z-index: 1;
+        }
+
+        /* Leg Visualization */
+        .leg-visual {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            justify-content: center; margin: 20px 0;
+        }
+        .leg-item {
+            background: #fff; border: 2px solid var(--border);
+            border-radius: 12px; padding: 15px 12px; text-align: center;
+            min-width: 110px; flex: 1;
+        }
+        .leg-item.active { border-color: var(--accent); background: #fdf8ec; }
+        .leg-item .leg-icon { font-size: 1.8em; margin-bottom: 5px; }
+        .leg-item .leg-name { font-weight: 700; color: var(--primary); font-size: 0.9em; }
+        .leg-item .leg-score { color: var(--accent); font-weight: 800; font-size: 1.1em; margin-top: 5px; }
+
         /* Income Tags */
         .income-tag {
             display: inline-block; padding: 4px 12px; border-radius: 20px;
             font-size: 0.8em; font-weight: 600; margin-bottom: 10px;
         }
-        .tag-realtime { background: #e8f5e9; color: #2d8659; }
-        .tag-monthly { background: #e3f2fd; color: #1565c0; }
-        .tag-passive { background: #f3e5f5; color: #7b1fa2; }
+        .tag-annual { background: linear-gradient(135deg, #c5a059 0%, #e8d5a0 100%); color: #1a1a1a; }
 
         /* FAQ Style for Details */
         .detail-box {
@@ -161,9 +220,9 @@
 <body>
 
 <header class="hero">
-    <div class="hero-badge">💰 INCOME ENGINES</div>
-    <h1>9 大收入引擎<br>总有一款适合你</h1>
-    <p class="tagline">从“今天卖货今天拿钱”，到“退休后仍有被动收入”<br>我们为您设计了覆盖全生命周期的赚钱路径</p>
+    <div class="hero-badge">💰 INCOME ENGINES · V4.1</div>
+    <h1>10 大收入引擎<br>总有一款适合你</h1>
+    <p class="tagline">从"今天卖货今天拿钱"，到"年度成就大奖"<br>我们为您设计了覆盖全生命周期的赚钱路径</p>
 </header>
 
 <div class="container">
@@ -198,14 +257,14 @@
             <p style="text-align:center; font-size:1.2em; margin:15px 0;">
                 小王的收入 = 3 件 × $50 = <span class="highlight">$150</span>
             </p>
-            <p style="font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>这笔钱在客户付款后 1 分钟内就到了小王的电子钱包，他立刻提现到了银行卡。这就是“快速看到钱”的信心建立。</p>
+            <p style="font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>这笔钱在客户付款后 1 分钟内就到了小王的电子钱包，他立刻提现到了银行卡。</p>
         </div>
     </section>
 
     <!-- ===================== 收入 2 ===================== -->
     <section>
         <span class="sec-label">收入引擎 ②</span>
-        <h2>带团队赚“管道差价”（被动收入核心）</h2>
+        <h2>带团队赚"管道差价"（被动收入核心）</h2>
         <p class="lead">当你有了团队，你的下级卖货，你也能拿差价。你的级别越高，差价越大。</p>
 
         <div class="grid-2">
@@ -227,14 +286,14 @@
             <p style="text-align:center; font-size:1.2em; margin:15px 0;">
                 李姐的管道差价 = 400 件 × $25 = <span class="highlight">$10,000 / 月</span>
             </p>
-            <p style="font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>李姐这个月甚至没有亲自卖货，但因为她的下级在卖，她依然拿到了 $10,000 的被动收入。这就是“建管道”的魅力。</p>
+            <p style="font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>李姐这个月甚至没有亲自卖货，但因为她的下级在卖，她依然拿到了 $10,000 的被动收入。</p>
         </div>
     </section>
 
     <!-- ===================== 收入 3 ===================== -->
     <section>
         <span class="sec-label">收入引擎 ③</span>
-        <h2>“伯乐奖”：公司额外发红包（不扣下级钱）</h2>
+        <h2>"伯乐奖"：公司额外发红包（不扣下级钱）</h2>
         <p class="lead">你的下级赚了钱，公司会<strong>额外</strong>拿出一笔钱奖励你。这笔钱是公司出的，<strong>绝对不会扣减你下级已经拿到的收入</strong>。</p>
 
         <div class="box-highlight">
@@ -245,7 +304,7 @@
         </div>
 
         <details class="detail-box">
-            <summary>👉 点击展开：钻石总裁的“伯乐奖”算账</summary>
+            <summary>👉 点击展开：钻石总裁的"伯乐奖"算账</summary>
             <div class="detail-answer">
                 <p>假设你是钻石级别，你的团队网络如下：</p>
                 <p>• <strong>第 1 代</strong>（你直推的）：3 人，共赚了 $60,000 → 你额外拿 6% = <span class="highlight">$3,600</span><br>
@@ -263,8 +322,8 @@
     <!-- ===================== 收入 4 ===================== -->
     <section>
         <span class="sec-label">收入引擎 ④</span>
-        <h2>VIP 订阅躺赚（真正的“睡后收入”）</h2>
-        <p class="lead">客户每月支付 $39 加入“焕新俱乐部”享受换新权益。你不仅能拿一次性开户奖，还能每月持续拿佣金，而且<strong>客户续费越久，你的比例越高</strong>。</p>
+        <h2>VIP 订阅躺赚（真正的"睡后收入"）</h2>
+        <p class="lead">客户每月支付 $39 加入"焕新俱乐部"享受换新权益。你不仅能拿一次性开户奖，还能每月持续拿佣金，而且<strong>客户续费越久，你的比例越高</strong>。</p>
 
         <div class="grid-2">
             <div class="card">
@@ -283,27 +342,27 @@
         </div>
 
         <div class="box-story">
-            <p><strong>老张的“收租”账单（积累 3 年）：</strong></p>
+            <p><strong>老张的"收租"账单（积累 3 年）：</strong></p>
             <p>老张没有天天去推销新产品，而是用心维护老客户。3 年后，他有 <strong>200 名</strong>持续续费的 VIP 客户。</p>
             <p style="text-align:center; font-size:1.2em; margin:15px 0;">
                 每月被动收入：<span class="highlight">$1,556</span><br>
                 年化收入：<span class="highlight">$18,673</span>
             </p>
-            <p style="font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>这笔钱不需要老张再卖出一个包。只要客户觉得“以旧换新”划算，持续续费，老张就月月有钱进账。</p>
+            <p style="font-size:0.9em; color:var(--text-light);">💡 <strong>关键点：</strong>这笔钱不需要老张再卖出一个包。只要客户觉得"以旧换新"划算，持续续费，老张就月月有钱进账。</p>
         </div>
     </section>
 
     <!-- ===================== 收入 5-8 ===================== -->
     <section>
         <span class="sec-label">收入引擎 ⑤ - ⑧</span>
-        <h2>四大“存钱罐”：把事业变成传世资产</h2>
+        <h2>四大"存钱罐"：把事业变成传世资产</h2>
         <p class="lead">除了每月的现金收入，公司还为你准备了 4 个长期资产账户。你做得越久，这些账户里的钱就越多。</p>
 
         <div class="grid-2">
             <div class="card" style="border-top: 4px solid var(--accent);">
                 <div class="card-icon">💎</div>
                 <h4>1. CARAT 代币回购</h4>
-                <p>通过日常活跃和团队业绩赚取 CARAT。公司每季度用净利润溢价（105%）回购。持有满 12 个月还有“成本价+5%”的保底承诺。</p>
+                <p>通过日常活跃和团队业绩赚取 CARAT。公司每季度用净利润溢价（105%）回购。持有满 12 个月还有"成本价+5%"的保底承诺。</p>
             </div>
             <div class="card" style="border-top: 4px solid var(--success);">
                 <div class="card-icon">📊</div>
@@ -321,28 +380,175 @@
                 <p>皇冠级别可指定 3 名继承人接管你的团队。即使你退休了，你依然终身享受该团队 <strong>20% 的永久顾问费</strong>。</p>
             </div>
         </div>
+    </section>
+
+    <!-- ===================== 收入 9 · GLAP/GLAB 重磅 ===================== -->
+    <section>
+        <span class="sec-label">收入引擎 ⑨ · V4.1 年度重磅</span>
+        <h2>🏆 GLAP 全球领袖成就大奖</h2>
+        <p class="lead">这是 V4.1 新增的"王炸"模块——专门给顶级领袖准备的<strong>年度分红大奖</strong>。从公司年度净利润的 <strong>7%</strong> 中拿出，<strong>不占月度 40% 拨出</strong>，是真正的"公司利润分享"。</p>
+
+        <div class="glap-hero">
+            <div class="glap-badge">⭐ ANNUAL ACHIEVEMENT AWARD</div>
+            <h3>GLAP · GLAB 年度成就大奖</h3>
+            <p>靠培养领导人拿积分，年底按积分瓜分公司 7% 净利润</p>
+        </div>
+
+        <h3>🎯 什么是 GLAP？通俗理解</h3>
+        <p>GLAP（全球领袖成就积分）是一套<strong>年度积分系统</strong>。它不看你个人卖了多少货，而是看你培养了多少个<strong>"能独立作战的领导人"</strong>。</p>
 
         <div class="box-story">
-            <p><strong>“老王传承”真实故事：</strong></p>
-            <p>老王做了 8 年，达到了钻石级别，团队月流水 $500 万，他月收入 $80,000。<br>
-            现在老王想退休享受生活，他启动了“传承权”，把团队交给了儿子小王。</p>
-            <p>• 儿子小王接管团队 → 月收入 <strong>$80,000</strong><br>
-            • 老王终身保留 20% 顾问费 → 每月躺赚 <span class="highlight">$16,000</span></p>
-            <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>关键点：</strong>这不是打工，这是真正可以传给下一代的商业资产。</p>
+            <p><strong>通俗理解：</strong></p>
+            <p>你直接推荐的每个人，如果他能带起一个独立业务分支（当月 GV ≥ $2,500），就算你的<strong>"一条腿"</strong>。</p>
+            <p>你培养的腿越多、级别越高，你的 GLAP 积分就越高，年底分红就越多。</p>
+            <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>类比：</strong>就像麦当劳的"区域经理奖"——不是看你卖了多少汉堡，而是看你培养了多少个能独立开店的店长。</p>
+        </div>
+
+        <h3>🦵 什么是"腿"？可视化展示</h3>
+        <p>你直接推荐的每个人，如果能独立带起业务（月销 ≥ $2,500），就算你的一条"活跃腿"。</p>
+
+        <div class="leg-visual">
+            <div class="leg-item active">
+                <div class="leg-icon">🦵</div>
+                <div class="leg-name">第 1 条腿</div>
+                <div class="leg-score">铂金级 · 3 分</div>
+            </div>
+            <div class="leg-item active">
+                <div class="leg-icon">🦵</div>
+                <div class="leg-name">第 2 条腿</div>
+                <div class="leg-score">钻石级 · 10 分</div>
+            </div>
+            <div class="leg-item active">
+                <div class="leg-icon">🦵</div>
+                <div class="leg-name">第 3 条腿</div>
+                <div class="leg-score">铂金级 · 3 分</div>
+            </div>
+            <div class="leg-item active">
+                <div class="leg-icon">🦵</div>
+                <div class="leg-name">第 4 条腿</div>
+                <div class="leg-score">双钻石 · 30 分</div>
+            </div>
+        </div>
+
+        <h3>📊 积分怎么算？</h3>
+        <p>每条腿根据其最高达标级别产生积分，<strong>单腿积分上限 30 分</strong>：</p>
+
+        <div class="table-wrap"><div class="table-scroll">
+            <table>
+                <thead>
+                    <tr><th>腿的级别</th><th>产生积分</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>金级部门</td><td><strong>0.5 分</strong></td><td>每条腿内所有金级最多计 3 分</td></tr>
+                    <tr><td>铂金部门</td><td><strong>3.0 分</strong></td><td>—</td></tr>
+                    <tr><td>钻石部门</td><td><strong>10.0 分</strong></td><td>—</td></tr>
+                    <tr style="background:#fdf8ec;"><td>双钻石部门</td><td class="highlight"><strong>30.0 分</strong></td><td>达到单腿积分上限 🏆</td></tr>
+                    <tr><td>国际腿（海外市场）</td><td><strong>+0.5 分</strong></td><td>该国际腿需连续 12 个月达标</td></tr>
+                </tbody>
+            </table>
+        </div></div>
+
+        <h3>🎯 谁能拿 GLAB？资格门槛</h3>
+        <p>要获得 GLAB 领取资格，必须<strong>同时满足</strong>以下 4 个条件：</p>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-icon">💎</div>
+                <h4>① 身份要求</h4>
+                <p>必须是<strong>钻石及以上</strong>级别</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🦵</div>
+                <h4>② 团队宽度</h4>
+                <p>至少 <strong>4 条活跃铂金腿</strong><br>
+                <small style="color:var(--text-light);">（或 2 条铂金腿 + 2 条金级腿）</small></p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h4>③ 积分门槛</h4>
+                <p>GLAP 总积分 <strong>≥ 30 分</strong></p>
+            </div>
+            <div class="card">
+                <div class="card-icon">✅</div>
+                <h4>④ 合规要求</h4>
+                <p>团队终端零售 <strong>≥ 70%</strong><br>
+                <small style="color:var(--text-light);">（确保真实销售）</small></p>
+            </div>
+        </div>
+
+        <h3>💰 GLAB 奖金怎么分？</h3>
+        <div class="box-highlight">
+            <h3>🎁 年度奖金池 = 公司年度净利润 × 7%</h3>
+            <p>个人 GLAB = GLAB 池总额 ×（个人 GLAP 积分 ÷ 全体达标者总积分）<br>
+            <strong>个人年度上限：不超过 GLAB 池总额的 15%</strong></p>
+        </div>
+
+        <details class="detail-box">
+            <summary>👉 点击展开：老王冲击 GLAB 的完整算账</summary>
+            <div class="detail-answer">
+                <p><strong>场景：</strong>钻石领袖老王，团队有 4 条活跃铂金腿，GLAP 总积分 45 分。<br>
+                公司年净利润 $3,720,000，全体达标者总积分 1,000 分。</p>
+                
+                <p style="margin-top:15px;"><strong>第一步：计算 GLAB 池总额</strong></p>
+                <p>GLAB 池 = $3,720,000 × 7% = <span class="highlight">$260,400</span></p>
+                
+                <p style="margin-top:15px;"><strong>第二步：计算老王的分配比例</strong></p>
+                <p>老王比例 = 45 分 ÷ 1,000 分 = <span class="highlight">4.5%</span></p>
+                
+                <p style="margin-top:15px;"><strong>第三步：计算老王年度 GLAB</strong></p>
+                <p>老王 GLAB = $260,400 × 4.5% = <span class="highlight">$11,718</span></p>
+                
+                <p style="margin-top:15px;"><strong>第四步：加上超级小组奖（见下方）</strong></p>
+                <p>假设老王有 2 个 30 分腿 → 超级小组奖 = <span class="highlight">$20,000</span></p>
+                
+                <p style="text-align:center; font-size:1.3em; margin-top:20px; border-top:2px dashed var(--accent); padding-top:15px;">
+                    老王年度 GLAB 合计 = <span class="highlight">$31,718</span>
+                </p>
+                
+                <p style="font-size:0.85em; color:var(--success); margin-top:15px;">✅ 这笔奖金从公司年度净利润 7% 的 GLAB 池中支出，不占 40% 月度核心拨出。</p>
+            </div>
+        </details>
+
+        <h3>🌟 超级小组奖（额外重磅奖励）</h3>
+        <p>当你的 GLAP 总积分达到 <strong>150 分以上</strong>，且拥有至少 <strong>2 个积分达到 30 分（上限）的活跃腿</strong>（称为"超级小组"），可额外获得：</p>
+
+        <div class="box-gold">
+            <p><strong>🏆 超级小组奖奖励标准：</strong></p>
+            <p>• 第 2 - 5 个超级小组：每个奖励 <span class="highlight">$20,000</span><br>
+            • 第 6 个及以上：每个奖励 <span class="highlight">$40,000</span>，<strong>上不封顶</strong>！</p>
+            <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>通俗理解：</strong>"超级小组"就是你培养出来的"双钻石级别"的独立业务分支。每多培养一个，年底额外多拿 2-4 万美金！</p>
+        </div>
+
+        <h3>⚖️ 合规亮点：不占 40% 月度拨出</h3>
+        <div class="box-info">
+            <p><strong>✅ 资金来源：</strong>公司年度净利润的 7%<br>
+            <strong>✅ 是否占 40% 拨出：</strong><span class="highlight">否</span>，独立于月度核心拨出<br>
+            <strong>✅ 分配方式：</strong>按 GLAP 积分加权分配，设个人上限 15%<br>
+            <strong>✅ 透明性：</strong>每年向全体达标领袖公布池金额与分配结果</p>
+            <p style="font-size:0.85em; color:var(--text-light); margin-top:10px;">💡 <strong>为什么这么设计？</strong>GLAB 是"利润分享"，不是"销售佣金"。它从公司赚到的利润中拿出，而不是从销售额中拨出，所以不占印尼法规要求的 40% 月度拨出上限。</p>
+        </div>
+
+        <h3>📅 GLAP 积分保留机制（V4.1 新增）</h3>
+        <div class="box-gold">
+            <p><strong>🛡️ 软着陆保护：</strong>GLAP 积分滚动 12 个月，<strong>不因单月降级清零</strong>。</p>
+            <p style="font-size:0.9em; color:var(--text-light); margin-top:10px;">💡 <strong>设计目的：</strong>鼓励长期团队建设。即使某个月业绩波动，你过去 12 个月积累的积分依然有效，不会因为一次降级就失去年度大奖资格。</p>
         </div>
     </section>
 
     <!-- ===================== 总结 ===================== -->
     <section>
         <div class="box-highlight" style="background: var(--gold-grad); color: #1a1a1a;">
-            <h3 style="color: #1a1a1a;">💡 一句话总结你的收入</h3>
+            <h3 style="color: #1a1a1a;">💡 一句话总结你的 10 大收入</h3>
             <p style="color: #333; font-weight: 500; line-height: 2;">
                 卖一个包赚 <strong>$87.50</strong> 佣金，<br>
                 建两条深线拿 <strong>双倍管道差价</strong>，<br>
                 带团队拿 <strong>公司额外伯乐奖</strong>，<br>
                 转 VIP 拿 <strong>28% 月月递增</strong> 的被动收入，<br>
+                攒 CARAT 享回购增值，<br>
+                囤 PSU 享公司利润分红，<br>
                 存养老金退休一次性领取，<br>
-                传网络给后代享 <strong>20% 永久顾问费</strong>。
+                传网络给后代享 <strong>20% 永久顾问费</strong>，<br>
+                冲 GLAP 拿 <strong>年度净利润 7%</strong> 的成就大奖！
             </p>
         </div>
     </section>
@@ -359,9 +565,10 @@
 
 <footer style="background: var(--primary); color: #888; padding: 30px 20px; text-align: center; font-size: 0.8em;">
     <div style="font-size: 1.2em; font-weight: 800; background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;">LUXE · JEWELRY · LEGACY</div>
-    <p>国际轻奢珠宝事业合伙人计划</p>
+    <p>国际轻奢珠宝事业合伙人计划 · V4.1</p>
     <p style="margin-top:15px; font-size:0.75em; color:#666;">
         ⚠️ 免责声明：本手册中的收入数据为基于努力程度的参考区间，实际收入因个人市场开拓情况而异。本文件不构成任何收入保证或法律承诺。<br>
+        GLAP/GLAB 为内部命名，参考国际顶级直销领袖成就积分逻辑设计。<br>
         © 2026 LUXE Jewelry. All Rights Reserved.
     </p>
 </footer>
